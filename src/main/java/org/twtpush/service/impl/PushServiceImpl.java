@@ -20,7 +20,7 @@ public class PushServiceImpl implements IPushService{
     public Operate push(String broker,String appname,String appkey,String secretkey,String topic, String content) {
         try {
             twtMqtt = new TwtMqtt();
-            twtMqtt.setBroker(broker);
+            twtMqtt.setBroker("tcp://"+broker);
             twtMqtt.setTopic(topic);
             twtMqtt.setUserName(appkey);
             twtMqtt.setPassword(secretkey);
@@ -34,7 +34,7 @@ public class PushServiceImpl implements IPushService{
             return new Operate(true,"push success!",10002);
         }catch (Exception e){
             logger.error(e.getMessage(),e);
-            return new Operate(false,e.getMessage(),10001);
+            return new Operate(false,e.getMessage().toString(),10001);
         }
 
     }

@@ -5,11 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.twtpush.dto.Operate;
 import org.twtpush.service.IPushService;
-
-import javax.annotation.Resource;
 
 /**
  * Created by nero on 16-8-20.
@@ -24,7 +21,7 @@ public class PushController {
     private IPushService pushService;
 
     @RequestMapping(value = "/{broker}/{appname}/{appkey}/{secretkey}/{topic}/{content}/push",
-            method = RequestMethod.GET,
+            method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Operate push(@PathVariable("broker") String broker,
@@ -35,17 +32,8 @@ public class PushController {
                         @PathVariable("content") String content){
         Operate operate;
 
-            operate = pushService.push(broker, appname, appkey, secretkey, topic, content);
+        operate = pushService.push(broker, appname, appkey, secretkey, topic, content);
 
-        return operate;
-    }
-
-    @RequestMapping(value = "/{a}/push",
-            method = RequestMethod.GET,
-            produces = {"application/json;charset=UTF-8"})
-    @ResponseBody
-    public Operate pu(@PathVariable("a") String a){
-        Operate operate = new Operate(true,a,0001);
         return operate;
     }
 }

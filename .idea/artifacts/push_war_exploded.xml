@@ -32,6 +32,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.1.7.RELEASE" />
+          <element id="library" level="project" name="org.eclipse.paho.client.mqttv3-1.0.2 (2)" />
         </element>
       </element>
       <element id="directory" name="META-INF">

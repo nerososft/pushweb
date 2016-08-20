@@ -28,11 +28,11 @@ public class IPushServiceTest {
 
     @Test
     public void push() throws Exception {
-        String broker = "asd";
-        String appname ="asd";
-        String appkey="asd";
-        String secretkey="asd";
-        String topic="asd";
+        String broker = "tcp://127.0.0.1:61613";
+        String appname ="a";
+        String appkey="admin";
+        String secretkey="password";
+        String topic="admin";
         String content="asd";
         Operate operate = pushService.push(broker,appname,appkey,secretkey,topic,content);
         logger.info("pushresult={}",operate.toString());
