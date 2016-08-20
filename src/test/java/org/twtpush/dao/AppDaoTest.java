@@ -8,6 +8,8 @@ import org.twtpush.entity.App;
 
 import javax.annotation.Resource;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -39,9 +41,39 @@ public class AppDaoTest {
 
     @Test
     public void queryByDeveloperId() throws Exception {
-        long developerid = 1;
-        App app = appDao.queryById(developerid);
+        long developerid = 3;
+        List<App> app = appDao.queryByDeveloperId(3);
         System.out.println(app.toString());
     }
+    @Test
+    public void findAll() throws Exception {
+        long offset=0;
+        long limit=3;
+        List<App> apps= appDao.findAll(offset,limit);
+        System.out.println(apps.toString());
+    }
 
+    @Test
+    public void deleteAppById() throws Exception {
+        long id=1;
+        int result = appDao.deleteAppById(id);
+        System.out.println(result);
+    }
+
+    @Test
+    public void resetAppById() throws Exception {
+        long id =3;
+        String appkey="resetappkey";
+        String appsecret = "resetsecretkey";
+        int result = appDao.resetAppById(id,appkey,appsecret);
+        System.out.println(result);
+    }
+
+    @Test
+    public void changeAppNameById() throws Exception {
+        long id =3;
+        String newname= "new name";
+        int result=appDao.changeAppNameById(id,newname);
+        System.out.println(result);
+    }
 }

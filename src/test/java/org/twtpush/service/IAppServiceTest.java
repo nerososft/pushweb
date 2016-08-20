@@ -25,7 +25,7 @@ public class IAppServiceTest {
 
     @Test
     public void addApp() throws Exception {
-        String appname="wenjin.in";
+        String appname="weipeiyang_android";
         long developerid=3;
         Operate operate = appService.addApp(appname,developerid);
         logger.info("addapp={}",operate.toString());

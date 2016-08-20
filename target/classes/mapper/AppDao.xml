@@ -26,4 +26,35 @@
         WHERE
         app_developer_id = #{appDeveloperId}
     </select>
+    <select id="findAll" resultType="App">
+        SELECT
+        *
+        FROM
+        apps
+        LIMIT
+        #{offset},#{limit}
+    </select>
+    <delete id="deleteAppById">
+        DELETE
+        FROM
+        apps
+        WHERE
+        app_id = #{appId}
+    </delete>
+    <update id="resetAppById">
+        UPDATE
+        apps
+        SET
+        app_key = #{appKey},app_secret_key=#{secretKey}
+        WHERE
+        app_id = #{appId}
+    </update>
+    <update id="changeAppNameById">
+        UPDATE
+        apps
+        SET
+        app_name = #{newAppName}
+        WHERE
+        app_id = #{appId}
+    </update>
 </mapper>

@@ -30,7 +30,7 @@ public interface AppDao {
      * @param appDeveloperId
      * @return
      */
-    App queryByDeveloperId(long appDeveloperId);
+    List<App> queryByDeveloperId(long appDeveloperId);
 
     /**
      * find all
@@ -38,19 +38,30 @@ public interface AppDao {
      * @param limit
      * @return
      */
-    List<App> findAll(long offset,long limit);
+    List<App> findAll(@Param("offset") long offset,@Param("limit") long limit);
 
-    /**
-     * find by id
-     * @param id
-     * @return
-     */
-    App findById(long id);
 
     /**
      * delete app by id
-     * @param id
+     * @param appId
      * @return
      */
-    int deleteAppById(long id);
+    int deleteAppById(long appId);
+
+    /**
+     * reset a app's app key & secret key
+     * @param appId
+     * @param appKey
+     * @param secretKey
+     * @return
+     */
+    int resetAppById(@Param("appId") long appId,@Param("appKey") String appKey,@Param("secretKey") String secretKey);
+
+    /**
+     * change app 's name
+     * @param appId
+     * @param newAppName
+     * @return
+     */
+    int changeAppNameById(@Param("appId") long appId,@Param("newAppName") String newAppName);
 }
