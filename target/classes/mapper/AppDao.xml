@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.twtpush.dao.AppDao">
+    <insert id="add">
+        INSERT INTO
+          apps
+          (app_name,app_key,app_secret_key,app_developer_id)
+        VALUES
+          (#{appName},#{appKey},#{appSecretKey},#{appDeveloperId})
+    </insert>
+    <select id="queryById" resultType="App">
+        SELECT
+          *
+        FROM
+          apps
+        WHERE
+          app_id = #{appId}
+    </select>
+    <select id="queryByDeveloperId" resultType="App">
+        SELECT
+        *
+        FROM
+        apps
+        WHERE
+        app_developer_id = #{appDeveloperId}
+    </select>
+</mapper>

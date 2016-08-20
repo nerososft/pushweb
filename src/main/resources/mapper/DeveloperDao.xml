@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.twtpush.dao.DeveloperDao">
+    <insert id="add">
+        INSERT INTO
+          developers
+          (developer_name,developer_email,developer_password)
+        VALUES
+          (#{developerName},#{developerEmail},#{developerPassword})
+
+    </insert>
+    <select id="queryByEmail" resultType="Developer">
+        SELECT
+          *
+        FROM
+          developers
+        WHERE
+          developer_email = #{developerEmail}
+    </select>
+    <select id="queryById" resultType="Developer">
+        SELECT
+          *
+        FROM
+          developers
+        WHERE
+          developer_id = #{developerId}
+    </select>
+    <select id="queryByEmailAndPassword" resultType="Developer">
+        SELECT
+          *
+        FROM
+          developers
+        WHERE
+          developer_email = #{developerEmail} and developer_password=#{developerPassword}
+    </select>
+    <select id="queryByIdAndToken" resultType="Developer">
+        SELECT
+        *
+        FROM
+        developers
+        WHERE
+        developer_id = #{developerId} and developer_token=#{developerToken}
+    </select>
+    <select id="queryAll" resultType="Developer">
+        SELECT
+          *
+        FROM
+          developers
+        LIMIT #{offset},#{limit}
+    </select>
+    <update id="updateTokenByEmail">
+        UPDATE
+          developers
+        SET
+          developer_token  = #{newToken}
+        WHERE
+          developer_email = #{developerEmail}
+    </update>
+    <update id="updateTokenById">
+        UPDATE
+        developers
+        SET
+        developer_token  = #{newToken}
+        WHERE
+        developer_id = #{developerId}
+    </update>
+    <update id="updatePassword">
+         UPDATE
+          developers
+        SET
+          developer_password  = #{developerPassword}
+        WHERE
+          developer_email = #{developerEmail}
+    </update>
+</mapper>
