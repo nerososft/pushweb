@@ -65,4 +65,12 @@
         WHERE
         app_id = #{appId}
     </update>
+    <select id="findByKeySecretKey" resultType="App">
+      SELECT
+      *
+      FROM
+      apps
+      WHERE
+      app_key=#{appKey} and app_secret_key=#{appSecretKey}
+    </select>
 </mapper>

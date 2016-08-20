@@ -81,4 +81,8 @@ public class AppServiceImpl implements IAppService
         }
         return new Operate(true,"change name success!",04002);
     }
+
+    public App checkApp(String appKey, String secretKey) {
+       return appDao.findByKeySecretKey(appKey,secretKey);
+    }
 }

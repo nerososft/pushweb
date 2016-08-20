@@ -67,4 +67,12 @@ public interface IAppService {
      */
     Operate changeAppName(long appId,String newAppName);
 
+    /**
+     * check  is appkey & secretkey  is a app
+     * @param appKey
+     * @param secretKey
+     * @return
+     */
+    App  checkApp(String appKey,String secretKey);
+
 }

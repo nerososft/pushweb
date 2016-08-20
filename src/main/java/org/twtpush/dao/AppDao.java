@@ -70,4 +70,12 @@ public interface AppDao {
      * @return
      */
     int changeAppNameById(@Param("appId") long appId,@Param("newAppName") String newAppName);
+
+    /**
+     * find app by app key & secret key
+     * @param appKey
+     * @param appSecretKey
+     * @return
+     */
+    App findByKeySecretKey(@Param("appKey") String appKey,@Param("appSecretKey") String appSecretKey);
 }

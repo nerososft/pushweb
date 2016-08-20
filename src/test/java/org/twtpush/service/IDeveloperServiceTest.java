@@ -24,6 +24,7 @@ import static org.junit.Assert.*;
         "classpath:spring/spring-service.xml"})
 public class IDeveloperServiceTest {
 
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -74,6 +75,11 @@ public class IDeveloperServiceTest {
     @Test
     public void register() throws Exception {
 
+    }
+    @Test
+    public void checkDeveloper() throws Exception {
+        Developer result  = developerService.checkDeveloper(3,"dae71bb9116f0993a5d9b92ad77fd02e");
+        logger.info("result={}",result);
     }
 
 }

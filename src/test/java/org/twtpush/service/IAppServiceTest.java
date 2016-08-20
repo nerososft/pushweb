@@ -21,6 +21,7 @@ import java.util.List;
         "classpath:spring/spring-service.xml"})
 public class IAppServiceTest {
 
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -79,6 +80,14 @@ public class IAppServiceTest {
     public void findByName() throws Exception {
         String name="yang";
         App app = appService.findByName(name);
+        logger.info("result={}",app.toString());
+    }
+
+    @Test
+    public void checkApp() throws Exception {
+        String key="weipeiyang_ios_014dd069e98bb226f32929b7d39a3035";
+        String secret="75d32ba7a8d2ed7408bfc0796770c166)7fAru(qkm2Jab3bc4c77b267725a15bad618fe1fcb2";
+        App app = appService.checkApp(key,secret);
         logger.info("result={}",app.toString());
     }
 

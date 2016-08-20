@@ -65,4 +65,12 @@ public interface IDeveloperService {
      * @return
      */
     Operate register(String developerEmail,String developerPassword,String developerName);
+
+    /**
+     * check is developer
+     * @param id
+     * @param developerToken
+     * @return
+     */
+    Developer checkDeveloper(long id,String developerToken);
 }

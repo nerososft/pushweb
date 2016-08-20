@@ -21,6 +21,7 @@ import static org.junit.Assert.*;
 public class AppDaoTest {
 
 
+
     @Resource
     private AppDao appDao;
 
@@ -83,5 +84,12 @@ public class AppDaoTest {
         String newname= "new name";
         int result=appDao.changeAppNameById(id,newname);
         System.out.println(result);
+    }
+    @Test
+    public void findByKeySecretKey() throws Exception {
+        String key="weipeiyang_ios_014dd069e98bb226f32929b7d39a3035";
+        String secret="75d32ba7a8d2ed7408bfc0796770c166)7fAru(qkm2Jab3bc4c77b267725a15bad618fe1fcb2";
+        App app = appDao.findByKeySecretKey(key,secret);
+        System.out.println(app.toString());
     }
 }

@@ -135,4 +135,8 @@ public class DeveloperServiceImpl implements IDeveloperService {
         //developerDao.add();
         return null;
     }
+
+    public Developer checkDeveloper(long id, String developerToken) {
+       return developerDao.queryByIdAndToken(id,developerToken);
+    }
 }
