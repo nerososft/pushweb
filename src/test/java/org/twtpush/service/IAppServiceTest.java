@@ -29,9 +29,11 @@ public class IAppServiceTest {
 
     @Test
     public void addApp() throws Exception {
+        String grouppath="/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties";
+        String userpath="/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties";
         String appname="weipeiyang_android";
         long developerid=3;
-        Operate operate = appService.addApp(appname,developerid);
+        Operate operate = appService.addApp(grouppath,userpath,appname,developerid);
         logger.info("addapp={}",operate.toString());
 
     }

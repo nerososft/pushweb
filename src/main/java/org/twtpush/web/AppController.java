@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.twtpush.dto.Result;
 import org.twtpush.entity.App;
 import org.twtpush.entity.Developer;
+import org.twtpush.exception.AppRepeatException;
 import org.twtpush.exception.TokenAuthFailedException;
 import org.twtpush.service.IAppService;
 import org.twtpush.service.IDeveloperService;
@@ -40,17 +41,21 @@ public class AppController {
             Developer developer = developerService.checkDeveloper(developerId, developerToken);
             if (developer==null) {
                 throw new TokenAuthFailedException("token auth failed!");
-            }else{
-                if(appService.addApp(appName,developer.getDeveloperId()).isState()){
-                    result = new Result<App>(true,"create app success!");
-                }else{
-                    result = new Result<App>(false,"create app failed!");
-                }
             }
-
+            if(appService.findByName(appName)!=null){
+                throw new AppRepeatException("app have exists!");
+            }
+            if(appService.addApp("/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties","/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties",appName,developer.getDeveloperId()).isState()){
+                result = new Result<App>(true,"create app success!");
+            }else{
+                result = new Result<App>(false,"create app failed!");
+            }
         }catch (TokenAuthFailedException e1){
-            logger.error(e1.getMessage(),e1);
-            result = new Result<App>(false,"token auth failed!");
+            throw e1;
+        }catch (AppRepeatException e2){
+            throw e2;
+        }catch (Exception e){
+            return new Result<App>(false,e.getMessage());
         }
         return result;
     }

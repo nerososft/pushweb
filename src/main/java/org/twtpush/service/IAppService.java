@@ -43,7 +43,7 @@ public interface IAppService {
      * @param appName
      * @return
      */
-    Operate addApp(String appName,long developerId);
+    Operate addApp(String groupPath,String userPath,String appName,long developerId);
 
     /**
      * delete app

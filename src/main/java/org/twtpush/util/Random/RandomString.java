@@ -6,7 +6,7 @@ package org.twtpush.util.Random;
  */
 public class RandomString {
 
-    private final String seeds="abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=~";
+    private final String seeds="abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+~";
 
     public String getRandomString(long length){
         String randomString="";

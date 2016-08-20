@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71cab1fd-4174-4e4e-b335-e5e324624ef1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/twtpush/service/IDeveloperService.class" afterPath="$PROJECT_DIR$/target/classes/org/twtpush/service/IDeveloperService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/twtpush/service/impl/DeveloperServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/twtpush/service/impl/DeveloperServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/twtpush/service/IDeveloperServiceTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/twtpush/service/IDeveloperServiceTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/exception/AppRepeatException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/exception/CreateAppException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/AppDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AppDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/twtpush/dao/AppDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/twtpush/dao/AppDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/util/Random/RandomString.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/util/Random/RandomString.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java" />
     </list>
     <ignored path="push.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,24 +32,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DeveloperController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java">
+      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="312">
+              <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PushController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java">
+      <file leaf-file-name="AppRepeatException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/AppRepeatException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,20 +57,8 @@
       <file leaf-file-name="IAppService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IAppServiceTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+            <state relative-caret-position="279">
+              <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,77 +69,81 @@
       <file leaf-file-name="AppServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="85" column="58" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
+            <state relative-caret-position="135">
+              <caret line="77" column="68" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2749#2750#0" expanded="true" />
-                <element signature="e#2814#2815#0" expanded="true" />
+                <element signature="e#4198#4199#0" expanded="true" />
+                <element signature="e#4263#4264#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java">
+      <file leaf-file-name="IAppServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDaoTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/dao/AppDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="92" column="43" selection-start-line="89" selection-start-column="6" selection-end-line="92" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AppDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="73" column="58" selection-start-line="73" selection-start-column="58" selection-end-line="73" selection-end-column="58" />
+            <state relative-caret-position="207">
+              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
               <folding>
-                <marker date="1471708183201" expanded="true" signature="238:407" ph="INSERT INTO apps" />
-                <marker date="1471708183201" expanded="true" signature="475:563" ph="SELECT * FRO... apps" />
-                <marker date="1471708183201" expanded="true" signature="632:718" ph="SELECT * FRO... apps" />
-                <marker date="1471708183201" expanded="true" signature="795:896" ph="SELECT * FRO... apps" />
-                <marker date="1471708183201" expanded="true" signature="962:1045" ph="SELECT * FRO... apps" />
-                <marker date="1471708183201" expanded="true" signature="1100:1172" ph="DELETE FROM " />
-                <marker date="1471708183201" expanded="true" signature="1226:1353" ph="UPDATE apps " />
-                <marker date="1471708183201" expanded="true" signature="1412:1516" ph="UPDATE apps " />
-                <marker date="1471708183201" expanded="true" signature="1591:1698" ph="SELECT * FRO... apps" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotAppException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppException.java">
+      <file leaf-file-name="CreateAppException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/CreateAppException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="e#178#179#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeveloperServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="139" column="64" selection-start-line="139" selection-start-column="64" selection-end-line="139" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomString.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/util/Random/RandomString.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <caret line="8" column="106" selection-start-line="8" selection-start-column="106" selection-end-line="8" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PushServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/PushServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding>
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#226#227#0" expanded="true" />
-                <element signature="e#272#273#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeveloperException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/DeveloperException.java">
+      <file leaf-file-name="IPushService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IPushService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="336">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -205,15 +189,18 @@
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppException.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/AppDao.xml" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/dao/AppDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/exception/AppRepeatException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/util/Random/RandomString.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/exception/CreateAppException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
       </list>
     </option>
   </component>
@@ -613,33 +600,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IAppServiceTest.checkApp">
-    <configuration default="false" name="IAppServiceTest.findById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.twtpush.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="push" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.twtpush.service" />
-      <option name="MAIN_CLASS_NAME" value="org.twtpush.service.IAppServiceTest" />
-      <option name="METHOD_NAME" value="findById" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.IAppServiceTest.addApp">
     <configuration default="false" name="IAppServiceTest.findByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -731,6 +692,32 @@
       <option name="PACKAGE_NAME" value="org.twtpush.service" />
       <option name="MAIN_CLASS_NAME" value="org.twtpush.service.IAppServiceTest" />
       <option name="METHOD_NAME" value="checkApp" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="IAppServiceTest.addApp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.twtpush.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="push" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.twtpush.service" />
+      <option name="MAIN_CLASS_NAME" value="org.twtpush.service.IAppServiceTest" />
+      <option name="METHOD_NAME" value="addApp" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1282,19 +1269,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.push" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findById" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findByName" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.checkDeveloper" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.AppDaoTest.findByKeySecretKey" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.checkApp" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findByName" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.checkDeveloper" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AppDaoTest.findByKeySecretKey" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.checkApp" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.addApp" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.checkApp" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AppDaoTest.findByKeySecretKey" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.checkDeveloper" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findByName" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findById" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.addApp" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.checkApp" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AppDaoTest.findByKeySecretKey" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.checkDeveloper" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findByName" />
       </list>
     </recent_temporary>
   </component>
@@ -1306,6 +1293,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="71cab1fd-4174-4e4e-b335-e5e324624ef1" name="Default" comment="" />
@@ -1313,44 +1303,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1471624305741</updated>
-      <workItem from="1471624309202" duration="40638000" />
+      <workItem from="1471624309202" duration="44206000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AppDaoTest_findByKeySecretKey - 2016.08.20 at 23h 54m 26s.xml">
-      <configuration name="AppDaoTest.findByKeySecretKey" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 40m 04s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppDaoTest_findByKeySecretKey - 2016.08.20 at 23h 55m 08s.xml">
-      <configuration name="AppDaoTest.findByKeySecretKey" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 45m 37s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_all - 2016.08.20 at 23h 02m 32s.xml">
-      <configuration name="IAppServiceTest.all" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 46m 53s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_checkApp - 2016.08.20 at 23h 56m 26s.xml">
-      <configuration name="IAppServiceTest.checkApp" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 47m 25s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_findByDeveloperId - 2016.08.20 at 23h 03m 15s.xml">
-      <configuration name="IAppServiceTest.findByDeveloperId" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 47m 34s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_findById - 2016.08.20 at 23h 03m 49s.xml">
-      <configuration name="IAppServiceTest.findById" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 49m 08s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_findByName - 2016.08.20 at 23h 04m 30s.xml">
-      <configuration name="IAppServiceTest.findByName" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 50m 06s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IDeveloperServiceTest_checkDeveloper - 2016.08.20 at 23h 28m 11s.xml">
-      <configuration name="IDeveloperServiceTest.checkDeveloper" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 50m 18s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IDeveloperServiceTest_checkDeveloper - 2016.08.20 at 23h 28m 45s.xml">
-      <configuration name="IDeveloperServiceTest.checkDeveloper" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 50m 25s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IDeveloperServiceTest_checkDeveloper - 2016.08.20 at 23h 37m 31s.xml">
-      <configuration name="IDeveloperServiceTest.checkDeveloper" configurationId="JUnit" />
+    <history-entry file="IAppServiceTest_addApp - 2016.08.21 at 00h 56m 44s.xml">
+      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40638000" />
+    <option name="totallyTimeSpent" value="44206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -1386,6 +1376,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1523,14 +1521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IPushService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/impl/AppServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
@@ -1579,28 +1569,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/PushServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
           <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="139" column="64" selection-start-line="139" selection-start-column="64" selection-end-line="139" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -1634,16 +1606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/DeveloperException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1665,14 +1627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AppDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -1691,33 +1645,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="85" column="58" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2749#2750#0" expanded="true" />
-            <element signature="e#2814#2815#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1729,20 +1661,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+        <state relative-caret-position="24">
+          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/AppRepeatException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        <state relative-caret-position="192">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/PushServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IPushService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/util/Random/RandomString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="106" selection-start-line="8" selection-start-column="106" selection-end-line="8" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/CreateAppException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="139" column="64" selection-start-line="139" selection-start-column="64" selection-end-line="139" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="77" column="68" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4198#4199#0" expanded="true" />
+            <element signature="e#4263#4264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
