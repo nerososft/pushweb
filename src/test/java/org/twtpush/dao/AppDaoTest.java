@@ -19,6 +19,8 @@ import static org.junit.Assert.*;
 @ContextConfiguration("classpath:spring/spring-dao.xml")
 
 public class AppDaoTest {
+
+
     @Resource
     private AppDao appDao;
 
@@ -39,6 +41,12 @@ public class AppDaoTest {
         System.out.println(app.toString());
     }
 
+    @Test
+    public void findByName() throws Exception {
+        String name="new name";
+        App app =  appDao.findByName(name);
+        System.out.println(app.toString());
+    }
     @Test
     public void queryByDeveloperId() throws Exception {
         long developerid = 3;

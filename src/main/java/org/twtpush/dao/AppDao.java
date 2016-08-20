@@ -26,6 +26,12 @@ public interface AppDao {
     App queryById(long appId);
 
     /**
+     * find by name
+     * @param appName
+     * @return
+     */
+    App findByName(String appName);
+    /**
      * query apps by app developer id
      * @param appDeveloperId
      * @return

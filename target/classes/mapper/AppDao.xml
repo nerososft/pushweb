@@ -18,6 +18,14 @@
         WHERE
           app_id = #{appId}
     </select>
+    <select id="findByName" resultType="App">
+        SELECT
+        *
+        FROM
+        apps
+        WHERE
+        app_name = #{appName}
+    </select>
     <select id="queryByDeveloperId" resultType="App">
         SELECT
         *

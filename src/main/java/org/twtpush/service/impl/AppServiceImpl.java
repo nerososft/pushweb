@@ -38,19 +38,19 @@ public class AppServiceImpl implements IAppService
 
 
     public List<App> all(long offset, long limit) {
-        return null;
+        return appDao.findAll(offset,limit);
     }
 
-    public App findByDeveloperId(long developerId) {
-        return null;
+    public List<App> findByDeveloperId(long developerId) {
+        return appDao.queryByDeveloperId(developerId);
     }
 
     public App findById(long appId) {
-        return null;
+        return appDao.queryById(appId);
     }
 
     public App findByName(String appName) {
-        return null;
+        return appDao.findByName(appName);
     }
 
     public Operate addApp(String appName, long developerId) {
@@ -62,14 +62,23 @@ public class AppServiceImpl implements IAppService
     }
 
     public Operate deleteApp(long appId) {
-        return null;
+        if(appDao.deleteAppById(appId)<1){
+            return new Operate(false,"delete failed!",00101);
+        }
+        return new Operate(true,"delete success!",00102);
     }
 
-    public Operate resetApp(long appId,String appKey,String secretkey) {
-        return null;
+    public Operate resetApp(long appId,String appName) {
+        if(appDao.resetAppById(appId,appName+"_"+getRandomToken(),getRandomToken()+randomString.getRandomString(12)+getRandomToken())<1){
+            return new Operate(false,"reset app failed!",02001);
+        }
+        return new Operate(true,"reset app success",02002);
     }
 
     public Operate changeAppName(long id,String newAppName) {
-        return null;
+        if(appDao.changeAppNameById(id,newAppName)<1){
+            return new Operate(false,"change name failed!",04001);
+        }
+        return new Operate(true,"change name success!",04002);
     }
 }

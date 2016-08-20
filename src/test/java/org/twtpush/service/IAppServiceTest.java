@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.twtpush.dto.Operate;
+import org.twtpush.entity.App;
+
+import java.util.List;
 
 
 /**
@@ -34,17 +37,49 @@ public class IAppServiceTest {
 
     @Test
     public void deleteApp() throws Exception {
-
+        long  id =2;
+        Operate operate=appService.deleteApp(id);
+        logger.info("result={}",operate);
     }
 
     @Test
     public void resetApp() throws Exception {
-
+        long  id =3;
+        Operate operate=appService.resetApp(id,"new name");
+        logger.info("result={}",operate);
     }
 
     @Test
     public void changeAppName() throws Exception {
+        long  id =3;
+        Operate operate=appService.changeAppName(id,"yang");
+        logger.info("result={}",operate);
+    }
+    @Test
+    public void all() throws Exception {
+        List<App> app = appService.all(0,10);
+        logger.info("result={}",app.toString());
+    }
 
+    @Test
+    public void findByDeveloperId() throws Exception {
+        long id =3;
+        List<App> app = appService.findByDeveloperId(id);
+        logger.info("result={}",app.toString());
+    }
+
+    @Test
+    public void findById() throws Exception {
+        long id =5;
+        App app = appService.findById(id);
+        logger.info("result={}",app.toString());
+    }
+
+    @Test
+    public void findByName() throws Exception {
+        String name="yang";
+        App app = appService.findByName(name);
+        logger.info("result={}",app.toString());
     }
 
 }

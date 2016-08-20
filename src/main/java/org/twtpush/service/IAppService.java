@@ -23,7 +23,7 @@ public interface IAppService {
      * @param developerId
      * @return
      */
-    App findByDeveloperId(long developerId);
+    List<App> findByDeveloperId(long developerId);
 
     /**
      * find app by appid
@@ -57,10 +57,11 @@ public interface IAppService {
      * @param appId
      * @return
      */
-    Operate resetApp(long appId,String appKey,String secretkey);
+    Operate resetApp(long appId,String appKey);
 
     /**
      * change app's name
+     * @param appId
      * @param newAppName
      * @return
      */
