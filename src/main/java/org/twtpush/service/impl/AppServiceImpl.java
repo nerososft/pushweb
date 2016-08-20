@@ -57,38 +57,35 @@ public class AppServiceImpl implements IAppService
         return appDao.findByName(appName);
     }
 
+
+    public boolean writebroker(String path,String appKey,String secretKey){
+        try {
+            FileWriter fileWriter = new FileWriter(path,true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            //使用缓冲区中的方法将数据写入到缓冲区中。
+            bufferedWriter.newLine();
+            bufferedWriter.write(appKey+"="+secretKey);
+            //使用缓冲区中的方法，将数据刷新到目的地文件中去。
+            bufferedWriter.flush();
+            //关闭缓冲区,同时关闭了fw流对象
+            bufferedWriter.close();
+            return true;
+        } catch (IOException e) {
+            //e.printStackTrace();
+            return false;
+        }
+    }
     public Operate addApp(String groupPath,String userPath,String appName, long developerId){
             String appKey=appName+"_"+getRandomToken();
             String secretKey = getRandomToken()+randomString.getRandomString(12)+getRandomToken();
-            try {
-
-                if(appDao.add(appName,appKey,secretKey,developerId)<1){
-                    return  new Operate(false,"create app failed!",03003);
-                }else{
-                    FileWriter fileWriter = new FileWriter(groupPath,true);
-                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                    //使用缓冲区中的方法将数据写入到缓冲区中。
-                    bufferedWriter.newLine();
-                    bufferedWriter.write(appKey+"="+secretKey);
-                    //使用缓冲区中的方法，将数据刷新到目的地文件中去。
-                    bufferedWriter.flush();
-                    //关闭缓冲区,同时关闭了fw流对象
-                    bufferedWriter.close();
-
-                    FileWriter fileWriter1 = new FileWriter(userPath,true);
-                    BufferedWriter bufferedWriter1 = new BufferedWriter(fileWriter1);
-                    //使用缓冲区中的方法将数据写入到缓冲区中。
-                    bufferedWriter1.newLine();
-                    bufferedWriter1.write(appKey+"="+secretKey);
-                    //使用缓冲区中的方法，将数据刷新到目的地文件中去。
-                    bufferedWriter1.flush();
-                    //关闭缓冲区,同时关闭了fw流对象
-                    bufferedWriter1.close();
-                    return new Operate(true,"create app success!",03002);
+            if(writebroker(groupPath,appKey,secretKey)&&writebroker(userPath,appKey,secretKey)) {
+                if (appDao.add(appName, appKey, secretKey, developerId) < 1) {
+                    return new Operate(false, "create app failed!", 03003);
+                } else {
+                    return new Operate(true, "create app success!", 03002);
                 }
-            } catch (IOException e) {
-                //e.printStackTrace();
-                return  new Operate(false,"can not write apollo!",03003);
+            }else {
+                return new Operate(false, "can not write apollo!", 03003);
             }
     }
 
