@@ -17,15 +17,15 @@ public class PushServiceImpl implements IPushService{
 
     private TwtMqtt twtMqtt;
 
-    public Operate push(String broker,String appname,String appkey,String secretkey,String topic, String content) {
+    public Operate push(String broker,String appName,String appKey,String secretKey,String topic, String content) {
         try {
             twtMqtt = new TwtMqtt();
             twtMqtt.setBroker("tcp://"+broker);
-            twtMqtt.setTopic(topic);
-            twtMqtt.setUserName(appkey);
-            twtMqtt.setPassword(secretkey);
+            twtMqtt.setTopic(appName+"/"+topic);
+            twtMqtt.setUserName(appKey);
+            twtMqtt.setPassword(secretKey);
             twtMqtt.setQos(1);
-            twtMqtt.setClientId(appname);
+            twtMqtt.setClientId(appName);
             twtMqtt.setContent(content);
 
 
