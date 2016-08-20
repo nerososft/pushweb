@@ -3,6 +3,8 @@ package org.twtpush.dao;
 import org.apache.ibatis.annotations.Param;
 import org.twtpush.entity.App;
 
+import java.util.List;
+
 /**
  * Created by nero on 16-8-18.
  */
@@ -30,4 +32,25 @@ public interface AppDao {
      */
     App queryByDeveloperId(long appDeveloperId);
 
+    /**
+     * find all
+     * @param offset
+     * @param limit
+     * @return
+     */
+    List<App> findAll(long offset,long limit);
+
+    /**
+     * find by id
+     * @param id
+     * @return
+     */
+    App findById(long id);
+
+    /**
+     * delete app by id
+     * @param id
+     * @return
+     */
+    int deleteAppById(long id);
 }
