@@ -14,11 +14,13 @@ public class Result<T> {
     public Result(boolean success,T data) {
         this.data = data;
         this.success = success;
+        this.error=null;
     }
 
     public Result(boolean success, String error) {
         this.success = success;
         this.error = error;
+        this.data=null;
     }
 
     public boolean isSuccess() {

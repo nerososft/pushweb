@@ -21,6 +21,38 @@ public class Login {
         this.resultCode = resultCode;
     }
 
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public long getResultCode() {
+        return resultCode;
+    }
+
+    public void setResultCode(long resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public Developer getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(Developer developer) {
+        this.developer = developer;
+    }
+
     public Login(boolean state, String msg, long resultCode, Developer developer) {
         this.state = state;
         this.msg = msg;
