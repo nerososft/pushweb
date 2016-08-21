@@ -15,6 +15,7 @@ import org.twtpush.util.Random.RandomString;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.List;
 
 /**
@@ -58,7 +59,7 @@ public class AppServiceImpl implements IAppService
     }
 
 
-    public boolean writebroker(String path,String appKey,String secretKey){
+    public boolean writeBrokerUser(String path,String appKey,String secretKey){
         try {
             FileWriter fileWriter = new FileWriter(path,true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -75,10 +76,26 @@ public class AppServiceImpl implements IAppService
             return false;
         }
     }
+    public boolean writeBrokerGroup(String path,String appKey){
+        try {
+            // 打开一个随机访问文件流，按读写方式
+            RandomAccessFile randomFile = new RandomAccessFile(path, "rw");
+            // 文件长度，字节数
+            long fileLength = randomFile.length();
+            // 将写文件指针移到文件尾。
+            randomFile.seek(fileLength);
+            randomFile.writeBytes("|"+appKey);
+            randomFile.close();
+            return true;
+        } catch (IOException e) {
+            //e.printStackTrace();
+            return false;
+        }
+    }
     public Operate addApp(String groupPath,String userPath,String appName, long developerId){
             String appKey=appName+"_"+getRandomToken();
             String secretKey = getRandomToken()+randomString.getRandomString(12)+getRandomToken();
-            if(writebroker(groupPath,appKey,secretKey)&&writebroker(userPath,appKey,secretKey)) {
+            if(writeBrokerUser(userPath,appKey,secretKey)&&writeBrokerGroup(groupPath,appKey)) {
                 if (appDao.add(appName, appKey, secretKey, developerId) < 1) {
                     return new Operate(false, "create app failed!", 03003);
                 } else {
