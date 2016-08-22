@@ -1,10 +1,12 @@
 package org.twtpush.service;
 
+import org.springframework.stereotype.Service;
 import org.twtpush.dto.Operate;
 
 /**
  * Created by nero on 16-8-18.
  */
+@Service
 public interface IPushService {
 
     /**

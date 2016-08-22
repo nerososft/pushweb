@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: org.twtpush.service.IDeveloperServiceTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.058 sec <<< FAILURE! - in org.twtpush.service.IDeveloperServiceTest
+checkDeveloper(org.twtpush.service.IDeveloperServiceTest)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.twtpush.service.impl.DeveloperServiceImpl.checkDeveloper(DeveloperServiceImpl.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:201)
+	at com.sun.proxy.$Proxy25.checkDeveloper(Unknown Source)
+	at org.twtpush.service.IDeveloperServiceTest.checkDeveloper(IDeveloperServiceTest.java:82)
+

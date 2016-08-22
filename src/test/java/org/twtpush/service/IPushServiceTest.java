@@ -21,6 +21,7 @@ import static org.junit.Assert.*;
         "classpath:spring/spring-service.xml"})
 public class IPushServiceTest {
 
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -36,6 +37,10 @@ public class IPushServiceTest {
         String content="asd";
         Operate operate = pushService.push(broker,appname,appkey,secretkey,topic,content);
         logger.info("pushresult={}",operate.toString());
+    }
+    @Test
+    public void getBrokerStatus() throws Exception {
+        Operate operate = pushService.getBrokerStatus("","");
     }
 
 }

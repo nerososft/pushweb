@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: org.twtpush.dao.DeveloperDaoTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 3.472 sec <<< FAILURE! - in org.twtpush.dao.DeveloperDaoTest
+queryByIdAndToken(org.twtpush.dao.DeveloperDaoTest)  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.twtpush.dao.DeveloperDaoTest.queryByIdAndToken(DeveloperDaoTest.java:97)
+
+queryByEmail(org.twtpush.dao.DeveloperDaoTest)  Time elapsed: 0.004 sec  <<< ERROR!
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:386)
+	at com.sun.proxy.$Proxy12.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:165)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:69)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy13.queryByEmail(Unknown Source)
+	at org.twtpush.dao.DeveloperDaoTest.queryByEmail(DeveloperDaoTest.java:40)
+
