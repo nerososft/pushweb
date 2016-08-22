@@ -11,8 +11,41 @@ public class App {
 
     private String appKey;
 
+    @Override
+    public String toString() {
+        return "App{" +
+                "appId=" + appId +
+                ", appName='" + appName + '\'' +
+                ", appKey='" + appKey + '\'' +
+                ", appSecretKey='" + appSecretKey + '\'' +
+                ", appDeveloperId=" + appDeveloperId +
+                ", appType='" + appType + '\'' +
+                ", appCompany='" + appCompany + '\'' +
+                ", appCreatetime=" + appCreatetime +
+                '}';
+    }
+
     private String appSecretKey;
+
+    public String getAppType() {
+        return appType;
+    }
+
+    public void setAppType(String appType) {
+        this.appType = appType;
+    }
+
+    public String getAppCompany() {
+        return appCompany;
+    }
+
+    public void setAppCompany(String appCompany) {
+        this.appCompany = appCompany;
+    }
+
     private long appDeveloperId;
+    private String appType;
+    private String appCompany;
 
     public long getAppDeveloperId() {
         return appDeveloperId;
@@ -26,18 +59,6 @@ public class App {
 
     public long getAppId() {
         return appId;
-    }
-
-    @Override
-    public String toString() {
-        return "App{" +
-                "appId=" + appId +
-                ", appName='" + appName + '\'' +
-                ", appKey='" + appKey + '\'' +
-                ", appSecretKey='" + appSecretKey + '\'' +
-                ", appDeveloperId=" + appDeveloperId +
-                ", appCreatetime=" + appCreatetime +
-                '}';
     }
 
     public void setAppId(long appId) {

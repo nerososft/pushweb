@@ -11,39 +11,22 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-8">
-            <div class="col-md-12"><strong style="color:#333;"><span class="glyphicon glyphicon-th"></span> My Apps</strong></div>
+            <div class="col-md-12"><strong style="color:#333;"><span class="glyphicon glyphicon-th"></span> My Apps</strong>
+                <select style="background: #EB650C;border:solid 1px #EB650C;border-radius: 2px;color: #F2F3F7;margin: -2px;">
+                    <option style="background: #EB650C;border:solid 1px #EB650C;color: #F2F3F7;">Android</option>
+                    <option style="background: #EB650C;border:solid 1px #EB650C;color: #F2F3F7;">Ios</option>
+                    <option style="background: #EB650C;border:solid 1px #EB650C;color: #F2F3F7;">Server</option>
+                </select>
+            </div>
             <div class="col-md-12" id="tip"></div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-2">
-               App1
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-offset-1 col-md-2">
-                App2
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-offset-1 col-md-2">
-                App3
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-offset-1 col-md-2">
-                App4
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-2">
-                App4
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-offset-1 col-md-2">
-                App4
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-offset-1 col-md-2">
-                App4
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-offset-1 col-md-2">
-                App4
-            </div>
-            <div style="background: #FFF;border: solid 1px #dddddd;height: 10em;margin-top: 1em;" class="col-md-2">
-                App4
-            </div>
+            <div class="col-md-12" id="apps_container">
+
+           </div>
         </div>
         <div style="padding: 1em;">
             <button style="background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;" class="col-md-2" class="btn btn-default">Create New App</button>
         </div>
+
         <div class="col-md-1">
 
         </div>
@@ -58,8 +41,15 @@
         developer.auth();
         app.find.allapp({
             offset:0,
-            limit:10
+            limit:100
         });
+       $(".app").mouseover(function () {
+           $(this).find("img").css("background","#000,");
+           alert("ss");
+       });
+       $(".app").mouseout(function () {
+           $(this).find("img").css("background","#FFF,");
+       });
    });
 </script>
 </html>

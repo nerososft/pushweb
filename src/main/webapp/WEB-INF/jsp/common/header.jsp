@@ -23,7 +23,7 @@
     a:link{
         color:#EB650C;
     }
-    .navbar-brand:hover{
+    .navbar-brand:hover {
         color: #EB650C;
     }
 </style>
@@ -31,16 +31,16 @@
 <div class="row">
     <nav style="background: #FFFFFF;" class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header col-md-12">
+            <div  class="navbar-header col-md-12" style="border-radius: 0px;">
                 <a class="navbar-brand col-md-2" href="#">
-                    <img style="height: 1.5em;" alt="TWTPush" src="//www.twt.edu.cn/static/logo.png">
+                    <img style="height: 1.5em;" alt="TWTPush" src="/resources/img/logo.png">
                 </a>
                 <div  class="col-md-6">
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
                         Document <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
-                         Social <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
+                         Community <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
                          About <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
@@ -55,14 +55,30 @@
         </div>
     </nav>
 </div>
-
+<script src="resources/script/jquery.rotate.js" type="text/javascript"></script>
 <script>
     $("a").mouseover(function(){
         $(this).css("color", "#EB650C");
+        $(this).find("span").css("color","#EB650C");
+        $(this).find("span").animate({rotate: '180'}, 300);
+        //$(this).find("span").attr("class","glyphicon glyphicon-menu-up");
     });
 
     $("a").mouseout(function(){
         $(this).css("color", "#333333");
+        $(this).find("span").css("color","#d3d3d3");
+        $(this).find("span").animate({rotate: '0'}, 300);
+        //$(this).find("span").attr("class","glyphicon glyphicon-menu-down");
+    });
+    $("#developerName").mouseover(function(){
+        $(this).find("p").css("color","#FFF");
+        $(this).find("p").css("background","#2AC7E3");
+        //$(this).find("span").attr("class","glyphicon glyphicon-menu-up");
+    });
+    $("#developerName").mouseout(function(){
+        $(this).find("p").css("color","#FFF");
+        $(this).find("p").css("background","#EB650C");
+        //$(this).find("span").attr("class","glyphicon glyphicon-menu-up");
     });
 
 </script>

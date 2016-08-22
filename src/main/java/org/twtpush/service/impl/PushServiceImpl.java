@@ -39,4 +39,8 @@ public class PushServiceImpl implements IPushService{
 
     }
 
+    public Operate getBrokerStatus(String brokerPath, String broker) {
+        return null;
+    }
+
 }

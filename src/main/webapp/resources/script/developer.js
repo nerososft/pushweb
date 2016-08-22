@@ -57,7 +57,7 @@ var developer={
                if(!result&&result.success){
                    window.location.href="/developer/login";
                } else{
-                   $("#developerName").html("<a style='font-weight: lighter;' href='javascript:;'><p style='background: #EB650C;width: 1.5em;height: 1.5em;border-radius: 1.5em;text-align: center;line-height: 1.5em;color: #FFFFFF;'>"+result.data.developerName.substr(0,1).toUpperCase()+"</p></a>")
+                   $("#developerName").html("<a style='font-weight: lighter;' href='javascript:;'><p style='background: #EB650C;width: 1.5em;height: 1.5em;border-radius: 1.5em;text-align: center;line-height: 1.5em;color: #FFFFFF;text-decoration: none;'>"+result.data.developerName.substr(0,1).toUpperCase()+"</p></a>")
                }
             });
         }

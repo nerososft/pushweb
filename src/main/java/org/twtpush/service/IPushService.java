@@ -15,4 +15,12 @@ public interface IPushService {
      */
     Operate push(String broker,String appname,String appkey,String secretkey,String topic, String content);
 
+
+    /**
+     * get broker status
+     * @param brokerPath
+     * @param broker
+     * @return
+     */
+    Operate getBrokerStatus(String  brokerPath,String broker);
 }

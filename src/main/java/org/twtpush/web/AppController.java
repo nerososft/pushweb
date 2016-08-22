@@ -31,6 +31,8 @@ public class AppController {
 
     @Autowired
     private IAppService appService;
+
+    @Autowired
     private IDeveloperService developerService;
 
     /**
@@ -86,12 +88,20 @@ public class AppController {
             }
             List<App> apps = appService.findByDeveloperId(developerId,offset,limit);
             result=new Result<List<App>>(true,apps);
-        }catch (NotAppException e1){
+        }catch (TokenAuthFailedException e1){
             throw e1;
         }catch (Exception e){
             result = new Result<List<App>>(false,e.getMessage());
         }
         return result;
     }
+
+
+
+    @RequestMapping(value = "/{appName}",method = RequestMethod.GET)
+    public String app(){
+        return "app";
+    }
+
 
 }
