@@ -6,10 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import org.twtpush.dao.DeveloperDao;
-import org.twtpush.dto.AuthDeveloper;
-import org.twtpush.dto.Login;
-import org.twtpush.dto.Logout;
-import org.twtpush.dto.Operate;
+import org.twtpush.dto.*;
 import org.twtpush.entity.Developer;
 import org.twtpush.exception.HaveLoggedOutException;
 import org.twtpush.exception.NotUserException;
@@ -66,7 +63,7 @@ public class DeveloperServiceImpl implements IDeveloperService {
                     return new Login(false, "server error!", 0002);
                 } else {
                     developer.setDeveloperToken(newToken);
-                    return new Login(true, "login success!", 0003, developer);
+                    return new Login(true, "login success!", 0003, new DeveloperInfo(developer.getDeveloperName(),developer.getDeveloperEmail(),developer.getDeveloperToken(),developer.getDeveloperId()));
                 }
             }
         }catch(NotUserException e1){
@@ -136,7 +133,10 @@ public class DeveloperServiceImpl implements IDeveloperService {
         return null;
     }
 
-    public Developer checkDeveloper(long id, String developerToken) {
-       return developerDao.queryByIdAndToken(id,developerToken);
+    public DeveloperInfo checkDeveloper(long id, String developerToken){
+        Developer developer = developerDao.queryByIdAndToken(id,developerToken);
+        DeveloperInfo developerInfo;
+        developerInfo = new DeveloperInfo(developer.getDeveloperName(),developer.getDeveloperEmail(),developer.getDeveloperToken(),developer.getDeveloperId());
+        return developerInfo;
     }
 }

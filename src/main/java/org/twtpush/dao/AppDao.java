@@ -16,7 +16,10 @@ public interface AppDao {
      * @param appSecretKey
      * @return
      */
-    int add(@Param("appName") String appName,@Param("appKey") String appKey,@Param("appSecretKey") String appSecretKey, @Param("appDeveloperId") long appDeveloperId);
+    int add(@Param("appName") String appName,
+            @Param("appKey") String appKey,
+            @Param("appSecretKey") String appSecretKey,
+            @Param("appDeveloperId") long appDeveloperId);
 
     /**
      * query app info by appid
@@ -36,7 +39,9 @@ public interface AppDao {
      * @param appDeveloperId
      * @return
      */
-    List<App> queryByDeveloperId(long appDeveloperId);
+    List<App> queryByDeveloperId(@Param("appDeveloperId") long appDeveloperId,
+                                 @Param("offset") int offset,
+                                 @Param("limit") int limit);
 
     /**
      * find all
@@ -44,7 +49,8 @@ public interface AppDao {
      * @param limit
      * @return
      */
-    List<App> findAll(@Param("offset") long offset,@Param("limit") long limit);
+    List<App> findAll(@Param("offset") long offset,
+                      @Param("limit") long limit);
 
 
     /**
@@ -61,7 +67,9 @@ public interface AppDao {
      * @param secretKey
      * @return
      */
-    int resetAppById(@Param("appId") long appId,@Param("appKey") String appKey,@Param("secretKey") String secretKey);
+    int resetAppById(@Param("appId") long appId,
+                     @Param("appKey") String appKey,
+                     @Param("secretKey") String secretKey);
 
     /**
      * change app 's name
@@ -69,7 +77,8 @@ public interface AppDao {
      * @param newAppName
      * @return
      */
-    int changeAppNameById(@Param("appId") long appId,@Param("newAppName") String newAppName);
+    int changeAppNameById(@Param("appId") long appId,
+                          @Param("newAppName") String newAppName);
 
     /**
      * find app by app key & secret key
@@ -77,5 +86,6 @@ public interface AppDao {
      * @param appSecretKey
      * @return
      */
-    App findByKeySecretKey(@Param("appKey") String appKey,@Param("appSecretKey") String appSecretKey);
+    App findByKeySecretKey(@Param("appKey") String appKey,
+                           @Param("appSecretKey") String appSecretKey);
 }

@@ -2,6 +2,9 @@ var developer={
     URL:{
         login:function (developerEmail,developerPassword) {
             return "/developer/"+developerEmail+"/"+developerPassword+"/login";
+        },
+        auth:function (developerId,developerToken) {
+            return "/developer/"+developerId+"/"+developerToken+"/auth";
         }
     },
     validateEmail:function (email) {
@@ -27,18 +30,36 @@ var developer={
                     {},
                     function (result) {
                     if(result&&result.success){
-                        $("#tip").html("<span>"+result.data.msg+"</span>");
+                        $("#tip").html("<span style='color: #EB650C;'><span style='color: #EB650C;' class='glyphicon glyphicon-bell'></span> "+result.data.msg+"</span>");
                         if(result.data.state){
-                            $.cookie('developerId', result.data.developer.developerId, { expires: 7 }); // 存储一个带7天期限的 cookie
-                            $.cookie('developerToken', result.data.developer.developerToken, { expires: 7 });
+                            console.log("developerToken={}",result.data.developer.developerToken);
+                            $.cookie('developerId', result.data.developer.developerId, { expires: 7 ,path:"/"}); // 存储一个带7天期限的 cookie
+                            $.cookie('developerToken', result.data.developer.developerToken, { expires: 7 ,path:"/"});
+                            console.log("cookieToken={}",$.cookie("developerToken"));
+
+                            window.location.href="/";
                         }
                     }else{
-                        $("#tip").html("<span>email not format!</span>");
+                        $("#tip").html("<span style='color: #EB650C;'><span style='color: #EB650C;' class='glyphicon glyphicon-bell'></span> server error!</span>");
                     }
                 });
             }else{
-                $("#tip").html("<span>email not format!</span>");
+                $("#tip").html("<span style='color: #EB650C;'><span style='color: #EB650C;' class='glyphicon glyphicon-bell'></span> email not format!</span>");
             }
+        }
+    },
+    auth:function () {
+        if(!$.cookie("developerId")||!$.cookie("developerToken")){
+            window.location.href="/developer/login";
+        }else{
+            $.post(developer.URL.auth($.cookie("developerId"),$.cookie("developerToken")),{},
+                function (result) {
+               if(!result&&result.success){
+                   window.location.href="/developer/login";
+               } else{
+                   $("#developerName").html("<a style='font-weight: lighter;' href='javascript:;'><p style='background: #EB650C;width: 1.5em;height: 1.5em;border-radius: 1.5em;text-align: center;line-height: 1.5em;color: #FFFFFF;'>"+result.data.developerName.substr(0,1).toUpperCase()+"</p></a>")
+               }
+            });
         }
     }
 }

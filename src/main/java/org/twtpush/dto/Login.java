@@ -13,7 +13,7 @@ public class Login {
 
     private long resultCode;
 
-    private Developer developer;
+    private DeveloperInfo developer;
 
     public Login(boolean state, String msg, long resultCode) {
         this.state = state;
@@ -45,15 +45,15 @@ public class Login {
         this.resultCode = resultCode;
     }
 
-    public Developer getDeveloper() {
+    public DeveloperInfo getDeveloper() {
         return developer;
     }
 
-    public void setDeveloper(Developer developer) {
+    public void setDeveloper(DeveloperInfo developer) {
         this.developer = developer;
     }
 
-    public Login(boolean state, String msg, long resultCode, Developer developer) {
+    public Login(boolean state, String msg, long resultCode, DeveloperInfo developer) {
         this.state = state;
         this.msg = msg;
         this.resultCode = resultCode;

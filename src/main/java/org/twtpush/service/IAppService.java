@@ -23,7 +23,7 @@ public interface IAppService {
      * @param developerId
      * @return
      */
-    List<App> findByDeveloperId(long developerId);
+    List<App> findByDeveloperId(long developerId,int offset,int limit);
 
     /**
      * find app by appid

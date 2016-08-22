@@ -33,6 +33,7 @@
         apps
         WHERE
         app_developer_id = #{appDeveloperId}
+        LIMIT #{offset},#{limit}
     </select>
     <select id="findAll" resultType="App">
         SELECT

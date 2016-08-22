@@ -51,7 +51,7 @@ public class AppDaoTest {
     @Test
     public void queryByDeveloperId() throws Exception {
         long developerid = 3;
-        List<App> app = appDao.queryByDeveloperId(3);
+        List<App> app = appDao.queryByDeveloperId(3,0,10);
         System.out.println(app.toString());
     }
     @Test

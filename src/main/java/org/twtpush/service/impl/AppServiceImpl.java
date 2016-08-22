@@ -46,8 +46,8 @@ public class AppServiceImpl implements IAppService
         return appDao.findAll(offset,limit);
     }
 
-    public List<App> findByDeveloperId(long developerId) {
-        return appDao.queryByDeveloperId(developerId);
+    public List<App> findByDeveloperId(long developerId,int offset,int limit) {
+        return appDao.queryByDeveloperId(developerId,offset,limit);
     }
 
     public App findById(long appId) {

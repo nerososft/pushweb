@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Login;
 import org.twtpush.dto.Result;
 import org.twtpush.entity.Developer;
+import org.twtpush.exception.TokenAuthFailedException;
 import org.twtpush.service.IDeveloperService;
 
 import java.util.List;
@@ -76,6 +78,29 @@ public class DeveloperController {
         return  loginResult;
     }
 
+
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Result<DeveloperInfo> developerAuth(@PathVariable("developerId") long developerId,
+                                               @PathVariable("developerToken") String developerToken){
+
+        Result<DeveloperInfo> result;
+        try {
+            DeveloperInfo developerInfo = developerService.checkDeveloper(developerId, developerToken);
+            if(developerInfo==null){
+                throw new TokenAuthFailedException("token auth failed!");
+            }
+            result = new Result<DeveloperInfo>(true,developerInfo);
+        }catch (TokenAuthFailedException e1){
+            throw e1;
+        }catch (Exception e){
+            result = new Result<DeveloperInfo>(false,e.getMessage());
+        }
+        return result;
+
+    }
 
 
 }

@@ -67,7 +67,7 @@ public class IAppServiceTest {
     @Test
     public void findByDeveloperId() throws Exception {
         long id =3;
-        List<App> app = appService.findByDeveloperId(id);
+        List<App> app = appService.findByDeveloperId(id,0,10);
         logger.info("result={}",app.toString());
     }
 

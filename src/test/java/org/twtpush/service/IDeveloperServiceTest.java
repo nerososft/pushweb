@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Login;
 import org.twtpush.dto.Logout;
 import org.twtpush.dto.Operate;
@@ -78,7 +79,7 @@ public class IDeveloperServiceTest {
     }
     @Test
     public void checkDeveloper() throws Exception {
-        Developer result  = developerService.checkDeveloper(3,"dae71bb9116f0993a5d9b92ad77fd02e");
+        DeveloperInfo result  = developerService.checkDeveloper(3,"dae71bb9116f0993a5d9b92ad77fd02e");
         logger.info("result={}",result);
     }
 

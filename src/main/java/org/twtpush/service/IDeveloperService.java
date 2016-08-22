@@ -1,5 +1,6 @@
 package org.twtpush.service;
 
+import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Login;
 import org.twtpush.dto.Logout;
 import org.twtpush.dto.Operate;
@@ -72,5 +73,5 @@ public interface IDeveloperService {
      * @param developerToken
      * @return
      */
-    Developer checkDeveloper(long id,String developerToken);
+    DeveloperInfo checkDeveloper(long id, String developerToken);
 }
