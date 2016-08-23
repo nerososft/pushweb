@@ -24,7 +24,11 @@ public class PushController {
 
     @Autowired
     private IPushService pushService;
+
+    @Autowired
     private IDeveloperService developerService;
+
+    @Autowired
     private IAppService appService;
 
 

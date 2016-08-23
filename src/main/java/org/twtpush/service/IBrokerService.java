@@ -7,7 +7,6 @@ import org.twtpush.dto.Result;
 /**
  * Created by nero on 16-8-22.
  */
-@Service
 public interface IBrokerService {
 
 
@@ -15,6 +14,7 @@ public interface IBrokerService {
      * get broker status
      * @return
      */
-    Result<BrokerStatus> getBrokerStatus();
+
+    Result<BrokerStatus> getBrokerStatus(String appKey,String appSecretKey);
 
 }

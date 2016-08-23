@@ -1,5 +1,8 @@
 package org.twtpush.dto.BrokerStatus;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import org.twtpush.dto.Broker.Connection;
 
 import java.util.List;
@@ -68,7 +71,7 @@ public class BrokerStatus {
 
     private String state;
 
-    private int state_since;
+    private Long state_since;
 
     private String version;
 
@@ -78,25 +81,65 @@ public class BrokerStatus {
 
     private Jvm_metrics jvm_metrics;
 
-    private int current_time;
+    private Long current_time;
 
     private List<String> virtual_hosts ;
 
     private List<String> connectors ;
 
-    private int connection_counter;
+    private Long connection_counter;
 
-    private int connected;
+    private Long connected;
 
     private List<Connection> connections ;
 
-    private int messages_sent;
+    private Long messages_sent;
 
-    private int messages_received;
+    private Long messages_received;
 
-    private int read_counter;
+    private Long read_counter;
 
-    private int write_counter;
+    private Long write_counter;
+
+    public BrokerStatus() {
+    }
+
+    @JsonCreator
+    public BrokerStatus(@JsonProperty("id") String id,
+                        @JsonProperty("state") String state,
+                        @JsonProperty("state_since") Long state_since,
+                        @JsonProperty("version") String version,
+                        @JsonProperty("home_location") String home_location,
+                        @JsonProperty("base_location") String base_location,
+                        @JsonProperty("jvm_metrics") Jvm_metrics jvm_metrics,
+                        @JsonProperty("current_time") Long current_time,
+                        @JsonProperty("virtual_hosts") List<String> virtual_hosts,
+                        @JsonProperty("connectors") List<String> connectors,
+                        @JsonProperty("connection_center") Long connection_counter,
+                        @JsonProperty("connected") Long connected,
+                        @JsonProperty("connections") List<Connection> connections,
+                        @JsonProperty("message_sent") Long messages_sent,
+                        @JsonProperty("messages_received") Long messages_received,
+                        @JsonProperty("read_counter") Long read_counter,
+                        @JsonProperty("write_counter") Long write_counter) {
+        this.id = id;
+        this.state = state;
+        this.state_since = state_since;
+        this.version = version;
+        this.home_location = home_location;
+        this.base_location = base_location;
+        this.jvm_metrics = jvm_metrics;
+        this.current_time = current_time;
+        this.virtual_hosts = virtual_hosts;
+        this.connectors = connectors;
+        this.connection_counter = connection_counter;
+        this.connected = connected;
+        this.connections = connections;
+        this.messages_sent = messages_sent;
+        this.messages_received = messages_received;
+        this.read_counter = read_counter;
+        this.write_counter = write_counter;
+    }
 
     public void setId(String id){
         this.id = id;
@@ -110,10 +153,10 @@ public class BrokerStatus {
     public String getState(){
         return this.state;
     }
-    public void setState_since(int state_since){
+    public void setState_since(Long state_since){
         this.state_since = state_since;
     }
-    public int getState_since(){
+    public Long getState_since(){
         return this.state_since;
     }
     public void setVersion(String version){
@@ -140,10 +183,10 @@ public class BrokerStatus {
     public Jvm_metrics getJvm_metrics(){
         return this.jvm_metrics;
     }
-    public void setCurrent_time(int current_time){
+    public void setCurrent_time(Long current_time){
         this.current_time = current_time;
     }
-    public int getCurrent_time(){
+    public Long getCurrent_time(){
         return this.current_time;
     }
     public void setVirtualhosts(List<String> virtual_hosts){
@@ -158,16 +201,16 @@ public class BrokerStatus {
     public List<String> getString(){
         return this.connectors;
     }
-    public void setConnection_counter(int connection_counter){
+    public void setConnection_counter(Long connection_counter){
         this.connection_counter = connection_counter;
     }
-    public int getConnection_counter(){
+    public Long getConnection_counter(){
         return this.connection_counter;
     }
-    public void setConnected(int connected){
+    public void setConnected(Long connected){
         this.connected = connected;
     }
-    public int getConnected(){
+    public Long getConnected(){
         return this.connected;
     }
     public void setConnections(List<Connection> connections){
@@ -176,28 +219,51 @@ public class BrokerStatus {
     public List<Connection> getConnections(){
         return this.connections;
     }
-    public void setMessages_sent(int messages_sent){
+    public void setMessages_sent(Long messages_sent){
         this.messages_sent = messages_sent;
     }
-    public int getMessages_sent(){
+    public Long getMessages_sent(){
         return this.messages_sent;
     }
-    public void setMessages_received(int messages_received){
+    public void setMessages_received(Long messages_received){
         this.messages_received = messages_received;
     }
-    public int getMessages_received(){
+    public Long getMessages_received(){
         return this.messages_received;
     }
-    public void setRead_counter(int read_counter){
+    public void setRead_counter(Long read_counter){
         this.read_counter = read_counter;
     }
-    public int getRead_counter(){
+    public Long getRead_counter(){
         return this.read_counter;
     }
-    public void setWrite_counter(int write_counter){
+    public void setWrite_counter(Long write_counter){
         this.write_counter = write_counter;
     }
-    public int getWrite_counter(){
+    public Long getWrite_counter(){
         return this.write_counter;
+    }
+
+    @Override
+    public String toString() {
+        return "BrokerStatus{" +
+                "id='" + id + '\'' +
+                ", state='" + state + '\'' +
+                ", state_since=" + state_since +
+                ", version='" + version + '\'' +
+                ", home_location='" + home_location + '\'' +
+                ", base_location='" + base_location + '\'' +
+                ", jvm_metrics=" + jvm_metrics +
+                ", current_time=" + current_time +
+                ", virtual_hosts=" + virtual_hosts +
+                ", connectors=" + connectors +
+                ", connection_counter=" + connection_counter +
+                ", connected=" + connected +
+                ", connections=" + connections +
+                ", messages_sent=" + messages_sent +
+                ", messages_received=" + messages_received +
+                ", read_counter=" + read_counter +
+                ", write_counter=" + write_counter +
+                '}';
     }
 }

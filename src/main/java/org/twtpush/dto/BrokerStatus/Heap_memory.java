@@ -4,29 +4,46 @@ package org.twtpush.dto.BrokerStatus;
  * Created by nero on 16-8-22.
  */
 public class Heap_memory {
-    private int used;
+    private Long used;
 
-    private int alloc;
+    private Long alloc;
 
-    private int max;
+    private Long max;
 
-    public void setUsed(int used){
+    public Heap_memory() {
+    }
+
+    public Heap_memory(Long used, Long alloc, Long max) {
         this.used = used;
-    }
-    public int getUsed(){
-        return this.used;
-    }
-    public void setAlloc(int alloc){
         this.alloc = alloc;
-    }
-    public int getAlloc(){
-        return this.alloc;
-    }
-    public void setMax(int max){
         this.max = max;
     }
-    public int getMax(){
+
+    public void setUsed(Long used){
+        this.used = used;
+    }
+    public Long getUsed(){
+        return this.used;
+    }
+    public void setAlloc(Long alloc){
+        this.alloc = alloc;
+    }
+    public Long getAlloc(){
+        return this.alloc;
+    }
+    public void setMax(Long max){
+        this.max = max;
+    }
+    public Long getMax(){
         return this.max;
     }
 
+    @Override
+    public String toString() {
+        return "Heap_memory{" +
+                "used=" + used +
+                ", alloc=" + alloc +
+                ", max=" + max +
+                '}';
+    }
 }

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" build-on-make="true" name="push:war exploded">
-    <output-path>$PROJECT_DIR$/target/push</output-path>
+    <output-path>/opt/apache-tomcat-8.0.36/webapps/ROOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
