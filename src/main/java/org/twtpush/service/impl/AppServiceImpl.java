@@ -94,7 +94,7 @@ public class AppServiceImpl implements IAppService
     }
     public Operate addApp(String groupPath,String userPath,String appName, long developerId){
             String appKey=appName+"_"+getRandomToken();
-            String secretKey = getRandomToken()+randomString.getRandomString(12)+getRandomToken();
+            String secretKey = getRandomToken()+getRandomToken()+getRandomToken();
             if(writeBrokerUser(userPath,appKey,secretKey)&&writeBrokerGroup(groupPath,appKey)) {
                 if (appDao.add(appName, appKey, secretKey, developerId) < 1) {
                     return new Operate(false, "create app failed!", 03003);

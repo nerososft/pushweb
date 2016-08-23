@@ -22,7 +22,6 @@ public class PushController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
     private IPushService pushService;
 
     @Autowired

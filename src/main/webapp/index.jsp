@@ -50,6 +50,11 @@
        $(".app").mouseout(function () {
            $(this).find("img").css("background","#FFF,");
        });
+       $("#apps_container").find("div").find("a").click(function() {
+                   var herf = "/app/" + $(this).attr("ref");
+                   window.location.href = href;
+               }
+       );
    });
 </script>
 </html>

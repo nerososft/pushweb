@@ -29,10 +29,7 @@
                         <strong style="color:#aaaaaa;">AppKey:</strong>
                         <p></p>
                     </div>
-                    <div class="col-md-12">
-                        <strong style="color:#aaaaaa;">Broker:</strong>
-                        <p></p>
-                    </div>
+
                     <div class="col-md-12">
                         <strong style="color:#aaaaaa;">AppDevice:</strong>
                         <p></p>
@@ -42,7 +39,7 @@
                         <p></p>
                     </div>
                 </div>
-                <div style="margin-left: 1em;margin-top: 1em;" class="col-md-5">
+                <div style="margin-left: 1em;" class="col-md-5">
                     <strong>Broker state</strong>
                 </div>
             </div>
@@ -74,6 +71,9 @@
 <script type="text/javascript">
     $(function () {
         developer.auth();
+        var id = window.location.href.substr(window.location.href.indexOf("/app/")+5);
+        console.log("id={}",id);
+        app.find.app(id);
         $(".app").mouseover(function () {
             $(this).find("img").css("background","#000,");
             alert("ss");

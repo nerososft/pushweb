@@ -23,7 +23,9 @@ public class IBrokerServiceTest {
 
     @Test
     public void getBrokerStatus() throws Exception {
-        Result<BrokerStatus> brokerStatus = brokerService.getBrokerStatus("admin","password");
+        String u = "testapp_2aba252f013582e96d2ba67d6e8e3947";
+        String p = "40bb993e9cb026331da36784a267a3c5MH739zdM)2mla058adeb2fddd7be3ff5149384f15350";
+        Result<BrokerStatus> brokerStatus = brokerService.getBrokerStatus(u,p);
         System.out.println(brokerStatus.toString());
     }
 

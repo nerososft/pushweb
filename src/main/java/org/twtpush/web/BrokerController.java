@@ -59,17 +59,17 @@ public class BrokerController {
                                              @PathVariable("appSecretKey") String appSecretKey){
         Result<BrokerStatus> result;
         try{
-        DeveloperInfo developerInfo = developerService.checkDeveloper(developerId, java.lang.String.valueOf(developerToken));
-        if(developerInfo==null){
-            throw new TokenAuthFailedException("token auth failed!");
-        }
-        App app = appService.checkApp(appKey,appSecretKey);
-        if(app==null){
-            throw new NotAppException("appkey or secret key incorecct!");
-        }
-        if(app.getAppDeveloperId()!=developerInfo.getDeveloperId()){
-            throw new NotAppException("it not your app!");
-        }
+            DeveloperInfo developerInfo = developerService.checkDeveloper(developerId, developerToken);
+            if(developerInfo==null){
+                throw new TokenAuthFailedException("token auth failed!");
+            }
+            App app = appService.checkApp(appKey,appSecretKey);
+            if(app==null){
+                throw new NotAppException("appkey or secret key incorecct!");
+            }
+            if(app.getAppDeveloperId()!=developerInfo.getDeveloperId()){
+                throw new NotAppException("it not your app!");
+            }
             result = brokerService.getBrokerStatus(appKey,appSecretKey);
         }catch (TokenAuthFailedException e1){
             throw e1;

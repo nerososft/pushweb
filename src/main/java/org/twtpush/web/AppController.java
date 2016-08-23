@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.twtpush.dto.BrokerStatus.BrokerStatus;
 import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Result;
 import org.twtpush.entity.App;
@@ -73,6 +74,14 @@ public class AppController {
         return result;
     }
 
+    /**
+     * return apps
+     * @param developerId
+     * @param developerToken
+     * @param offset
+     * @param limit
+     * @return
+     */
     @RequestMapping(value = "/{developerId}/{developerToken}/auth/{offset}/{limit}/apps",
                     method = RequestMethod.POST,
                     produces = {"application/json;charset=UTF-8"})
@@ -97,11 +106,58 @@ public class AppController {
     }
 
 
-
-    @RequestMapping(value = "/{appName}",method = RequestMethod.GET)
+    /**
+     * just return app jsp page
+     * @return
+     */
+    @RequestMapping(value = "/{appId}",method = RequestMethod.GET)
     public String app(){
         return "app";
     }
+
+    /**
+     * resuful api to get app info by app id ,need token auth
+     * @param developerId
+     * @param developerToken
+     * @param appId
+     * @return
+     */
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{appId}/app",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Result<App> appInfo(@PathVariable("developerId") long developerId,
+                               @PathVariable("developerToken") String developerToken,
+                               @PathVariable("appId") long appId){
+
+        Result<App> result;
+
+        try {
+            DeveloperInfo developerInfo = developerService.checkDeveloper(developerId, developerToken);
+            if (developerInfo == null) {
+                throw new TokenAuthFailedException("token auth failed!");
+            }
+            App app = appService.findById(appId);
+            if (app == null) {
+                throw new NotAppException("appkey or secret key incorecct!");
+            }
+            if (app.getAppDeveloperId() != developerInfo.getDeveloperId()) {
+                throw new NotAppException("it not your app!");
+            }
+            result = new Result<App>(true,app);
+        }catch (TokenAuthFailedException e1){
+            throw e1;
+        }catch (NotAppException e2){
+            throw e2;
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+            result = new Result<App>(false,e.getMessage());
+        }
+
+        return result;
+    }
+
+
 
 
 }
