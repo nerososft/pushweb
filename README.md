@@ -1,5 +1,5 @@
 >#推送系统部署[Deploy twtpush platform]
->##需要环境(Environment)
+>##环境(Environment)
 
 ###java(>=1.7)
 ###maven
