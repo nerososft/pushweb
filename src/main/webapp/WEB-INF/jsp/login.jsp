@@ -33,7 +33,7 @@
                     </div>
                 <div style="margin-top: 2em;">
                     <button id="login" type="submit" style="background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;" class="col-md-12">Login</button>
-                    <a style="margin-top: 1em;float: right;" href="login.jsp">Free Join!</a>
+                    <a style="margin-top: 1em;float: right;" href="/developer/register">Free Join!</a>
                 </div>
                 </form>
             </div>

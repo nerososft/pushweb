@@ -27,6 +27,10 @@ var app = {
                 $("#changeNameTip").html("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> Incomplete form!</p>");
                 return;
             }
+            if(patrn.exec($("#newNameText").val())){
+                $("#changeNameTip").html("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> Name can not be Chinese!</p>");
+                return;
+            }
             var id = window.location.href.substr(window.location.href.indexOf("/app/")+5);
             $.post(app.URL.changename($("#changeConfirmPass").val(),id,$("#newNameText").val()),{},function (result,state) {
                 if(state){
@@ -85,6 +89,11 @@ var app = {
         add:function () {
             if(!$("#addconfirmPass").val() || !$("#appname_text").val() || !$("#company_text").val()){
                 $("#changeNameTip").html("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> Incomplete form!</p>");
+                return;
+            }
+            var patrn=/[\u4E00-\u9FA5]|[\uFE30-\uFFA0]/gi;
+            if(patrn.exec($("#appname_text").val())){
+                $("#changeNameTip").html("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> Name can not be Chinese!</p>");
                 return;
             }
             var url=app.URL.add($("#addconfirmPass").val(),$("#appname_text").val(),$("#company_text").val());
