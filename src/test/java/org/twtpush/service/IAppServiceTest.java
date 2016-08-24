@@ -31,7 +31,7 @@ public class IAppServiceTest {
     public void addApp() throws Exception {
         String grouppath="/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties";
         String userpath="/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties";
-        String appname="weipaiyang";
+        String appname="weipeiyang";
         long developerid=3;
         Operate operate = appService.addApp(grouppath,userpath,appname,developerid);
         logger.info("addapp={}",operate.toString());
@@ -48,7 +48,7 @@ public class IAppServiceTest {
     @Test
     public void resetApp() throws Exception {
         long  id =3;
-        Operate operate=appService.resetApp(id,"new name");
+        Operate operate=appService.resetApp(id,"new name","/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties","/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties");
         logger.info("result={}",operate);
     }
 

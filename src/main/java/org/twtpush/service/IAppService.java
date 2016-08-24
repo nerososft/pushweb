@@ -57,7 +57,7 @@ public interface IAppService {
      * @param appId
      * @return
      */
-    Operate resetApp(long appId,String appKey);
+    Operate resetApp(long appId,String appKey,String userPath,String groupPath);
 
     /**
      * change app's name
@@ -74,5 +74,7 @@ public interface IAppService {
      * @return
      */
     App  checkApp(String appKey,String secretKey);
+
+
 
 }

@@ -41,12 +41,13 @@ public class AppController {
      * @param appName
      * @return
      */
-    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{appName}/create",
-    method = RequestMethod.GET,
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{developerPass}/verify/{appName}/create",
+    method = RequestMethod.POST,
     produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Result<App> addApp(@PathVariable("developerId") long developerId,
                               @PathVariable("developerToken") String developerToken,
+                              @PathVariable("developerPass") String developerPass,
                               @PathVariable("appName") String appName){
         Result<App> result;
         try {
@@ -57,17 +58,24 @@ public class AppController {
             if(appService.findByName(appName)!=null){
                 throw new AppRepeatException("app have exists!");
             }
+            if(developerService.verify(developer.getDeveloperEmail(),developerPass)==null){
+                throw new NotUserException("password incorrect!");
+            }
             if(appService.addApp("/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties","/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties",appName,developer.getDeveloperId()).isState()){
                 result = new Result<App>(true,"create app success!");
             }else{
                 result = new Result<App>(false,"create app failed!");
             }
         }catch (TokenAuthFailedException e1){
-            throw e1;
+            //throw e1;
+            result = new Result<App>(false,e1.getMessage());
         }catch (AppRepeatException e2){
-            throw e2;
+            //throw e2;
+            result = new Result<App>(false,e2.getMessage());
+        }catch(NotUserException e3){
+            result = new Result<App>(false,e3.getMessage());
         }catch (Exception e){
-            return new Result<App>(false,e.getMessage());
+            result = new Result<App>(false,e.getMessage());
         }
         return result;
     }
@@ -96,7 +104,8 @@ public class AppController {
             List<App> apps = appService.findByDeveloperId(developerId,offset,limit);
             result=new Result<List<App>>(true,apps);
         }catch (TokenAuthFailedException e1){
-            throw e1;
+            //throw e1;
+            result = new Result<List<App>>(false,e1.getMessage());
         }catch (Exception e){
             result = new Result<List<App>>(false,e.getMessage());
         }
@@ -144,9 +153,11 @@ public class AppController {
             }
             result = new Result<App>(true,app);
         }catch (TokenAuthFailedException e1){
-            throw e1;
+            //throw e1;
+            result = new Result<App>(false,e1.getMessage());
         }catch (NotAppException e2){
-            throw e2;
+            //throw e2;
+            result = new Result<App>(false,e2.getMessage());
         }catch (Exception e){
             logger.error(e.getMessage(),e);
             result = new Result<App>(false,e.getMessage());
@@ -191,7 +202,7 @@ public class AppController {
                 throw new NotAppOwnerException("it's not your app!");
             }
             //verify user
-            if (!developerService.login(developer.getDeveloperEmail(), developerPass).isState()) {
+            if (developerService.verify(developer.getDeveloperEmail(), developerPass)==null) {
                 throw new NotUserException("password incorrect!");
             }
 
@@ -215,6 +226,128 @@ public class AppController {
         return result;
     }
 
+    /**
+     * resetful api for reset app
+     * @param developerId
+     * @param developerToken
+     * @param developerPass
+     * @param appId
+     * @return
+     */
+    @RequestMapping(value = "{developerId}/{developerToken}/auth/{developerPass}/verify/{appId}/reset",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Result<App> refreshKey(@PathVariable("developerId") long developerId,
+                                  @PathVariable("developerToken") String developerToken,
+                                  @PathVariable("developerPass") String developerPass,
+                                  @PathVariable("appId") long appId){
+        Result<App> result;
+        try {
+            DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
+            App app = appService.findById(appId);
+            //token auth
+            if (developer == null) {
+                throw new TokenAuthFailedException("Token auth failed!");
+            }
+            //if app exists
+            if (app == null) {
+                throw new NotAppException("Not have this app!");
+            }
+            //if app owner
+            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppOwnerException("it's not your app!");
+            }
+            //verify user
+            if (developerService.verify(developer.getDeveloperEmail(), developerPass)==null) {
+                throw new NotUserException("password incorrect!");
+            }
+
+            if (!appService.resetApp(appId,app.getAppName(),"/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties","/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties").isState()) {
+                result = new Result<App>(false, "reset app name failed!");
+            } else {
+                result = new Result<App>(true, appService.findById(appId));
+            }
+        }catch(TokenAuthFailedException e1){
+            //throw e1;
+            result = new Result<App>(false, e1.getMessage());
+        }catch (NotAppException e2){
+            //throw e2;
+            result = new Result<App>(false, e2.getMessage());
+        }catch (NotAppOwnerException e3){
+            //throw e3;
+            result = new Result<App>(false, e3.getMessage());
+        }catch (NotUserException e4){
+            //throw e4;
+            result = new Result<App>(false, e4.getMessage());
+        }catch (Exception e){
+            result = new Result<App>(false,e.getMessage());
+        }
+
+        return result;
+    }
+
+
+    /**
+     * delete app
+     * @param developerId
+     * @param developerToken
+     * @param developerPass
+     * @param appId
+     * @return
+     */
+    @RequestMapping(value = "{developerId}/{developerToken}/auth/{developerPass}/verify/{appId}/delete",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Result<App> delete(@PathVariable("developerId") long developerId,
+                                  @PathVariable("developerToken") String developerToken,
+                                  @PathVariable("developerPass") String developerPass,
+                                  @PathVariable("appId") long appId){
+        Result<App> result;
+        try {
+            DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
+            App app = appService.findById(appId);
+            //token auth
+            if (developer == null) {
+                throw new TokenAuthFailedException("Token auth failed!");
+            }
+            //if app exists
+            if (app == null) {
+                throw new NotAppException("Not have this app!");
+            }
+            //if app owner
+            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppOwnerException("it's not your app!");
+            }
+            //verify user
+            if (developerService.verify(developer.getDeveloperEmail(),developerPass)==null) {
+                throw new NotUserException("password incorrect!");
+            }
+
+            if (!appService.deleteApp(appId).isState()) {
+                result = new Result<App>(false, "delete app name failed!");
+            } else {
+                result = new Result<App>(true, appService.findById(appId));
+            }
+        }catch(TokenAuthFailedException e1){
+            //throw e1;
+            result = new Result<App>(false, e1.getMessage());
+        }catch (NotAppException e2){
+            //throw e2;
+            result = new Result<App>(false, e2.getMessage());
+        }catch (NotAppOwnerException e3){
+            //throw e3;
+            result = new Result<App>(false, e3.getMessage());
+        }catch (NotUserException e4){
+            //throw e4;
+            result = new Result<App>(false, e4.getMessage());
+        }catch (Exception e){
+            result = new Result<App>(false,e.getMessage());
+        }
+
+        return result;
+    }
 
 
 

@@ -113,11 +113,18 @@ public class AppServiceImpl implements IAppService
         return new Operate(true,"delete success!",00102);
     }
 
-    public Operate resetApp(long appId,String appName) {
-        if(appDao.resetAppById(appId,appName+"_"+getRandomToken(),getRandomToken()+randomString.getRandomString(12)+getRandomToken())<1){
-            return new Operate(false,"reset app failed!",02001);
+    public Operate resetApp(long appId,String appName,String groupPath,String userPath) {
+        String appKey=appName+"_"+getRandomToken();
+        String secretKey = getRandomToken()+getRandomToken()+getRandomToken();
+        if(writeBrokerUser(userPath,appKey,secretKey)&&writeBrokerGroup(groupPath,appKey)) {
+            if (appDao.resetAppById(appId,appKey,secretKey) < 1) {
+                return new Operate(false, "reset app failed!", 02001);
+            }else{
+                return new Operate(true, "reset app success!", 02001);
+            }
+        }else {
+            return new Operate(false, "reset app failed!", 02001);
         }
-        return new Operate(true,"reset app success",02002);
     }
 
     public Operate changeAppName(long id,String newAppName) {
@@ -130,4 +137,5 @@ public class AppServiceImpl implements IAppService
     public App checkApp(String appKey, String secretKey) {
        return appDao.findByKeySecretKey(appKey,secretKey);
     }
+
 }

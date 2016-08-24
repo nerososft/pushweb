@@ -26,7 +26,9 @@ var developer={
         },
         login:function (params) {
             if(developer.login.init(params)){
-                $.post(developer.URL.login(params['developerEmail'],params["developerPassword"]),
+                var url =developer.URL.login(params['developerEmail'],params["developerPassword"]);
+                console.log("login:","http://localhost:8080"+url);
+                $.post(url,
                     {},
                     function (result) {
                     if(result&&result.success){
@@ -52,9 +54,11 @@ var developer={
         if(!$.cookie("developerId")||!$.cookie("developerToken")){
             window.location.href="/developer/login";
         }else{
-            $.post(developer.URL.auth($.cookie("developerId"),$.cookie("developerToken")),{},
+            var url=developer.URL.auth($.cookie("developerId"),$.cookie("developerToken"));
+            console.log("auth","http://localhost:8080/"+url);
+            $.post(url,{},
                 function (result) {
-               if(!result&&result.success){
+               if(!result || !result.success){
                    window.location.href="/developer/login";
                } else{
                    $("#developerName").html("<a style='font-weight: lighter;' href='javascript:;'><p style='background: #EB650C;width: 1.5em;height: 1.5em;border-radius: 1.5em;text-align: center;line-height: 1.5em;color: #FFFFFF;text-decoration: none;'>"+result.data.developerName.substr(0,1).toUpperCase()+"</p></a>")

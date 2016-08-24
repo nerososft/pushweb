@@ -26,6 +26,7 @@ import static org.junit.Assert.*;
 public class IDeveloperServiceTest {
 
 
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -83,4 +84,10 @@ public class IDeveloperServiceTest {
         logger.info("result={}",result);
     }
 
+
+    @Test
+    public void verify() throws Exception {
+        Developer  developer = developerService.verify("testemail@testemail.com","testnewassword");
+        logger.info("result={}",developer.toString());
+    }
 }

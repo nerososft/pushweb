@@ -4,6 +4,7 @@ import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Login;
 import org.twtpush.dto.Logout;
 import org.twtpush.dto.Operate;
+import org.twtpush.entity.App;
 import org.twtpush.entity.Developer;
 import org.twtpush.exception.HaveLoggedOutException;
 import org.twtpush.exception.NotUserException;
@@ -74,4 +75,12 @@ public interface IDeveloperService {
      * @return
      */
     DeveloperInfo checkDeveloper(long id, String developerToken);
+
+    /**
+     * verify user
+     * @param developerEmail
+     * @param developerPassword
+     * @return
+     */
+    Developer verify(String developerEmail, String developerPassword);
 }

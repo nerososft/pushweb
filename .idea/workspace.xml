@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71cab1fd-4174-4e4e-b335-e5e324624ef1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppOwnerException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/script/app.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/script/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/script/developer.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/script/developer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java" />
     </list>
     <ignored path="push.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +44,8 @@
       <file leaf-file-name="AppController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="159" column="22" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+            <state relative-caret-position="-168">
+              <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,77 +53,86 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dto/Login.java">
+      <file leaf-file-name="DeveloperController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="103" column="11" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotAppOwnerException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppOwnerException.java">
+      <file leaf-file-name="IDeveloperServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="1272">
+              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IAppServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-24">
+              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrokerServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/BrokerServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-112">
+              <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
               <folding>
-                <element signature="e#199#200#0" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
-                <element signature="e#317#318#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IAppService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
+      <file leaf-file-name="DeveloperServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="1542">
+              <caret line="143" column="27" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeveloperDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/DeveloperDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp">
+      <file leaf-file-name="DeveloperDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeveloperDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="122" column="58" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="-1080">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1471539550211" expanded="true" signature="244:421" ph="INSERT INTO developers" />
+                <marker date="1471539550211" expanded="true" signature="499:611" ph="SELECT * FRO... developers" />
+                <marker date="1471539550211" expanded="true" signature="685:791" ph="SELECT * FRO... developers" />
+                <marker date="1471539550211" expanded="true" signature="879:1035" ph="SELECT * FRO... developers" />
+                <marker date="1471539550211" expanded="true" signature="1117:1255" ph="SELECT * FRO... developers" />
+                <marker date="1471539550211" expanded="true" signature="1328:1413" ph="SELECT * FRO... developers" />
+                <marker date="1471539550211" expanded="true" signature="1473:1613" ph="UPDATE devel... " />
+                <marker date="1471539550211" expanded="true" signature="1670:1798" ph="UPDATE devel... " />
+                <marker date="1471539550211" expanded="true" signature="1855:2007" ph="UPDATE devel... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,75 +140,114 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="312">
+              <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
               <folding>
-                <marker date="1472027062387" expanded="true" signature="973:986" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="1175:1194" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="1250:1266" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="1415:1434" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="1520:1601" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="1520:1617" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="1972:1985" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2396:2409" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2598:2617" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2671:2706" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2690:2706" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2721:2736" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2876:2895" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2876:2909" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="2955:2970" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3077:3174" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3508:3521" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3576:3597" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3576:3609" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3750:3769" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3807:3828" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3807:3844" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="3807:3856" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4029:4048" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4102:4112" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4102:4123" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4102:4139" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4193:4214" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4193:4226" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4310:4396" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4318:4337" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4318:4396" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4596:4607" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4596:4633" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4596:4645" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4788:4807" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4882:4896" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="4882:4913" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="5043:5140" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6046:6181" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6062:6129" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6062:6181" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6216:6235" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6308:6355" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6308:6373" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6468:6500" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="6573:6588" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="7229:7244" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="7704:7721" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="7832:7847" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="7985:8000" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="8134:8151" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="8277:8292" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="8436:8451" ph="..." />
-                <marker date="1472027062387" expanded="true" signature="14796:14811" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="1552:1567" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="2033:2048" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="2618:2633" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="3072:3087" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="3341:3356" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="3542:3557" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="3837:3852" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="4290:4305" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="4568:4583" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="4769:4784" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="5116:5131" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="5605:5620" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="5883:5898" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6084:6099" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6536:6549" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6621:6629" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6621:6641" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6702:6713" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6702:6722" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6865:6884" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6940:6976" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="6960:6976" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="7141:7160" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="7246:7327" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="7246:7343" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="7698:7711" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8122:8135" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8207:8227" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8443:8462" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8516:8551" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8535:8551" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8566:8581" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8721:8740" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8721:8754" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8800:8815" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="8964:9061" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="9399:9412" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="9484:9504" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="9565:9586" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="9751:9770" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="9824:9859" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="9874:9889" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="10029:10048" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="10108:10123" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="10273:10370" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="10707:10720" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="10792:10812" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="10873:10894" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="10873:10906" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11047:11066" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11104:11125" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11104:11141" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11104:11153" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11326:11345" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11399:11409" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11399:11420" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11399:11436" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11490:11511" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11490:11523" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11607:11693" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11615:11634" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11615:11693" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11893:11904" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11893:11930" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="11893:11942" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="12088:12107" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="12182:12196" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="12182:12213" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="12383:12480" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13390:13525" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13406:13473" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13406:13525" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13560:13579" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13652:13699" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13652:13717" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13812:13844" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="13917:13932" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="14575:14590" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="15054:15071" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="15184:15199" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="15343:15360" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="15488:15503" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="16347:16362" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="16508:16523" ph="..." />
+                <marker date="1472043557314" expanded="true" signature="22283:22298" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <file leaf-file-name="developer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/developer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="34" column="142" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="142" />
-              <folding />
+            <state relative-caret-position="438">
+              <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+              <folding>
+                <marker date="1472041113319" expanded="true" signature="1338:1353" ph="..." />
+                <marker date="1472041113319" expanded="true" signature="1368:1383" ph="..." />
+                <marker date="1472041113319" expanded="true" signature="2102:2117" ph="..." />
+                <marker date="1472041113319" expanded="true" signature="2132:2147" ph="..." />
+                <marker date="1472041113319" expanded="true" signature="2320:2335" ph="..." />
+                <marker date="1472041113319" expanded="true" signature="2350:2365" ph="..." />
+                <marker date="1472041113319" expanded="true" signature="3027:3048" ph="..." />
+                <marker date="1472041113319" expanded="true" signature="3080:3223" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -229,20 +283,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/js/common.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dto/Logout.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dto/DeveloperInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dto/Login.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/script/App.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/footer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/AppDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/dao/AppDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/entity/App.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/script/developer.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/PushServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IPushServiceTest.java" />
@@ -261,14 +309,20 @@
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/BrokerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IBrokerServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dto/Broker/Connection.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppOwnerException.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/script/developer.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/script/app.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
       </list>
@@ -460,96 +514,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -581,28 +545,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -770,37 +712,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="exception" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="push" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="twtpush" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dto" />
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -829,70 +741,18 @@
       <recent name="org.twtpush.service.impl" />
       <recent name="org.twtpush.web" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/lib" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/lib" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.IAppServiceTest.addApp">
-    <configuration default="false" name="IAppServiceTest.findByDeveloperId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.twtpush.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="push" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.twtpush.service" />
-      <option name="MAIN_CLASS_NAME" value="org.twtpush.service.IAppServiceTest" />
-      <option name="METHOD_NAME" value="findByDeveloperId" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="AppDaoTest.queryByDeveloperId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.twtpush.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="push" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.twtpush.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.twtpush.dao.AppDaoTest" />
-      <option name="METHOD_NAME" value="queryByDeveloperId" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="IPushServiceTest.getBrokerStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -958,6 +818,58 @@
       <option name="PACKAGE_NAME" value="org.twtpush.service" />
       <option name="MAIN_CLASS_NAME" value="org.twtpush.service.IAppServiceTest" />
       <option name="METHOD_NAME" value="addApp" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="IDeveloperServiceTest.verify" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.twtpush.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="push" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.twtpush.service" />
+      <option name="MAIN_CLASS_NAME" value="org.twtpush.service.IDeveloperServiceTest" />
+      <option name="METHOD_NAME" value="verify" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="IDeveloperServiceTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.twtpush.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="push" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.twtpush.service" />
+      <option name="MAIN_CLASS_NAME" value="org.twtpush.service.IDeveloperServiceTest" />
+      <option name="METHOD_NAME" value="login" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1516,19 +1428,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.push" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findByDeveloperId" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AppDaoTest.queryByDeveloperId" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.IPushServiceTest.getBrokerStatus" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.IBrokerServiceTest.getBrokerStatus" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.addApp" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.IPushServiceTest.getBrokerStatus" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.IBrokerServiceTest.getBrokerStatus" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.addApp" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.verify" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.login" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.addApp" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.IBrokerServiceTest.getBrokerStatus" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.IPushServiceTest.getBrokerStatus" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AppDaoTest.queryByDeveloperId" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.IAppServiceTest.findByDeveloperId" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.login" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.IDeveloperServiceTest.verify" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.IBrokerServiceTest.getBrokerStatus" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.IPushServiceTest.getBrokerStatus" />
       </list>
     </recent_temporary>
   </component>
@@ -1559,44 +1471,44 @@
       <workItem from="1471936620872" duration="9908000" />
       <workItem from="1471961333360" duration="158000" />
       <workItem from="1471961936834" duration="2140000" />
-      <workItem from="1471966118977" duration="23422000" />
+      <workItem from="1471966118977" duration="37795000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IAppServiceTest_addApp - 2016.08.23 at 15h 31m 53s.xml">
+    <history-entry file="IAppServiceTest_addApp - 2016.08.24 at 20h 41m 36s.xml">
       <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_addApp - 2016.08.23 at 15h 32m 11s.xml">
+    <history-entry file="IAppServiceTest_addApp - 2016.08.24 at 20h 41m 49s.xml">
       <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_addApp - 2016.08.23 at 15h 32m 23s.xml">
+    <history-entry file="IAppServiceTest_addApp - 2016.08.24 at 20h 44m 41s.xml">
       <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_addApp - 2016.08.23 at 15h 35m 09s.xml">
+    <history-entry file="IAppServiceTest_addApp - 2016.08.24 at 20h 44m 50s.xml">
       <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IAppServiceTest_addApp - 2016.08.23 at 15h 35m 20s.xml">
+    <history-entry file="IAppServiceTest_addApp - 2016.08.24 at 20h 45m 00s.xml">
       <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IAppServiceTest_addApp - 2016.08.23 at 15h 35m 33s.xml">
-      <configuration name="IAppServiceTest.addApp" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IBrokerServiceTest_getBrokerStatus - 2016.08.23 at 12h 16m 23s.xml">
-      <configuration name="IBrokerServiceTest.getBrokerStatus" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IBrokerServiceTest_getBrokerStatus - 2016.08.23 at 12h 16m 40s.xml">
-      <configuration name="IBrokerServiceTest.getBrokerStatus" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IBrokerServiceTest_getBrokerStatus - 2016.08.23 at 15h 18m 25s.xml">
-      <configuration name="IBrokerServiceTest.getBrokerStatus" configurationId="JUnit" />
     </history-entry>
     <history-entry file="IBrokerServiceTest_getBrokerStatus - 2016.08.23 at 15h 22m 20s.xml">
       <configuration name="IBrokerServiceTest.getBrokerStatus" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="IDeveloperServiceTest_login - 2016.08.24 at 19h 55m 56s.xml">
+      <configuration name="IDeveloperServiceTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IDeveloperServiceTest_login - 2016.08.24 at 20h 01m 46s.xml">
+      <configuration name="IDeveloperServiceTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IDeveloperServiceTest_login - 2016.08.24 at 20h 20m 54s.xml">
+      <configuration name="IDeveloperServiceTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IDeveloperServiceTest_verify - 2016.08.24 at 19h 52m 12s.xml">
+      <configuration name="IDeveloperServiceTest.verify" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179926000" />
+    <option name="totallyTimeSpent" value="194299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -1604,7 +1516,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16196136" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49331352" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1620,17 +1532,17 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22693998" sideWeight="0.49130434" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2203514" sideWeight="0.50869566" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4026746" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.75260806" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.75185734" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1655,47 +1567,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/DeveloperDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/DeviceDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/entity/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/AppDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/developer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="59" column="251" selection-start-line="59" selection-start-column="251" selection-end-line="59" selection-end-column="251" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/img/android.svg" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/img/server.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/img/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1768,13 +1639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dto/DeveloperInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1831,13 +1695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/BrokerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="59" column="30" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IBrokerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1849,13 +1706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
           <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="93" column="13" selection-start-line="90" selection-start-column="12" selection-end-line="93" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1883,24 +1733,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/BrokerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1937,50 +1769,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="34" column="142" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="142" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="122" column="58" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1990,74 +1782,10 @@
         <state relative-caret-position="192">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <marker date="1472027062387" expanded="true" signature="973:986" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="1175:1194" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="1250:1266" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="1415:1434" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="1520:1601" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="1520:1617" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="1972:1985" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2396:2409" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2598:2617" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2671:2706" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2690:2706" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2721:2736" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2876:2895" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2876:2909" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="2955:2970" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3077:3174" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3508:3521" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3576:3597" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3576:3609" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3750:3769" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3807:3828" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3807:3844" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="3807:3856" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4029:4048" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4102:4112" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4102:4123" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4102:4139" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4193:4214" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4193:4226" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4310:4396" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4318:4337" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4318:4396" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4596:4607" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4596:4633" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4596:4645" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4788:4807" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4882:4896" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="4882:4913" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="5043:5140" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6046:6181" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6062:6129" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6062:6181" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6216:6235" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6308:6355" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6308:6373" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6468:6500" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="6573:6588" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="7229:7244" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="7704:7721" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="7832:7847" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="7985:8000" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="8134:8151" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="8277:8292" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="8436:8451" ph="..." />
-            <marker date="1472027062387" expanded="true" signature="14796:14811" ph="..." />
+            <element signature="e#199#200#0" expanded="false" />
+            <element signature="e#236#237#0" expanded="false" />
+            <element signature="e#287#288#0" expanded="false" />
+            <element signature="e#317#318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2070,10 +1798,263 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotUserException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8830">
+          <caret line="992" column="0" selection-start-line="992" selection-start-column="0" selection-end-line="992" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="63" column="19" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IDeveloperService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1108">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/BrokerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/BrokerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112">
+          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/DeveloperDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DeveloperDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1471539550211" expanded="true" signature="244:421" ph="INSERT INTO developers" />
+            <marker date="1471539550211" expanded="true" signature="499:611" ph="SELECT * FRO... developers" />
+            <marker date="1471539550211" expanded="true" signature="685:791" ph="SELECT * FRO... developers" />
+            <marker date="1471539550211" expanded="true" signature="879:1035" ph="SELECT * FRO... developers" />
+            <marker date="1471539550211" expanded="true" signature="1117:1255" ph="SELECT * FRO... developers" />
+            <marker date="1471539550211" expanded="true" signature="1328:1413" ph="SELECT * FRO... developers" />
+            <marker date="1471539550211" expanded="true" signature="1473:1613" ph="UPDATE devel... " />
+            <marker date="1471539550211" expanded="true" signature="1670:1798" ph="UPDATE devel... " />
+            <marker date="1471539550211" expanded="true" signature="1855:2007" ph="UPDATE devel... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/developer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+          <folding>
+            <marker date="1472041113319" expanded="true" signature="1338:1353" ph="..." />
+            <marker date="1472041113319" expanded="true" signature="1368:1383" ph="..." />
+            <marker date="1472041113319" expanded="true" signature="2102:2117" ph="..." />
+            <marker date="1472041113319" expanded="true" signature="2132:2147" ph="..." />
+            <marker date="1472041113319" expanded="true" signature="2320:2335" ph="..." />
+            <marker date="1472041113319" expanded="true" signature="2350:2365" ph="..." />
+            <marker date="1472041113319" expanded="true" signature="3027:3048" ph="..." />
+            <marker date="1472041113319" expanded="true" signature="3080:3223" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/DeveloperServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1542">
+          <caret line="143" column="27" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IDeveloperServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/DeveloperController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="103" column="11" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+          <folding>
+            <marker date="1472043557314" expanded="true" signature="1552:1567" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="2033:2048" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="2618:2633" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="3072:3087" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="3341:3356" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="3542:3557" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="3837:3852" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="4290:4305" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="4568:4583" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="4769:4784" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="5116:5131" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="5605:5620" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="5883:5898" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6084:6099" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6536:6549" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6621:6629" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6621:6641" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6702:6713" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6702:6722" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6865:6884" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6940:6976" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="6960:6976" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="7141:7160" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="7246:7327" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="7246:7343" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="7698:7711" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8122:8135" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8207:8227" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8443:8462" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8516:8551" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8535:8551" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8566:8581" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8721:8740" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8721:8754" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8800:8815" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="8964:9061" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="9399:9412" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="9484:9504" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="9565:9586" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="9751:9770" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="9824:9859" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="9874:9889" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="10029:10048" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="10108:10123" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="10273:10370" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="10707:10720" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="10792:10812" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="10873:10894" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="10873:10906" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11047:11066" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11104:11125" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11104:11141" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11104:11153" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11326:11345" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11399:11409" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11399:11420" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11399:11436" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11490:11511" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11490:11523" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11607:11693" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11615:11634" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11615:11693" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11893:11904" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11893:11930" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="11893:11942" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="12088:12107" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="12182:12196" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="12182:12213" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="12383:12480" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13390:13525" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13406:13473" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13406:13525" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13560:13579" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13652:13699" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13652:13717" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13812:13844" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="13917:13932" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="14575:14590" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="15054:15071" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="15184:15199" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="15343:15360" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="15488:15503" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="16347:16362" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="16508:16523" ph="..." />
+            <marker date="1472043557314" expanded="true" signature="22283:22298" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="159" column="22" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+        <state relative-caret-position="-168">
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

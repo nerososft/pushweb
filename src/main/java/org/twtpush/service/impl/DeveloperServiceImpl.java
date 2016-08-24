@@ -139,4 +139,9 @@ public class DeveloperServiceImpl implements IDeveloperService {
         developerInfo = new DeveloperInfo(developer.getDeveloperName(),developer.getDeveloperEmail(),developer.getDeveloperToken(),developer.getDeveloperId());
         return developerInfo;
     }
+
+    public Developer verify(String developerEmail, String developerPassword) {
+        return developerDao.queryByEmailAndPassword(developerEmail,developerPassword);
+    }
+
 }

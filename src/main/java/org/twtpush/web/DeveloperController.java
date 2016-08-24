@@ -30,6 +30,11 @@ public class DeveloperController {
     @Autowired
     private IDeveloperService developerService;
 
+    /**
+     * list
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public String list(Model model){
         //get all developer info
@@ -40,6 +45,12 @@ public class DeveloperController {
 
     }
 
+    /**
+     * developer
+     * @param developerId
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/{developerId}/detail",method = RequestMethod.GET)
     public String detail(@PathVariable("developerId") Long developerId,Model model){
 
@@ -56,11 +67,21 @@ public class DeveloperController {
         return "developer";
     }
 
+    /**
+     * page login
+     * @return
+     */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String showlogin(){
         return "login";
     }
 
+    /**
+     * login
+     * @param developerEmail
+     * @param developerPassword
+     * @return
+     */
     @RequestMapping(value = "/{developerEmail}/{developerPassword}/login",
             method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
@@ -79,6 +100,12 @@ public class DeveloperController {
     }
 
 
+    /**
+     * auth
+     * @param developerId
+     * @param developerToken
+     * @return
+     */
     @RequestMapping(value = "/{developerId}/{developerToken}/auth",
             method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
