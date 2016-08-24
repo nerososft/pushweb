@@ -13,9 +13,7 @@ import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Result;
 import org.twtpush.entity.App;
 import org.twtpush.entity.Developer;
-import org.twtpush.exception.AppRepeatException;
-import org.twtpush.exception.NotAppException;
-import org.twtpush.exception.TokenAuthFailedException;
+import org.twtpush.exception.*;
 import org.twtpush.service.IAppService;
 import org.twtpush.service.IDeveloperService;
 
@@ -151,6 +149,66 @@ public class AppController {
             throw e2;
         }catch (Exception e){
             logger.error(e.getMessage(),e);
+            result = new Result<App>(false,e.getMessage());
+        }
+
+        return result;
+    }
+
+
+    /**
+     * change app name
+     * @param developerId
+     * @param developerToken
+     * @param developerPass
+     * @param appId
+     * @param newAppName
+     * @return
+     */
+    @RequestMapping(value = "{developerId}/{developerToken}/auth/{developerPass}/verify/{appId}/{newAppName}/changename",
+    method = RequestMethod.POST,
+    produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Result<App> changename(@PathVariable("developerId") long developerId,
+                                  @PathVariable("developerToken") String developerToken,
+                                  @PathVariable("developerPass") String developerPass,
+                                  @PathVariable("appId") long appId,
+                                  @PathVariable("newAppName") String newAppName){
+        Result<App> result;
+        try {
+            DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
+            App app = appService.findById(appId);
+            //token auth
+            if (developer == null) {
+                throw new TokenAuthFailedException("Token auth failed!");
+            }
+            //if app exists
+            if (app == null) {
+                throw new NotAppException("Not have this app!");
+            }
+            //if app owner
+            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppOwnerException("it's not your app!");
+            }
+            //verify user
+            if (!developerService.login(developer.getDeveloperEmail(), developerPass).isState()) {
+                throw new NotUserException("password incorrect!");
+            }
+
+            if (!appService.changeAppName(appId, newAppName).isState()) {
+                result = new Result<App>(false, "change app name failed!");
+            } else {
+                result = new Result<App>(true, appService.findById(appId));
+            }
+        }catch(TokenAuthFailedException e1){
+            throw e1;
+        }catch (NotAppException e2){
+            throw e2;
+        }catch (NotAppOwnerException e3){
+            throw e3;
+        }catch (NotUserException e4){
+            throw e4;
+        }catch (Exception e){
             result = new Result<App>(false,e.getMessage());
         }
 

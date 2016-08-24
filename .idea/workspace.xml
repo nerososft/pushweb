@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71cab1fd-4174-4e4e-b335-e5e324624ef1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/twtpush/dto/Broker/Connection.class" afterPath="$PROJECT_DIR$/target/classes/org/twtpush/dto/Broker/Connection.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppOwnerException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/dto/Broker/Connection.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/dto/Broker/Connection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" afterPath="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/script/app.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/script/app.js" />
     </list>
@@ -36,11 +35,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BrokerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/BrokerController.java">
+      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+            <state relative-caret-position="223">
+              <caret line="159" column="22" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dto/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-120">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotAppOwnerException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppOwnerException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <folding>
+                <element signature="e#199#200#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IAppService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,40 +85,9 @@
       <file leaf-file-name="app.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-504">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+            <state relative-caret-position="240">
+              <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dto/Broker/Connection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="e#208#209#0" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
-                <element signature="e#278#279#0" expanded="true" />
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#339#340#0" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#398#399#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IAppServiceTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -90,19 +95,9 @@
       <file leaf-file-name="AppServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1776">
-              <caret line="96" column="64" selection-start-line="96" selection-start-column="64" selection-end-line="96" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1313#1314#0" expanded="false" />
-                <element signature="e#1364#1365#0" expanded="false" />
-                <element signature="e#1558#1559#0" expanded="false" />
-                <element signature="e#1604#1605#0" expanded="false" />
-                <element signature="e#1649#1650#0" expanded="false" />
-                <element signature="e#1698#1699#0" expanded="false" />
-                <element signature="e#4489#4490#0" expanded="false" />
-                <element signature="e#4554#4555#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="247">
+              <caret line="122" column="58" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,8 +105,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="456">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -120,35 +115,74 @@
       <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="62" column="59" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="59" />
+            <state relative-caret-position="713">
+              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="114" column="43" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="43" />
+              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
-                <marker date="1472017185399" expanded="true" signature="1354:1489" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="1370:1437" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="1370:1489" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="1524:1543" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="1616:1663" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="1616:1681" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="1776:1808" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="1881:1896" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="2479:2494" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="2834:2851" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="2906:2921" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="2997:3012" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="3146:3163" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="3227:3242" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="3318:3333" ph="..." />
-                <marker date="1472017185399" expanded="true" signature="9369:9384" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="973:986" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="1175:1194" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="1250:1266" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="1415:1434" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="1520:1601" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="1520:1617" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="1972:1985" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2396:2409" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2598:2617" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2671:2706" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2690:2706" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2721:2736" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2876:2895" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2876:2909" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="2955:2970" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3077:3174" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3508:3521" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3576:3597" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3576:3609" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3750:3769" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3807:3828" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3807:3844" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="3807:3856" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4029:4048" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4102:4112" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4102:4123" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4102:4139" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4193:4214" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4193:4226" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4310:4396" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4318:4337" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4318:4396" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4596:4607" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4596:4633" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4596:4645" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4788:4807" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4882:4896" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="4882:4913" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="5043:5140" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6046:6181" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6062:6129" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6062:6181" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6216:6235" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6308:6355" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6308:6373" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6468:6500" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="6573:6588" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="7229:7244" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="7704:7721" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="7832:7847" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="7985:8000" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="8134:8151" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="8277:8292" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="8436:8451" ph="..." />
+                <marker date="1472027062387" expanded="true" signature="14796:14811" ph="..." />
               </folding>
             </state>
           </provider>
@@ -157,18 +191,8 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="34" column="75" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PushController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="281">
+              <caret line="34" column="142" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="142" />
               <folding />
             </state>
           </provider>
@@ -196,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/impl/AppServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/exception/AppRepeatException.java" />
@@ -237,16 +260,17 @@
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/util/Ssl/InstallCert.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/BrokerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/PushController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IBrokerServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/twtpush/service/IAppServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/twtpush/dto/Broker/Connection.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppOwnerException.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/script/app.js" />
+        <option value="$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java" />
       </list>
     </option>
   </component>
@@ -717,6 +741,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="push" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="push" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twtpush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1505,7 +1559,7 @@
       <workItem from="1471936620872" duration="9908000" />
       <workItem from="1471961333360" duration="158000" />
       <workItem from="1471961936834" duration="2140000" />
-      <workItem from="1471966118977" duration="13768000" />
+      <workItem from="1471966118977" duration="23422000" />
     </task>
     <servers />
   </component>
@@ -1542,7 +1596,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170272000" />
+    <option name="totallyTimeSpent" value="179926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -1550,7 +1604,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16196136" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16196136" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1601,27 +1655,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/TokenAuthFailedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/footer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/jquery.rotate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dao/DeveloperDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -1812,13 +1845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/util/Ssl/InstallCert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
@@ -1850,38 +1876,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2232">
-          <caret line="112" column="66" selection-start-line="112" selection-start-column="66" selection-end-line="112" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/twtpush/service/IBrokerServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1776">
-          <caret line="96" column="64" selection-start-line="96" selection-start-column="64" selection-end-line="96" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1364#1365#0" expanded="false" />
-            <element signature="e#1558#1559#0" expanded="false" />
-            <element signature="e#1604#1605#0" expanded="false" />
-            <element signature="e#1649#1650#0" expanded="false" />
-            <element signature="e#1698#1699#0" expanded="false" />
-            <element signature="e#4489#4490#0" expanded="false" />
-            <element signature="e#4554#4555#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1912,76 +1912,170 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="34" column="75" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dto/Broker/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#339#340#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="false" />
+            <element signature="e#236#237#0" expanded="false" />
+            <element signature="e#278#279#0" expanded="false" />
+            <element signature="e#312#313#0" expanded="false" />
+            <element signature="e#339#340#0" expanded="false" />
+            <element signature="e#364#365#0" expanded="false" />
+            <element signature="e#398#399#0" expanded="false" />
+            <element signature="e#426#427#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/jquery.rotate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="34" column="142" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="142" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="62" column="59" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="59" />
+        <state relative-caret-position="713">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="240">
+          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/IAppService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/service/impl/AppServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="122" column="58" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/exception/NotAppOwnerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="114" column="43" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="43" />
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
-            <marker date="1472017185399" expanded="true" signature="1354:1489" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="1370:1437" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="1370:1489" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="1524:1543" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="1616:1663" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="1616:1681" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="1776:1808" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="1881:1896" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="2479:2494" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="2834:2851" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="2906:2921" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="2997:3012" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="3146:3163" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="3227:3242" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="3318:3333" ph="..." />
-            <marker date="1472017185399" expanded="true" signature="9369:9384" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="973:986" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="1175:1194" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="1250:1266" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="1415:1434" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="1520:1601" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="1520:1617" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="1972:1985" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2396:2409" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2598:2617" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2671:2706" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2690:2706" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2721:2736" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2876:2895" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2876:2909" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="2955:2970" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3077:3174" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3508:3521" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3576:3597" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3576:3609" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3750:3769" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3807:3828" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3807:3844" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="3807:3856" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4029:4048" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4102:4112" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4102:4123" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4102:4139" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4193:4214" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4193:4226" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4310:4396" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4318:4337" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4318:4396" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4596:4607" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4596:4633" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4596:4645" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4788:4807" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4882:4896" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="4882:4913" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="5043:5140" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6046:6181" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6062:6129" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6062:6181" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6216:6235" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6308:6355" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6308:6373" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6468:6500" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="6573:6588" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="7229:7244" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="7704:7721" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="7832:7847" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="7985:8000" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="8134:8151" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="8277:8292" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="8436:8451" ph="..." />
+            <marker date="1472027062387" expanded="true" signature="14796:14811" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/dto/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/twtpush/web/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="159" column="22" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

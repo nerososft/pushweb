@@ -8,8 +8,82 @@ var app = {
         },
         broker:function (appKey,appSecretKey) {
             return "/broker/"+$.cookie("developerId") + "/" + $.cookie("developerToken") + "/auth/"+appKey+"/"+appSecretKey+"/broker";
+        },
+        changename:function () {
+            
         }
     },
+    operate:{
+        changename:function () {
+            $.post();
+        }
+        
+    },utils: {
+        changeName: function () {
+            layer.open({
+                type: 1,
+                area: ['32em', '21em'],
+                shadeClose: true, //点击遮罩关闭
+                title: "ChangeAppName",
+                content: "<div class='col-md-12' style='padding: 2em;'>" +
+                "<label class='col-md-12' for='newNameText'>New Name:</label>" +
+                "<input id='newNameText' class='col-md-12 form-control' placeholder='new name' style='border-radius: 1px;'/>" +
+                "<label class='col-md-12' style='margin-top: 1em;' for='confirmPass'>Password:</label>" +
+                "<input id='changeConfirmPass' class='col-md-12 form-control' placeholder='password' style='border-radius: 1px;'/>" +
+                "<a href='javascript:app.operate.changename();'><button style='background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;margin-top: 1em;' class='col-md-12'>Change</button></a>" +
+                "</div>"
+            });
+        },
+        showAppKey: function (key) {
+            layer.open({
+                type: 1,
+                area: ['32em', '10em'],
+                shadeClose: true, //点击遮罩关闭
+                title: "Refresh",
+                content: "<div class='col-md-12' style='padding: 2em;'>" +
+                "<input readonly='readonly' class='col-md-12 form-control' value='" + key + "'/>" +
+                "</div>"
+            });
+        }, refreshAppKey: function (title) {
+            layer.open({
+                type: 1,
+                area: ['32em', '20em'],
+                shadeClose: true, //点击遮罩关闭
+                title: title,
+                content: "<div class='col-md-12' style='padding: 2em;'>" +
+                "<label class='col-md-12' for='confirmPass'>Password:</label>" +
+                "<input id='confirmPass' class='col-md-12 form-control' placeholder='password' style='border-radius: 1px;'/>" +
+                "<div class='col-md-12' style='padding:0;margin:0;margin-top: 1em;'><span style='color: #EB650C;' class='glyphicon glyphicon-exclamation-sign'></span> Please proceed with caution!</div>" +
+                "<div class='col-md-12' style='padding:0;margin:0;'><span class='glyphicon glyphicon-exclamation-sign' style='color: #EB650C;'></span> Will cause the existing device to be unable to connect!</div>" +
+                "<button style='background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;margin-top: 1em;' class='col-md-12'>Refresh</button>" +
+                "</div>"
+            });
+        },add:function () {
+            layer.open({
+                type: 1,
+                area: ['24em', '32em'],
+                shadeClose: true, //点击遮罩关闭
+                title: "CreateApp",
+                content: "<div class='col-md-12' style='padding: 2em;'>" +
+                "<label class='col-md-12' style='margin: 0;padding: 0;color: #888;' for='appname_text'>Name:</label>" +
+                "<input id='appname_text' class='col-md-12 form-control' placeholder='app name' style='border-radius: 1px;'/>" +
+                "<label style='margin: 0;padding: 0;margin-top: 1em;color: #888;' class='col-md-12' for='company_text'>Company/Group:</label>" +
+                "<input id='company_text' class='col-md-12 form-control' placeholder='company/group' style='border-radius: 1px;'/>" +
+                "<div class='col-md-12' style='margin: 0;padding: 0;margin-top: 1em;'>" +
+                "<label class='col-md-6' style='margin: 0;padding: 0;color: #888;' for='type_text'>Type:</label>" +
+                "<select class='col-md-6' style='margin0;background: #EB650C;border: none;color:#fff;padding: 0.3em;border-radius: 1px;'>" +
+                "<option>Server</option>" +
+                "<option>Android</option>" +
+                "<option>Ios</option></select></div>" +
+                "<label class='col-md-12' style='padding: 0;margin: 0;margin-top: 1em;color: #888;' for='confirmPass'>Password:</label>" +
+                "<input id='confirmPass' class='col-md-12 form-control' placeholder='password' style='border-radius: 1px;'/>" +
+                "<span class='glyphicon glyphicon-info-sign' style='color: #EB650C;margin-top: 1em;'></span> Means that you accept the <a href='javascript:app.utils.agreement();'>agreement</a>!" +
+                "<button style='background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;margin-top: 1em;' class='col-md-12'>Create</button>" +
+                "</div>"
+            });
+        }
+    }
+    ,
     find:{
         init:function (developerId,developerToken) {
             
@@ -37,11 +111,13 @@ var app = {
                 console.log(result);
                 if(result.success){
                     $("#app_info").html("<strong class='col-md-12'>APP</strong><hr>");
-                    $("#app_info").append("<p class='col-md-12'>Name:"+result.data.appName+" <a style='color: #EB650C;'><span class='glyphicon glyphicon-pencil'></span></a></p>");
+                    $("#app_info").append("<p class='col-md-12'>Name:"+result.data.appName+" <a id='changeName' href='javascript:app.utils.changeName();' style='color: #EB650C;'><span class='glyphicon glyphicon-pencil'></span></a></p>");
                     $("#app_info").append("<p class='col-md-12'>Company:"+result.data.appCompany+"</p>");
                     $("#app_info").append("<p class='col-md-12'>Type:"+result.data.appType+"</p>");
-                    $("#app_info").append("<p class='col-md-12'  style='overflow: hidden;'>AppKey:"+result.data.appKey.substr(0,20)+" <a style='color: #EB650C;'><span class='glyphicon glyphicon-option-horizontal'></span></a> <a style='color: #EB650C;'><span class='glyphicon glyphicon-refresh'></span></a></p>");
-                    $("#app_info").append("<p class='col-md-12' style='overflow: hidden;'>SecretKey:"+result.data.appSecretKey.substr(0,20)+" <a style='color: #EB650C;'><span class='glyphicon glyphicon-option-horizontal'></span></a> <a style='color: #EB650C;'><span class='glyphicon glyphicon-refresh'></span></a></p>");
+                    var appKey=result.data.appKey+"";
+                    var appSecretKey=result.data.appSecretKey+"";
+                    $("#app_info").append("<p class='col-md-12'  style='overflow: hidden;'>AppKey:"+result.data.appKey.substr(0,20)+" <a href='javascript:app.utils.showAppKey(\""+appKey+"\");' style='color: #EB650C;'><span class='glyphicon glyphicon-option-horizontal'></span></a> <a href='javascript:app.utils.refreshAppKey(\"RefreshAppKey\");' style='color: #EB650C;'><span class='glyphicon glyphicon-refresh'></span></a></p>");
+                    $("#app_info").append("<p class='col-md-12' style='overflow: hidden;'>SecretKey:"+result.data.appSecretKey.substr(0,20)+" <a href='javascript:app.utils.showAppKey(\""+appSecretKey+"\");' style='color: #EB650C;'><span class='glyphicon glyphicon-option-horizontal'></span></a> <a href='javascript:app.utils.refreshAppKey(\"RefreshAppSecretKey\");' style='color: #EB650C;'><span class='glyphicon glyphicon-refresh'></span></a></p>");
                     //Up Since: 2016/8/23 下午10:44:09
                     var date = new Date(result.data.appCreatetime);
                     var hours = "";
@@ -57,8 +133,13 @@ var app = {
                     app.find.broker(result.data.appKey,result.data.appSecretKey);
                 }
             });
-        },
-        broker:function (appKey,appSecretKey) {
+        },refresh:function (time) {
+            setTimeout(function () {
+                var id = window.location.href.substr(window.location.href.indexOf("/app/")+5);
+                console.log("id={}",id);
+                app.find.app(id);
+            },time);
+        }, broker:function (appKey,appSecretKey) {
             var url=app.URL.broker(appKey,appSecretKey);
             console.log("broker_url={}",url);
             $.post(url,{},function (result,status) {
@@ -78,7 +159,7 @@ var app = {
                     $("#broker_info").append("<p class='col-md-12'>MessagedReceived:"+result.data.messages_received+"</p>");
                     $("#broker_info").append("<p class='col-md-12'>MessageSend:"+result.data.messages_sent+"</p>");
                     $("#broker_info").append("<p class='col-md-12'>ReadCounter"+result.data.read_counter+"</p>");
-                    $("#broker_tip").html("<p class='col-md-12'>State:"+result.data.state+"</p>");
+                    $("#broker_tip").html("<p class='col-md-12'>State: "+result.data.state+"</span></p>");
                     $("#broker_info").append("<p class='col-md-12'>StartedSince:"+result.data.state_since+"</p>");
                     $("#broker_info").append("<p class='col-md-12'>"+result.data.version+"</p>");
                     $("#broker_info").append("<p class='col-md-12'>Version:"+result.data.write_counter+"</p>");
@@ -111,14 +192,13 @@ var app = {
                     $("#node_info").append("<p class='col-md-12'>ThreadPeak:"+result.data.jvm_metrics.threads_peak+"</p>");
                     $("#node_info").append("<p class='col-md-12'>Up Time:"+result.data.jvm_metrics.uptime+"</p>");
 
+                    app.find.refresh(10000);
                 }else {
-                    $("#broker_tip").append("<p style='color: #ff0000;'><span class='glyphicon glyphicon-exclamation-sign'></span> Broker state exception!</p><p><span id='repire_cog' class='glyphicon glyphicon-cog'></span> Attempting to repair automatically!</p><p><span id='repire_cog' class='glyphicon glyphicon-cog'></span> Please Waiting.... </p>");
+                    $("#broker_tip").append("<p style='color: #ff0000;'><span class='glyphicon glyphicon-exclamation-sign'></span> Broker state exception!</p>" +
+                                            "<p><span id='repire_cog' class='glyphicon glyphicon-cog'></span> Attempting to repair automatically!</p>" +
+                                            "<p><span id='repire_cog' class='glyphicon glyphicon-cog'></span> Please Waiting.... </p>");
                     //repire ajax
-                    setTimeout(function () {
-                        var id = window.location.href.substr(window.location.href.indexOf("/app/")+5);
-                        console.log("id={}",id);
-                        app.find.app(id);
-                    },5000);
+                    app.find.refresh(5000);
                 }
             });
         }

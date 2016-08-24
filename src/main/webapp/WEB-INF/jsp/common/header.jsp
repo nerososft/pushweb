@@ -16,6 +16,7 @@
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="/resources/script/layer/layer.js"></script>
 <style>
     *{
         outline: none;
@@ -25,6 +26,9 @@
     }
     .navbar-brand:hover {
         color: #EB650C;
+    }
+    label{
+        color: #888;
     }
 </style>
 
@@ -55,7 +59,7 @@
         </div>
     </nav>
 </div>
-<script src="resources/script/jquery.rotate.js" type="text/javascript"></script>
+<script src="/resources/script/jquery.rotate.js" type="text/javascript"></script>
 <script>
     $("a").mouseover(function(){
         $(this).css("color", "#EB650C");
