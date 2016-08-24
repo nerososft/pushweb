@@ -6,56 +6,78 @@
     <title>TWTpush - app</title>
 </head>
 <body style="background: #F2F3F7;">
+<style>
+    @-webkit-keyframes repire_cog{
+        0%{ transform:rotate(0deg); }
+        100%{ transform:rotate(-360deg); }
+    }
+</style>
 <div class="container-fluid">
     <%@include file="common/header.jsp"%>
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-8">
-            <div class="col-md-12"><strong style="color:#333;height:2em;line-height: 2em;"><img src="/resources/img/ios.small.png"/><a href="/">AllApps</a> / App Info</strong>
+        <div class="col-md-10">
+            <div class="col-md-12" style="padding-left: 0em;padding-right: 4em;">
+
+            <div class="col-md-12"  style="margin-left:1em;">
+                <div class="col-md-12" style="padding: 0;margin: 0;">
+                        <span style="color: #EB650C;" class="glyphicon glyphicon-chevron-left"></span><a style="color: #EB650C;text-decoration: none;" href="/"><strong>AllApps</strong></a>
+                </div>
+                    <%--<div class="col-md-2" style="padding: 0;margin: 0;">--%>
+                        <%--<button style="background: #EB650C;border: none;padding: 0.2em;color:#F2F3F7;margin: 0;" class="col-md-12">Change App Name</button>--%>
+                    <%--</div>--%>
+                    <%--<div  class="col-md-2" style="padding: 0;margin: 0;">--%>
+                        <%--<button style="background: #EB650C;border: none;padding: 0.2em;color:#F2F3F7;margin: 0;" class="col-md-12">Reset App Key</button>--%>
+                    <%--</div>--%>
+                    <%--<div  class="col-md-2" style="padding: 0;margin: 0;">--%>
+                        <%--<button style="background: #EB650C;border: none;padding: 0.2em;color:#F2F3F7;margin: 0;" class="col-md-12">Reset App SecretKey</button>--%>
+                    <%--</div>--%>
+                    <%--<div  class="col-md-2" style="padding: 0;margin: 0;">--%>
+                        <%--<button style="background: #EB650C;border: none;padding: 0.2em;color:#F2F3F7;margin: 0;" class="col-md-12">Delete App</button>--%>
+                    <%--</div>--%>
             </div>
-            <hr>
-            <div class="col-md-12" id="tip"></div>
+            </div>
             <div class="col-md-12" id="apps_container">
-                <div class="col-md-5" style='margin-left:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;padding: 0;padding-bottom: 0.5em;border-radius: 1px;'>
-                    <div class="col-md-12">
-                        <strong style="color:#aaaaaa;">AppName:</strong>
-                        <p></p>
+                <div class="col-md-4" style="padding: 0;margin: 0;">
+                <div class="col-md-12">
+                    <div id="app_info" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                        app info
                     </div>
-                    <div class="col-md-12">
-                        <strong style="color:#aaaaaa;">CreateTime:</strong>
-                        <p></p>
+                    <div id="node_info" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                        node info
                     </div>
-                    <div class="col-md-12">
-                        <strong style="color:#aaaaaa;">AppKey:</strong>
-                        <p></p>
+                    <div id="app_connect" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                        <strong>CONNECTIONS</strong><hr>
+
+                        <table id="app_connect_table" class="col-md-12">
+                            <tr class="col-md-12"><td class="col-md-2">Id</td><td class="col-md-10">Label</td></tr>
+                        </table>
+                    </div>
+                    <div id="app_device" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                        app device
                     </div>
 
+                </div>
+                </div>
+                <div class="col-md-8" style="padding: 0;margin: 0;">
                     <div class="col-md-12">
-                        <strong style="color:#aaaaaa;">AppDevice:</strong>
-                        <p></p>
+                        <div class="col-md-12" style="padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;">
+                            <p id="broker_tip"></p>
+                        </div>
+                    <div id="virtualhost_info"  class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                        virtualhost
                     </div>
-                    <div class="col-md-12">
-                        <strong style="color:#aaaaaa;">AppSecretKey:</strong>
-                        <p></p>
+                    <div id="broker_info"  class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                            broker info
+                    </div>
+                    <div id="jvm_info" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                            jvm info
+                    </div>
+                    <div id="msg_histroy" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                            msg histroy
                     </div>
                 </div>
-                <div style="margin-left: 1em;" class="col-md-5">
-                    <strong>Broker state</strong>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div style="padding: 1em;" class="col-md-12">
-                <button style="background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;" class="col-md-12" class="btn btn-default">Change App Name</button>
-            </div>
-            <div style="padding: 1em;" class="col-md-12">
-                <button style="background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;" class="col-md-12" class="btn btn-default">Reset App Key</button>
-            </div>
-            <div style="padding: 1em;" class="col-md-12">
-                <button style="background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;" class="col-md-12" class="btn btn-default">Reset App SecretKey</button>
-            </div>
-            <div style="padding: 1em;" class="col-md-12">
-                <button style="background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;" class="col-md-12" class="btn btn-default">Delete App</button>
+                    </div>
             </div>
         </div>
 
@@ -69,6 +91,7 @@
 <script src="/resources/script/app.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script type="text/javascript">
+
     $(function () {
         developer.auth();
         var id = window.location.href.substr(window.location.href.indexOf("/app/")+5);

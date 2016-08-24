@@ -10,23 +10,14 @@
     <%@include file="WEB-INF/jsp/common/header.jsp"%>
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-8">
-            <div class="col-md-12"><strong style="color:#333;"><span class="glyphicon glyphicon-th"></span> My Apps</strong>
-                <select style="background: #EB650C;border:solid 1px #EB650C;border-radius: 2px;color: #F2F3F7;margin: -2px;">
-                    <option style="background: #EB650C;border:solid 1px #EB650C;color: #F2F3F7;">Android</option>
-                    <option style="background: #EB650C;border:solid 1px #EB650C;color: #F2F3F7;">Ios</option>
-                    <option style="background: #EB650C;border:solid 1px #EB650C;color: #F2F3F7;">Server</option>
-                </select>
-            </div>
+        <div class="col-md-10">
             <div class="col-md-12" id="tip"></div>
             <div class="col-md-12" id="apps_container">
-
+                <div style='margin-left:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;padding: 1em;border-radius: 1px;' class='app col-md-2'>
+                    <span class="glyphicon glyphicon-plus-sign col-md-12" style="font-size: 8em;color: #EB650C;"></span>
+                </div>
            </div>
         </div>
-        <div style="padding: 1em;">
-            <button style="background: #EB650C;border: none;padding: 0.4em;color:#F2F3F7;border-radius: 4px;" class="col-md-2" class="btn btn-default">Create New App</button>
-        </div>
-
         <div class="col-md-1">
 
         </div>
@@ -45,7 +36,7 @@
         });
        $(".app").mouseover(function () {
            $(this).find("img").css("background","#000,");
-           alert("ss");
+
        });
        $(".app").mouseout(function () {
            $(this).find("img").css("background","#FFF,");

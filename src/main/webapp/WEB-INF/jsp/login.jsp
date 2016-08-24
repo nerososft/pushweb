@@ -14,7 +14,7 @@
             <div style="margin-top: 4em;padding-right: 8em;" class="col-md-8">
                 <img class="col-md-12" alt="ADS" src="https://o8ci6tgz8.qnssl.com/push_console_pic_3.png?ver=201608191938"/>
             </div>
-            <div style="margin-top: 5em;box-shadow: 0px 0px 1px 2px #dddddd;padding-bottom: 2em;" class="col-md-4">
+            <div style="margin-top: 5em;box-shadow: 0px 0px 1px 2px #eee;background: #fff;padding-bottom: 2em;" class="col-md-4">
                 <br>
                     <div id="tip">
 
