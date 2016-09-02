@@ -14,3 +14,6 @@
 ###4.运行broker (%APOLLO_HOME%/bin/twt/bin/apollo-broker run)[run broker]
 ###5.修改 (%APOLLO_HOME%/bin/twt/etc/groups.properties %APOLLO_HOME%/bin/twt/etc/users.properties) 权限 (可写)[change authority]
 ###6.证书安装,编译运行org.twtpush.Util.Ssl包下InstallCert(javac InstallCert.java  java InstallCert host:port (例java InstallCert 127.0.0.1:60681)),后会产生证书,然后将证书move至%JAVA_HOME%/jre/lib/security/下[ssl]
+
+
+##下一次push应该会加推送策略，这两天做直播平台，更新要慢。。。。
