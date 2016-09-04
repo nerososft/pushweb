@@ -12,6 +12,7 @@
         <div style="text-align: center;" class="col-md-3">
             <strong class="col-md-12">About Us</strong>
             <p class="col-md-12"><a>NeroYang</a></p>
+            <p class="col-md-12"><a>Jd</a></p>
         </div>
         <div style="text-align: center;" class="col-md-3">
             <strong>Nothing</strong>

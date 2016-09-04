@@ -49,6 +49,7 @@ public class BrokerServiceImpl implements IBrokerService {
                 try {
                     instream.close();
                 } catch (Exception ignore) {
+
                 }
             }
             // 相信自己的CA和所有自签名的证书
@@ -103,5 +104,7 @@ public class BrokerServiceImpl implements IBrokerService {
         }
         return result;
     }
-
 }
+
+
+

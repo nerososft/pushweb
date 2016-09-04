@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.twtpush.dao.PolicyDao">
+
+    <insert id="addPolicy" >
+        INSERT INTO policies
+        (policy_name,app_id)
+        VALUES
+        (#{policyName},#{appId})
+    </insert>
+
+    <delete id="deletePolicy">
+        DELETE FROM polities
+        WHERE policy_id = #{policyId}
+    </delete>
+    <select id="getPolicyList" resultType="Policy">
+        SELECT * FROM policies
+        LIMIT #{offset},#{limit}
+    </select>
+
+    <update id="modifyPolicy">
+        UPDATE polities
+        SET policy_name = #{newName}
+        WHERE policy_id=#{policyId}
+    </update>
+
+
+</mapper>

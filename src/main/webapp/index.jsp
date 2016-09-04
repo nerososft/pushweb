@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>TWTpush</title>
+    <meta charset="UTF-8"/>
 </head>
 <body style="background: #F2F3F7;">
 <div class="container-fluid">
