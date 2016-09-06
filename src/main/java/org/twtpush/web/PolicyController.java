@@ -51,12 +51,13 @@ public class PolicyController {
      * @param appId
      * @return Operate
      */
-    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{appId}/{policyName}/create",
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{developerPass}/verify/{appId}/{policyName}/create",
     method = RequestMethod.POST,
     produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Operate createPolicy(@PathVariable("developerId")long developerId,
                                 @PathVariable("developerToken") String developerToken,
+                                @PathVariable("developerPass") String developerPass,
                                 @PathVariable("policyName") String policyName,
                                 @PathVariable("appId") long appId){
         Operate result;
@@ -69,6 +70,9 @@ public class PolicyController {
             if (developer == null) {
                 throw new TokenAuthFailedException("token auth failed!");
             }
+            if(developerService.verify(developer.getDeveloperEmail(),developerPass)==null){
+                throw new NotUserException("password incorrect!");
+            }
             app = appService.findById(appId);
 
             if (app.getAppDeveloperId() != developer.getDeveloperId()) {
@@ -80,11 +84,13 @@ public class PolicyController {
                 result = new Operate(false, "create failed!", 01003);
             }
         }catch (NotPolicyException e3){
-            throw e3;
+            result = new Operate(false,e3.getMessage(),01001);
         }catch (TokenAuthFailedException e1){
-            throw e1;
+            result = new Operate(false,e1.getMessage(),01001);
         }catch (NotAppException e2){
-            throw e2;
+            result = new Operate(false,e2.getMessage(),01001);
+        }catch (NotUserException e4){
+            result = new Operate(false,e4.getMessage(),01001);
         }catch (Exception e){
             result = new Operate(false,e.getMessage(),01001);
         }
@@ -116,14 +122,15 @@ public class PolicyController {
             if(developer==null){
                 throw new TokenAuthFailedException("token auth failed!");
             }
+
             if (app.getAppDeveloperId() != developer.getDeveloperId()) {
                 throw new NotAppException("it not your app!");
             }
             result =  policyService.getPolicyList(appId,offset,limit);
         }catch (TokenAuthFailedException e1){
-            throw e1;
-        }catch (NotAppException e2){
-            throw e2;
+            result = new Result<List<Policy>>(false,e1.getMessage());
+        }catch (NotAppException e2) {
+            result = new Result<List<Policy>>(false,e2.getMessage());
         }catch (Exception e){
             result = new Result<List<Policy>>(false,e.getMessage());
         }
@@ -200,12 +207,13 @@ public class PolicyController {
      * @param policyName
      * @return
      */
-    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{policyId}/{policyName}/modify",
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{developerPass}/verify/{policyId}/{policyName}/modify",
             method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Operate modifyPolicy(@PathVariable("developerId") long developerId,
                                 @PathVariable("developerToken") String developerToken,
+                                @PathVariable("developerPass") String developerPass,
                                 @PathVariable("policyId") long policyId,
                                 @PathVariable("policyName") String policyName){
 
@@ -218,6 +226,9 @@ public class PolicyController {
             developer = developerService.checkDeveloper(developerId, developerToken);
             if (developer == null) {
                 throw new TokenAuthFailedException("token auth failed!");
+            }
+            if(developerService.verify(developer.getDeveloperEmail(),developerPass)==null){
+                throw new NotUserException("password incorrect!");
             }
             policy = policyService.findById(policyId);
             if (policy == null) {
@@ -234,11 +245,14 @@ public class PolicyController {
                 result = new Operate(false, "modify failed!", 01003);
             }
         }catch (NotPolicyException e3){
-            throw e3;
+            result = new Operate(false,e3.getMessage(),01001);
         }catch (TokenAuthFailedException e1){
-            throw e1;
+            result = new Operate(false,e1.getMessage(),01001);
         }catch (NotAppException e2){
-            throw e2;
+            result = new Operate(false,e2.getMessage(),01001);
+        }catch (NotUserException e5){
+            //throw e5;
+            result = new Operate(false,e5.getMessage(),01001);
         }catch (Exception e){
             result = new Operate(false,e.getMessage(),01001);
         }

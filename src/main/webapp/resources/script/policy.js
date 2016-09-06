@@ -5,8 +5,8 @@ var policy={
       }
     },
     URL:{
-        addpolicy:function (policyname,appid) {
-            return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+appid+"/"+policyname+"/create";
+        addpolicy:function (policyname,appid,pass) {
+            return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+pass+"/verify/"+appid+"/"+policyname+"/create";
         },
         getpolicylist:function (offset,limit) {
             return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+policy.APP.getId()+"/list/"+offset+"/"+limit;
@@ -14,8 +14,8 @@ var policy={
         delete:function (policyId,pass) {
             return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+pass+"/verify/"+policyId+"/delete";
         },
-        modify:function (policyId,policyName) {
-            return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+policyId+"/"+policyName+"/modify";
+        modify:function (policyId,policyName,pass) {
+            return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+pass+"/verify/"+policyId+"/"+policyName+"/modify";
         }
     },
     View:{
@@ -100,7 +100,28 @@ var policy={
             });
         },
         modify:function (policyId) {
-
+            $.post(policy.URL.modify(policyId,$("#newNameText").val(),$("#changeConfirmPass").val()),{},function (data,status) {
+                console.log("deletepolicy={}",data);
+                if(!status || !data.state){
+                    $("#changeNameTip").append("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> "+data.msg+"</p>");
+                }else{
+                    layer.closeAll();
+                    layer.msg("修改成功!");
+                    app.find.app(policy.APP.getId());
+                }
+            });
+        },
+        addpolicy:function () {
+            $.post(policy.URL.addpolicy($("#policyname").val(),policy.APP.getId(),$("#changeConfirmPass").val()),{},function (data,status) {
+                console.log("deletepolicy={}",data);
+                if(!status || !data.state){
+                    $("#changeNameTip").append("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> "+data.msg+"</p>");
+                }else{
+                    layer.closeAll();
+                    layer.msg("添加成功!");
+                    app.find.app(policy.APP.getId());
+                }
+            });
         }
     }
 };
