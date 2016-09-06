@@ -45,6 +45,9 @@
                         文档 <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
+                        下载 <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
+                    </a>
+                    <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
                          社区 <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">

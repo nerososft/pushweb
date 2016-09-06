@@ -223,8 +223,8 @@ var app = {
             $.post(app.URL.app(id), {}, function (result) {
                 console.log(result);
                 if(result.success){
-                    $("#app_info").html("<strong class='col-md-12'>应用信息</strong><hr>");
-                    $("#app_info").append("<p class='col-md-12'>应用名称 : "+result.data.appName+" <a id='changeName' href='javascript:app.utils.changeName();' style='color: #EB650C;'><span class='glyphicon glyphicon-pencil'>修改应用</span></a></p>");
+                    $("#app_info").html("<strong class='col-md-12'>应用信息 &nbsp;&nbsp;<a id='changeName' href='javascript:app.utils.changeName();' style='color: #EB650C;'><span class='glyphicon glyphicon-pencil'>修改应用</span></a></strong><hr>");
+                    $("#app_info").append("<p class='col-md-12'>应用名称 : "+result.data.appName+"</p>");
                     $("#app_info").append("<p class='col-md-12'>公司 : "+result.data.appCompany+"</p>");
                     $("#app_info").append("<p class='col-md-12'>类型 : "+result.data.appType+"</p>");
                     var appKey=result.data.appKey+"";

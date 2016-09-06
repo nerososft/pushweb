@@ -12,7 +12,7 @@
     </insert>
 
     <delete id="deletePolicy">
-        DELETE FROM polities
+        DELETE FROM policies
         WHERE policy_id = #{policyId}
     </delete>
     <select id="getPolicyList" resultType="Policy">
@@ -22,10 +22,16 @@
     </select>
 
     <update id="modifyPolicy">
-        UPDATE polities
+        UPDATE policies
         SET policy_name = #{newName}
         WHERE policy_id=#{policyId}
     </update>
 
+    <select id="findPolicyById" resultType="Policy">
+        SELECT * FROM
+        policies
+        WHERE
+        policy_id = #{policyId}
+    </select>
 
 </mapper>

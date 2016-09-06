@@ -2,21 +2,20 @@ var policy={
     APP:{
       getId:function () {
           return window.location.href.substr(window.location.href.indexOf("/app/")+5);
-
       }
     },
     URL:{
         addpolicy:function (policyname,appid) {
-            return "";
+            return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+appid+"/"+policyname+"/create";
         },
         getpolicylist:function (offset,limit) {
             return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+policy.APP.getId()+"/list/"+offset+"/"+limit;
         },
-        delete:function (policyId) {
-            
+        delete:function (policyId,pass) {
+            return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+pass+"/verify/"+policyId+"/delete";
         },
-        modify:function (policyId) {
-            
+        modify:function (policyId,policyName) {
+            return "/policy/"+$.cookie("developerId")+"/"+$.cookie("developerToken")+"/auth/"+policyId+"/"+policyName+"/modify";
         }
     },
     View:{
@@ -89,8 +88,15 @@ var policy={
             });
         },
         delete:function (policyId) {
-            $.post(policy.URL.delete(),{},function (data,status) {
-                
+            $.post(policy.URL.delete(policyId,$("#deleteconfirmPass").val()),{},function (data,status) {
+                console.log("deletepolicy={}",data);
+                if(!status || !data.state){
+                    $("#changeNameTip").append("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> "+data.msg+"</p>");
+                }else{
+                    layer.closeAll();
+                    layer.msg("删除成功!");
+                    app.find.app(policy.APP.getId());
+                }
             });
         },
         modify:function (policyId) {
