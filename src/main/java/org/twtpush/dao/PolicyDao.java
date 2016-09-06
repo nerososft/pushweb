@@ -45,6 +45,13 @@ public interface PolicyDao {
      */
     int modifyPolicy(@Param("id") long id,@Param("newPolicyName") String newPolicyName);
 
+    /**
+     * 查找policy信息
+     *
+     * @param policyId
+     * @return
+     */
+    Policy findPolicyById(long policyId);
 
 
 

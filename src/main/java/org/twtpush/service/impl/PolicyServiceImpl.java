@@ -60,4 +60,8 @@ public class PolicyServiceImpl implements IPolicyService {
     public Result<List<Policy>> getPolicyList(long appId,long offset, long limit) {
         return new Result<List<Policy>>(true,policyDao.getPolicyList(appId,offset,limit));
     }
+
+    public Policy findById(long policyId) {
+        return policyDao.findPolicyById(policyId);
+    }
 }

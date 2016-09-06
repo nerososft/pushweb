@@ -14,6 +14,7 @@ import org.twtpush.dto.Result;
 import org.twtpush.entity.App;
 import org.twtpush.entity.Policy;
 import org.twtpush.exception.NotAppException;
+import org.twtpush.exception.NotPolicyException;
 import org.twtpush.exception.TokenAuthFailedException;
 import org.twtpush.service.IAppService;
 import org.twtpush.service.IDeveloperService;
@@ -57,7 +58,36 @@ public class PolicyController {
                                 @PathVariable("developerToken") String developerToken,
                                 @PathVariable("policyName") String policyName,
                                 @PathVariable("appId") long appId){
-        return null;
+        Operate result;
+        Policy policy;
+        DeveloperInfo developer;
+        App app;
+
+        try {
+            developer = developerService.checkDeveloper(developerId, developerToken);
+            if (developer == null) {
+                throw new TokenAuthFailedException("token auth failed!");
+            }
+            app = appService.findById(appId);
+            
+            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppException("it not your app!");
+            }
+            if (policyService.createPolicy(policyName,appId).isState()) {
+                result = new Operate(false, "create failed!", 01002);
+            } else {
+                result = new Operate(true, "create success!", 01003);
+            }
+        }catch (NotPolicyException e3){
+            throw e3;
+        }catch (TokenAuthFailedException e1){
+            throw e1;
+        }catch (NotAppException e2){
+            throw e2;
+        }catch (Exception e){
+            result = new Operate(false,e.getMessage(),01001);
+        }
+        return result;
     }
 
     /**
@@ -115,7 +145,40 @@ public class PolicyController {
                                 @PathVariable("developerToken") String developerToken,
                                 @PathVariable("policyId") long policyId){
 
-        return null;
+        Operate result;
+        Policy policy;
+        DeveloperInfo developer;
+        App app;
+
+        try {
+            developer = developerService.checkDeveloper(developerId, developerToken);
+            if (developer == null) {
+                throw new TokenAuthFailedException("token auth failed!");
+            }
+            policy = policyService.findById(policyId);
+            if (policy == null) {
+                throw new NotPolicyException("not policy");
+            }
+            app = appService.findById(policy.getAppId());
+
+            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppException("it not your app!");
+            }
+            if (policyService.deletePolicy(policyId).isState()) {
+                result = new Operate(false, "delete failed!", 01002);
+            } else {
+                result = new Operate(true, "delete success!", 01003);
+            }
+        }catch (NotPolicyException e3){
+            throw e3;
+        }catch (TokenAuthFailedException e1){
+            throw e1;
+        }catch (NotAppException e2){
+            throw e2;
+        }catch (Exception e){
+            result = new Operate(false,e.getMessage(),01001);
+        }
+        return result;
     }
 
     /**
@@ -135,7 +198,40 @@ public class PolicyController {
                                 @PathVariable("policyId") long policyId,
                                 @PathVariable("policyName") String policyName){
 
-        return null;
+        Operate result;
+        Policy policy;
+        DeveloperInfo developer;
+        App app;
+
+        try {
+            developer = developerService.checkDeveloper(developerId, developerToken);
+            if (developer == null) {
+                throw new TokenAuthFailedException("token auth failed!");
+            }
+            policy = policyService.findById(policyId);
+            if (policy == null) {
+                throw new NotPolicyException("not policy");
+            }
+            app = appService.findById(policy.getAppId());
+
+            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppException("it not your app!");
+            }
+            if (policyService.modifyPolicy(policyId,policyName).isState()) {
+                result = new Operate(false, "modify failed!", 01002);
+            } else {
+                result = new Operate(true, "modify success!", 01003);
+            }
+        }catch (NotPolicyException e3){
+            throw e3;
+        }catch (TokenAuthFailedException e1){
+            throw e1;
+        }catch (NotAppException e2){
+            throw e2;
+        }catch (Exception e){
+            result = new Operate(false,e.getMessage(),01001);
+        }
+        return result;
 
     }
 

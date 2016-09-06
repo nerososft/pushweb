@@ -27,5 +27,11 @@
         WHERE policy_id=#{policyId}
     </update>
 
+    <select id="findPolicyById" resultType="Policy">
+        SELECT * FROM
+        policies
+        WHERE
+        policy_id = #{policyId}
+    </select>
 
 </mapper>

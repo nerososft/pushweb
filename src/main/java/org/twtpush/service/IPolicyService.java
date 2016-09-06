@@ -46,4 +46,12 @@ public interface IPolicyService {
      */
     Result<List<Policy>> getPolicyList(long appId,long offset,long limit);
 
+    /**
+     * 查询策略信息
+     *
+     * @param policyId
+     * @return
+     */
+    Policy findById(long policyId);
+
 }
