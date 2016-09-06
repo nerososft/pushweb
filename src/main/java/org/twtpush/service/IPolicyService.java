@@ -44,6 +44,6 @@ public interface IPolicyService {
      * @param limit
      * @return
      */
-    Result<List<Policy>> getPolicyList(long offset,long limit);
+    Result<List<Policy>> getPolicyList(long appId,long offset,long limit);
 
 }

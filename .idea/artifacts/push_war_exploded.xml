@@ -36,6 +36,8 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.5.1" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.3" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+          <element id="library" level="project" name="Maven: com.notnoop.apns:apns:1.0.0.Beta6" />
+          <element id="library" level="project" name="Maven: commons-httpclient:commons-httpclient:3.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -34,7 +34,7 @@ public interface PolicyDao {
      * @param limit
      * @return
      */
-    List<Policy> getPolicyList(@Param("offset") long offset,@Param("limit") long limit);
+    List<Policy> getPolicyList(@Param("appId") long appId,@Param("offset") long offset,@Param("limit") long limit);
 
 
     /**

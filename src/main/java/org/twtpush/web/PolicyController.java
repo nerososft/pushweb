@@ -6,11 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Operate;
 import org.twtpush.dto.Result;
+import org.twtpush.entity.App;
+import org.twtpush.entity.Policy;
+import org.twtpush.exception.NotAppException;
+import org.twtpush.exception.TokenAuthFailedException;
+import org.twtpush.service.IAppService;
+import org.twtpush.service.IDeveloperService;
 import org.twtpush.service.IPolicyService;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * author： nero
@@ -26,8 +36,23 @@ public class PolicyController {
 
     @Autowired
     private IPolicyService policyService;
+    @Autowired
+    private IDeveloperService developerService;
+    @Autowired
+    private IAppService appService;
 
-    @RequestMapping("/developerId/developerToken/auth/appId/policyName/create")
+    /**
+     * 创建新策略
+     * @param developerId
+     * @param developerToken
+     * @param policyName
+     * @param appId
+     * @return Operate
+     */
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{appId}/{policyName}/create",
+    method = RequestMethod.POST,
+    produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
     public Operate createPolicy(@PathVariable("developerId")long developerId,
                                 @PathVariable("developerToken") String developerToken,
                                 @PathVariable("policyName") String policyName,
@@ -35,8 +60,84 @@ public class PolicyController {
         return null;
     }
 
+    /**
+     * 获取策略组
+     * @param developerId
+     * @param developerToken
+     * @param appId
+     * @param offset
+     * @param limit
+     * @return
+     */
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{appId}/list/{offset}/{limit}",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Result<List<Policy>> getAllPolicy(@PathVariable("developerId") long developerId,
+                                             @PathVariable("developerToken") String developerToken,
+                                             @PathVariable("appId") long appId,
+                                             @PathVariable("offset") long offset,
+                                             @PathVariable("limit") long limit){
+        Result<List<Policy>> result;
+        App app = appService.findById(appId);
+        try {
+            DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
+            if(developer==null){
+                throw new TokenAuthFailedException("token auth failed!");
+            }
+            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppException("it not your app!");
+            }
+            result =  policyService.getPolicyList(appId,offset,limit);
+        }catch (TokenAuthFailedException e1){
+            throw e1;
+        }catch (NotAppException e2){
+            throw e2;
+        }catch (Exception e){
+            result = new Result<List<Policy>>(false,e.getMessage());
+        }
+        return result;
+    }
 
+    /**
+     * 删除策略
+     *
+     * @param developerId
+     * @param developerToken
+     * @param policyId
+     * @return
+     */
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{policyId}/delete",
+    method = RequestMethod.POST,
+    produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Operate deletePolicy(@PathVariable("developerId") long developerId,
+                                @PathVariable("developerToken") String developerToken,
+                                @PathVariable("policyId") long policyId){
 
+        return null;
+    }
+
+    /**
+     * 修改策略名
+     * @param developerId
+     * @param developerToken
+     * @param policyId
+     * @param policyName
+     * @return
+     */
+    @RequestMapping(value = "/{developerId}/{developerToken}/auth/{policyId}/{policyName}/modify",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public Operate modifyPolicy(@PathVariable("developerId") long developerId,
+                                @PathVariable("developerToken") String developerToken,
+                                @PathVariable("policyId") long policyId,
+                                @PathVariable("policyName") String policyName){
+
+        return null;
+
+    }
 
 
 }

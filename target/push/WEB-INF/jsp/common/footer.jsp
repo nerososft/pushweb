@@ -10,7 +10,9 @@
     <div class="container-fluid">
         <hr style="color: #E6E7EB;background: #E6E7EB;">
         <div style="text-align: center;" class="col-md-3">
-            <strong>About Us</strong>
+            <strong class="col-md-12">About Us</strong>
+            <p class="col-md-12"><a>NeroYang</a></p>
+            <p class="col-md-12"><a>Jd</a></p>
         </div>
         <div style="text-align: center;" class="col-md-3">
             <strong>Nothing</strong>
@@ -19,7 +21,8 @@
             <strong>Contract Us</strong>
         </div>
         <div style="text-align: center;" class="col-md-3">
-            <strong>Links</strong>
+            <strong class="col-md-12">Links</strong>
+            <p class="col-md-12"><a>TWT</a></p>
         </div>
 
     </div>

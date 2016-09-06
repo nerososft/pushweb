@@ -33,10 +33,10 @@ CREATE TABLE IF NOT EXISTS developers(
 
 CREATE TABLE IF NOT EXISTS policies(
   policy_id bigint NOT NULL AUTO_INCREMENT COMMENT 'policy id',
-  policy_id varchar(32) COMMENT 'policy name',
+  policy_name varchar(32) COMMENT 'policy name',
   app_id bigint NOT NULL COMMENT 'app id',
   policy_createtime DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-  PRIMARY KEY (developer_id)
+  PRIMARY KEY (policy_id)
 )ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='policy';
 
 

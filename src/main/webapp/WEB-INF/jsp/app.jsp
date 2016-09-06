@@ -43,6 +43,10 @@
                     <div id="app_info" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
                         app info
                     </div>
+                    <div id="policy" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
+                        <strong class='col-md-12'>推送策略 <a href="javascript:policy.View.addpolicy();"><span class="glyphicon glyphicon-plus">新建策略</span></a></strong><hr>
+
+                    </div>
                     <div id="node_info" class="col-md-12" style='padding:1em;background: #FFF;box-shadow: 0px 0px 1px  2px #eee;margin-top: 1em;border-radius: 1px;'>
                         node info
                     </div>
@@ -87,6 +91,7 @@
     </div>
 </div>
 </body>
+<script src ="/resources/script/policy.js" type="text/javascript"></script>
 <script src="/resources/script/developer.js" type="text/javascript"></script>
 <script src="/resources/script/app.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -96,7 +101,11 @@
         developer.auth();
         var id = window.location.href.substr(window.location.href.indexOf("/app/")+5);
         console.log("id={}",id);
-        app.find.app(id);
+
+        app.find.app(id);//获取当前应用信息
+
+        policy.Operate.getpolicylist();//获取当前应用的推送策略
+
         $(".app").mouseover(function () {
             $(this).find("img").css("background","#000,");
             alert("ss");

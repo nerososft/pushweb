@@ -21,7 +21,7 @@ import java.util.List;
  * time: 下午5:54.
  */
 @Service
-public class PolicyService implements IPolicyService {
+public class PolicyServiceImpl implements IPolicyService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -57,7 +57,7 @@ public class PolicyService implements IPolicyService {
         }
     }
 
-    public Result<List<Policy>> getPolicyList(long offset, long limit) {
-        return new Result<List<Policy>>(true,policyDao.getPolicyList(offset,limit));
+    public Result<List<Policy>> getPolicyList(long appId,long offset, long limit) {
+        return new Result<List<Policy>>(true,policyDao.getPolicyList(appId,offset,limit));
     }
 }

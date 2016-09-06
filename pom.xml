@@ -161,6 +161,13 @@
     </dependency>
 
 
+    <!--苹果推送需要依赖-->
+    <dependency>
+      <groupId>com.notnoop.apns</groupId>
+      <artifactId>apns</artifactId>
+      <version>1.0.0.Beta6</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>push</finalName>

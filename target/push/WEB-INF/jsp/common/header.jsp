@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!-- 新 Bootstrap 核心 CSS 文件 -->
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- 可选的Bootstrap主题文件（一般不用引入） -->
@@ -16,6 +17,7 @@
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="/resources/script/layer/layer.js"></script>
 <style>
     *{
         outline: none;
@@ -25,6 +27,9 @@
     }
     .navbar-brand:hover {
         color: #EB650C;
+    }
+    label{
+        color: #888;
     }
 </style>
 
@@ -37,13 +42,13 @@
                 </a>
                 <div  class="col-md-6">
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
-                        Document <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
+                        文档 <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
-                         Community <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
+                         社区 <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <a style="text-align: center;font-weight: lighter;color: #333333;font-size: 1.2em;" class="navbar-brand col-md-3" href="javascript:;">
-                         About <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
+                         关于 <span style="font-size: 0.5em;color: #d3d3d3;" class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <div class="col-md-3"></div>
                 </div>
@@ -55,7 +60,7 @@
         </div>
     </nav>
 </div>
-<script src="resources/script/jquery.rotate.js" type="text/javascript"></script>
+<script src="/resources/script/jquery.rotate.js" type="text/javascript"></script>
 <script>
     $("a").mouseover(function(){
         $(this).css("color", "#EB650C");
