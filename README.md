@@ -16,4 +16,4 @@
 ###6.证书安装,编译运行org.twtpush.Util.Ssl包下InstallCert(javac InstallCert.java  java InstallCert host:port (例java InstallCert 127.0.0.1:60681)),后会产生证书,然后将证书move至%JAVA_HOME%/jre/lib/security/下[ssl]
 
 
-##下一次push应该会加推送策略，这两天做直播平台，更新要慢。。。。
+##然后就是文档和各种语言的demo了

@@ -69,7 +69,7 @@ public class PolicyController {
                 throw new TokenAuthFailedException("token auth failed!");
             }
             app = appService.findById(appId);
-            
+
             if (app.getAppDeveloperId() != developer.getDeveloperId()) {
                 throw new NotAppException("it not your app!");
             }
