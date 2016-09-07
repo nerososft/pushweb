@@ -242,7 +242,7 @@ public class PolicyController {
             if (policyService.modifyPolicy(policyId,policyName).isState()) {
                 result = new Operate(true, "modify success!", 01002);
             } else {
-                result = new Operate(false, "modify failed!", 01003);
+                result = new Operate    (false, "modify failed!", 01003);
             }
         }catch (NotPolicyException e3){
             result = new Operate(false,e3.getMessage(),01001);
