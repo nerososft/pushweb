@@ -15,7 +15,7 @@
             <div class="col-md-12" id="tip"></div>
             <div class="col-md-12" id="apps_container">
                 <a href="javascript:app.utils.add();">
-                    <div style='margin-left:1em;height:16.3em;line-height:16.3em;background: #fff;box-shadow: 0px 0px 5px  2px #eee;margin-top: 1em;padding: 1em;border-radius: 1px;' class='app col-md-2'>
+                    <div style='margin-left:1em;height:15.9em;line-height:15.9em;background: #fff;box-shadow: 0px 0px 5px  2px #eee;margin-top: 1em;padding: 1em;border-radius: 1px;' class='app col-md-2'>
                     <center>
                         <span class="glyphicon glyphicon-plus-sign col-md-12" style="padding:0;margin:0;font-size: 8em;color: #EB650C;">
                              </span>
