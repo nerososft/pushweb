@@ -224,7 +224,7 @@ var app = {
                         var data = new Date(value.appCreatetime);
                         var data=data.getFullYear()+"-"+data.getMonth()+"-"+data.getDate();
                             $("#apps_container").append("<div onmouseover='javascript:app.utils.flowup(this);' onmouseout='javascript:app.utils.flowdown(this);' onclick='javascript:app.utils.gotopage(\"/app/"+value.appId+"\");' style='margin-left:1em;background: #FFF;box-shadow: 0px 0px 5px  2px #eee;margin-top: 1em;padding: 0;padding-bottom: 0.5em;border-radius: 1px;font-family:'\DejaVu Sans Mono'\;' class='app col-md-2'>" +
-                                "<img style='border-radius: 1px;' class='col-md-12' src='resources/img/"+value.appType+".png'/>" +
+                                "<img style='border-radius: 1px;' class='col-md-12' src='/resources/img/"+value.appType+".png'/>" +
                                 "<a style='color:#333;font-weight: lighter;font-size: 1em;margin-top: 0.5em;color: #666;' href='/app/"+value.appId+"' class='col-md-12'>"+value.appName.substr(0,15)+"</a>" +
                                 "<span style='color: #aaaaaa;font-size: 0.5em;' class='col-md-12'>"+value.appCompany.substr(0,15)+"</span>" +
                                 "<span style='margin-top:0.5em;color: #999;' class='glyphicon glyphicon-time col-md-12'>&nbsp;" +

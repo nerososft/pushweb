@@ -10,7 +10,7 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<body style="background: #F2F3F7;">
 <div class="container-fluid">
     <%@include file="common/header.jsp"%>
     <div class="row">

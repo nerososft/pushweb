@@ -36,6 +36,11 @@ public class PageController {
 
         return PAGE_DOWNLOAD.name;
     }
+    @RequestMapping(value = "/myapps")
+    public String apps(){
+
+        return PAGE_APPS.name;
+    }
 
 
 }

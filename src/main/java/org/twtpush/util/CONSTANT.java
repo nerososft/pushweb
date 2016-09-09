@@ -39,7 +39,9 @@ public enum  CONSTANT {
 
     PAGE_LOGIN("login"),
 
-    PAGE_APP("app");
+    PAGE_APP("app"),
+
+    PAGE_APPS("myapps");
 
     public String name;
 
