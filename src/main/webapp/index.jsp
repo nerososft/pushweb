@@ -56,19 +56,10 @@
        );
        $("#apps_container").find("div").mouseover(function () {
            $(this).css("transition","all 0.3s");
-           $(this).css("box-shadow","0px 2px 20px 2px #d3d3d3");
+           $(this).css("box-shadow","0px 5px 20px 2px #d3d3d3");
            $(this).css("margin-top","0.5em");
        });
        $("#apps_container").find("div").mouseout(function () {
-           $(this).css("box-shadow","0px 0px 5px  2px #eee");
-           $(this).css("margin-top","1em");
-       });
-       $("#app_item").mouseover(function () {
-           $(this).css("transition","all 0.3s");
-           $(this).css("box-shadow","0px 2px 20px 2px #d3d3d3");
-           $(this).css("margin-top","0.5em");
-       });
-       $("#app_item").mouseout(function () {
            $(this).css("box-shadow","0px 0px 5px  2px #eee");
            $(this).css("margin-top","1em");
        });

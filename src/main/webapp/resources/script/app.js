@@ -197,7 +197,7 @@ var app = {
         },flowup:function (oj) {
             //alert("on");
                oj.style.transition="all 0.3s";
-            oj.style.boxShadow="0px 2px 20px 2px #d3d3d3";
+            oj.style.boxShadow="0px 5px 20px 2px #d3d3d3";
             oj.style.marginTop="0.5em";
         },flowdown:function (oj) {
             //alert("down");
@@ -223,9 +223,9 @@ var app = {
                     $.each(result.data,function (key,value) {
                         var data = new Date(value.appCreatetime);
                         var data=data.getFullYear()+"-"+data.getMonth()+"-"+data.getDate();
-                            $("#apps_container").append("<div onmouseover='javascript:app.utils.flowup(this);' onmouseout='javascript:app.utils.flowdown(this);' onclick='javascript:app.utils.gotopage(\"/app/"+value.appId+"\");' style='margin-left:1em;background: #FFF;box-shadow: 0px 0px 5px  2px #eee;margin-top: 1em;padding: 0;padding-bottom: 0.5em;border-radius: 1px;' class='app col-md-2'>" +
+                            $("#apps_container").append("<div onmouseover='javascript:app.utils.flowup(this);' onmouseout='javascript:app.utils.flowdown(this);' onclick='javascript:app.utils.gotopage(\"/app/"+value.appId+"\");' style='margin-left:1em;background: #FFF;box-shadow: 0px 0px 5px  2px #eee;margin-top: 1em;padding: 0;padding-bottom: 0.5em;border-radius: 1px;font-family:'\DejaVu Sans Mono'\;' class='app col-md-2'>" +
                                 "<img style='border-radius: 1px;' class='col-md-12' src='resources/img/"+value.appType+".png'/>" +
-                                "<a style='color:#333;font-weight: lighter;font-size: 1em;margin-top: 0.5em;' href='/app/"+value.appId+"' class='col-md-12'>"+value.appName.substr(0,15)+"</a>" +
+                                "<a style='color:#333;font-weight: lighter;font-size: 1em;margin-top: 0.5em;color: #666;' href='/app/"+value.appId+"' class='col-md-12'>"+value.appName.substr(0,15)+"</a>" +
                                 "<span style='color: #aaaaaa;font-size: 0.5em;' class='col-md-12'>"+value.appCompany.substr(0,15)+"</span>" +
                                 "<span style='margin-top:0.5em;color: #999;' class='glyphicon glyphicon-time col-md-12'>&nbsp;" +
                                 "<span style='font-size: 1em;height: 1em;line-height: 1em;font-weight: lighter;'>"+data+"</span>" +
@@ -241,6 +241,7 @@ var app = {
             $.post(app.URL.app(id), {}, function (result) {
                 console.log(result);
                 if(result.success){
+                    $(document).attr("title","天外天推送-应用("+result.data.appName+")");
                     $("#app_info").html("<strong class='col-md-12'>应用信息 &nbsp;&nbsp;<a id='changeName' href='javascript:app.utils.changeName();' style='color: #EB650C;'><span class='glyphicon glyphicon-pencil'>修改应用</span></a></strong><hr>");
                     $("#app_info").append("<p class='col-md-12'>应用名称 : "+result.data.appName+"</p>");
                     $("#app_info").append("<p class='col-md-12'>公司 : "+result.data.appCompany+"</p>");

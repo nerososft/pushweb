@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TWTpush - app</title>
+    <title>天外天推送-应用</title>
 </head>
 <body style="background: #F2F3F7;">
 <style>
