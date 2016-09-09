@@ -29,7 +29,10 @@ import org.slf4j.*;
 import static org.apache.http.ssl.SSLContexts.custom;
 
 /**
- * Created by nero on 16-8-22.
+ * author： nero
+ * email: nerosoft@outlook.com
+ * data: 16-8-22
+ * time: 下午5:27.
  */
 @Service
 public class BrokerServiceImpl implements IBrokerService {

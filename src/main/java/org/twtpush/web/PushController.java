@@ -60,7 +60,7 @@ public class PushController {
         }catch (NotAppException e2){
             throw e2;
         }catch (Exception e){
-            logger.info(PUSH_FAILED.name(),e);
+            logger.info(PUSH_FAILED.name,e);
             operate = new Operate(false,e.getMessage(),03001);
         }
         return operate;

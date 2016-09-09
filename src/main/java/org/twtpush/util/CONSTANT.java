@@ -11,26 +11,40 @@ public enum  CONSTANT {
      * ERRORS
      */
     POLICY_FAILED("Policy Failed"),
+
     TOKEN_AUTH_FAILED("token auth failed!"),
+
     PASSWORD_INCORRECT("password incorrect"),
+
     NOT_APP("not app"),
+
     NOT_POLICY("not policy"),
+
     APP_FAILED("app failed"),
+
     PUSH_FAILED("push failed"),
+
     DEVELOPER_FAILED("developer failed"),
 
     /**
-     * STRINGS
+     * PAGES
      */
     PAGE_DOWNLOAD("download"),
+
     PAGE_DOCUMENT("document"),
+
     PAGE_ABOUT("about"),
+
     PAGE_COMMUNITY("community"),
+
     PAGE_LOGIN("login"),
+
     PAGE_APP("app");
-    private String name;
+
+    public String name;
 
     CONSTANT(String name) {
         this.name = name;
     }
+
 }

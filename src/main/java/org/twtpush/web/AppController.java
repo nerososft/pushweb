@@ -20,7 +20,10 @@ import java.util.List;
 import static org.twtpush.util.CONSTANT.*;
 
 /**
- * Created by nero on 16-8-20.
+ * author： nero
+ * email: nerosoft@outlook.com
+ * data: 16-8-20
+ * time: 下午5:27.
  */
 @Controller
 @RequestMapping("/app")
@@ -36,54 +39,56 @@ public class AppController {
 
     /**
      * add a new app
+     *
      * @param developerId
      * @param developerToken
      * @param appName
      * @return
      */
     @RequestMapping(value = "/{developerId}/{developerToken}/auth/{developerPass}/verify/{appName}/create",
-    method = RequestMethod.POST,
-    produces = {"application/json;charset=UTF-8"})
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Result<App> addApp(@PathVariable("developerId") long developerId,
                               @PathVariable("developerToken") String developerToken,
                               @PathVariable("developerPass") String developerPass,
-                              @PathVariable("appName") String appName){
+                              @PathVariable("appName") String appName) {
         Result<App> result;
         try {
             DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
-            if (developer==null) {
-                throw new TokenAuthFailedException(TOKEN_AUTH_FAILED.name());
+            if (developer == null) {
+                throw new TokenAuthFailedException(TOKEN_AUTH_FAILED.name);
             }
-            if(appService.findByName(appName)!=null){
+            if (appService.findByName(appName) != null) {
                 throw new AppRepeatException("app have exists!");
             }
-            if(developerService.verify(developer.getDeveloperEmail(),developerPass)==null){
-                throw new NotUserException(PASSWORD_INCORRECT.name());
+            if (developerService.verify(developer.getDeveloperEmail(), developerPass) == null) {
+                throw new NotUserException(PASSWORD_INCORRECT.name);
             }
-            if(appService.addApp("/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties","/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties",appName,developer.getDeveloperId()).isState()){
-                result = new Result<App>(true,"create app success!");
-            }else{
-                result = new Result<App>(false,"create app failed!");
+            if (appService.addApp("/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties", "/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties", appName, developer.getDeveloperId()).isState()) {
+                result = new Result<App>(true, "create app success!");
+            } else {
+                result = new Result<App>(false, "create app failed!");
             }
-        }catch (TokenAuthFailedException e1){
-            logger.info(TOKEN_AUTH_FAILED.name(),e1);
-            result = new Result<App>(false,e1.getMessage());
-        }catch (AppRepeatException e2){
-            logger.info(e2.getMessage(),e2);
-            result = new Result<App>(false,e2.getMessage());
-        }catch(NotUserException e3){
-            logger.info(e3.getMessage(),e3);
-            result = new Result<App>(false,e3.getMessage());
-        }catch (Exception e){
-            logger.info(e.getMessage(),e);
-            result = new Result<App>(false,e.getMessage());
+        } catch (TokenAuthFailedException e1) {
+            logger.info(TOKEN_AUTH_FAILED.name, e1);
+            result = new Result<App>(false, e1.getMessage());
+        } catch (AppRepeatException e2) {
+            logger.info(e2.getMessage(), e2);
+            result = new Result<App>(false, e2.getMessage());
+        } catch (NotUserException e3) {
+            logger.info(e3.getMessage(), e3);
+            result = new Result<App>(false, e3.getMessage());
+        } catch (Exception e) {
+            logger.info(e.getMessage(), e);
+            result = new Result<App>(false, e.getMessage());
         }
         return result;
     }
 
     /**
      * return apps
+     *
      * @param developerId
      * @param developerToken
      * @param offset
@@ -91,26 +96,26 @@ public class AppController {
      * @return
      */
     @RequestMapping(value = "/{developerId}/{developerToken}/auth/{offset}/{limit}/apps",
-                    method = RequestMethod.POST,
-                    produces = {"application/json;charset=UTF-8"})
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Result<List<App>> apps(@PathVariable("developerId") long developerId,
                                   @PathVariable("developerToken") String developerToken,
                                   @PathVariable("offset") int offset,
-                                  @PathVariable("limit") int limit){
+                                  @PathVariable("limit") int limit) {
         Result<List<App>> result;
         try {
             if (developerService.checkDeveloper(developerId, developerToken) == null) {
                 throw new TokenAuthFailedException("token auth failed!");
             }
-            List<App> apps = appService.findByDeveloperId(developerId,offset,limit);
-            result=new Result<List<App>>(true,apps);
-        }catch (TokenAuthFailedException e1){
-            logger.info(e1.getMessage(),e1);
-            result = new Result<List<App>>(false,e1.getMessage());
-        }catch (Exception e){
-            logger.info(e.getMessage(),e);
-            result = new Result<List<App>>(false,e.getMessage());
+            List<App> apps = appService.findByDeveloperId(developerId, offset, limit);
+            result = new Result<List<App>>(true, apps);
+        } catch (TokenAuthFailedException e1) {
+            logger.info(e1.getMessage(), e1);
+            result = new Result<List<App>>(false, e1.getMessage());
+        } catch (Exception e) {
+            logger.info(e.getMessage(), e);
+            result = new Result<List<App>>(false, e.getMessage());
         }
         return result;
     }
@@ -118,15 +123,17 @@ public class AppController {
 
     /**
      * just return app jsp page
+     *
      * @return
      */
-    @RequestMapping(value = "/{appId}",method = RequestMethod.GET)
-    public String app(){
-        return PAGE_APP.name();
+    @RequestMapping(value = "/{appId}", method = RequestMethod.GET)
+    public String app() {
+        return PAGE_APP.name;
     }
 
     /**
      * resuful api to get app info by app id ,need token auth
+     *
      * @param developerId
      * @param developerToken
      * @param appId
@@ -138,32 +145,30 @@ public class AppController {
     @ResponseBody
     public Result<App> appInfo(@PathVariable("developerId") long developerId,
                                @PathVariable("developerToken") String developerToken,
-                               @PathVariable("appId") long appId){
+                               @PathVariable("appId") long appId) {
 
         Result<App> result;
 
         try {
             DeveloperInfo developerInfo = developerService.checkDeveloper(developerId, developerToken);
+            App app = appService.findById(appId);
             if (developerInfo == null) {
                 throw new TokenAuthFailedException("token auth failed!");
-            }
-            App app = appService.findById(appId);
-            if (app == null) {
+            } else if (app == null) {
                 throw new NotAppException("appkey or secret key incorecct!");
-            }
-            if (app.getAppDeveloperId() != developerInfo.getDeveloperId()) {
+            } else if (app.getAppDeveloperId() != developerInfo.getDeveloperId()) {
                 throw new NotAppException("it not your app!");
             }
-            result = new Result<App>(true,app);
-        }catch (TokenAuthFailedException e1){
-            logger.info(e1.getMessage(),e1);
-            result = new Result<App>(false,e1.getMessage());
-        }catch (NotAppException e2){
-            logger.info(e2.getMessage(),e2);
-            result = new Result<App>(false,e2.getMessage());
-        }catch (Exception e){
-            logger.error(e.getMessage(),e);
-            result = new Result<App>(false,e.getMessage());
+            result = new Result<App>(true, app);
+        } catch (TokenAuthFailedException e1) {
+            logger.info(e1.getMessage(), e1);
+            result = new Result<App>(false, e1.getMessage());
+        } catch (NotAppException e2) {
+            logger.info(e2.getMessage(), e2);
+            result = new Result<App>(false, e2.getMessage());
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            result = new Result<App>(false, e.getMessage());
         }
 
         return result;
@@ -172,6 +177,7 @@ public class AppController {
 
     /**
      * change app name
+     *
      * @param developerId
      * @param developerToken
      * @param developerPass
@@ -180,51 +186,43 @@ public class AppController {
      * @return
      */
     @RequestMapping(value = "{developerId}/{developerToken}/auth/{developerPass}/verify/{appId}/{newAppName}/changename",
-    method = RequestMethod.POST,
-    produces = {"application/json;charset=UTF-8"})
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Result<App> changename(@PathVariable("developerId") long developerId,
                                   @PathVariable("developerToken") String developerToken,
                                   @PathVariable("developerPass") String developerPass,
                                   @PathVariable("appId") long appId,
-                                  @PathVariable("newAppName") String newAppName){
+                                  @PathVariable("newAppName") String newAppName) {
         Result<App> result;
         try {
             DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
             App app = appService.findById(appId);
             //token auth
             if (developer == null) {
-                throw new TokenAuthFailedException(TOKEN_AUTH_FAILED.name());
-            }
-            //if app exists
-            if (app == null) {
-                throw new NotAppException(NOT_APP.name());
-            }
-            //if app owner
-            if (app.getAppDeveloperId() != developer.getDeveloperId()) {
-                throw new NotAppOwnerException(NOT_APP.name());
-            }
-            //verify user
-            if (developerService.verify(developer.getDeveloperEmail(), developerPass)==null) {
-                throw new NotUserException(PASSWORD_INCORRECT.name());
-            }
-
-            if (!appService.changeAppName(appId, newAppName).isState()) {
+                throw new TokenAuthFailedException(TOKEN_AUTH_FAILED.name);
+            } else if (app == null) {
+                throw new NotAppException(NOT_APP.name);
+            } else if (app.getAppDeveloperId() != developer.getDeveloperId()) {
+                throw new NotAppOwnerException(NOT_APP.name);
+            } else if (developerService.verify(developer.getDeveloperEmail(), developerPass) == null) {
+                throw new NotUserException(PASSWORD_INCORRECT.name);
+            } else if (!appService.changeAppName(appId, newAppName).isState()) {
                 result = new Result<App>(false, "change app name failed!");
             } else {
                 result = new Result<App>(true, appService.findById(appId));
             }
-        }catch(TokenAuthFailedException e1){
+        } catch (TokenAuthFailedException e1) {
             throw e1;
-        }catch (NotAppException e2){
+        } catch (NotAppException e2) {
             throw e2;
-        }catch (NotAppOwnerException e3){
+        } catch (NotAppOwnerException e3) {
             throw e3;
-        }catch (NotUserException e4){
+        } catch (NotUserException e4) {
             throw e4;
-        }catch (Exception e){
-            logger.info(APP_FAILED.name(),e);
-            result = new Result<App>(false,e.getMessage());
+        } catch (Exception e) {
+            logger.info(APP_FAILED.name, e);
+            result = new Result<App>(false, e.getMessage());
         }
 
         return result;
@@ -232,11 +230,12 @@ public class AppController {
 
     /**
      * resetful api for reset app
+     *
      * @param developerId
      * @param developerToken
      * @param developerPass
      * @param appId
-     * @return
+     * @return Result<App>
      */
     @RequestMapping(value = "{developerId}/{developerToken}/auth/{developerPass}/verify/{appId}/reset",
             method = RequestMethod.POST,
@@ -245,7 +244,7 @@ public class AppController {
     public Result<App> refreshKey(@PathVariable("developerId") long developerId,
                                   @PathVariable("developerToken") String developerToken,
                                   @PathVariable("developerPass") String developerPass,
-                                  @PathVariable("appId") long appId){
+                                  @PathVariable("appId") long appId) {
         Result<App> result;
         try {
             DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
@@ -263,30 +262,30 @@ public class AppController {
                 throw new NotAppOwnerException("it's not your app!");
             }
             //verify user
-            if (developerService.verify(developer.getDeveloperEmail(), developerPass)==null) {
+            if (developerService.verify(developer.getDeveloperEmail(), developerPass) == null) {
                 throw new NotUserException("password incorrect!");
             }
 
-            if (!appService.resetApp(appId,app.getAppName(),"/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties","/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties").isState()) {
+            if (!appService.resetApp(appId, app.getAppName(), "/opt/apache-apollo-1.7.1/bin/twt/etc/groups.properties", "/opt/apache-apollo-1.7.1/bin/twt/etc/users.properties").isState()) {
                 result = new Result<App>(false, "reset app name failed!");
             } else {
                 result = new Result<App>(true, appService.findById(appId));
             }
-        }catch(TokenAuthFailedException e1){
-            logger.info(TOKEN_AUTH_FAILED.name(),e1);
+        } catch (TokenAuthFailedException e1) {
+            logger.info(TOKEN_AUTH_FAILED.name, e1);
             result = new Result<App>(false, e1.getMessage());
-        }catch (NotAppException e2){
-            logger.info(NOT_APP.name(),e2);
+        } catch (NotAppException e2) {
+            logger.info(NOT_APP.name, e2);
             result = new Result<App>(false, e2.getMessage());
-        }catch (NotAppOwnerException e3){
-            logger.info(NOT_APP.name(),e3);
+        } catch (NotAppOwnerException e3) {
+            logger.info(NOT_APP.name, e3);
             result = new Result<App>(false, e3.getMessage());
-        }catch (NotUserException e4){
-            logger.info(PASSWORD_INCORRECT.name(),e4);
+        } catch (NotUserException e4) {
+            logger.info(PASSWORD_INCORRECT.name, e4);
             result = new Result<App>(false, e4.getMessage());
-        }catch (Exception e){
-            logger.info(APP_FAILED.name(),e);
-            result = new Result<App>(false,e.getMessage());
+        } catch (Exception e) {
+            logger.info(APP_FAILED.name, e);
+            result = new Result<App>(false, e.getMessage());
         }
 
         return result;
@@ -295,6 +294,7 @@ public class AppController {
 
     /**
      * delete app
+     *
      * @param developerId
      * @param developerToken
      * @param developerPass
@@ -306,9 +306,9 @@ public class AppController {
             produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Result<App> delete(@PathVariable("developerId") long developerId,
-                                  @PathVariable("developerToken") String developerToken,
-                                  @PathVariable("developerPass") String developerPass,
-                                  @PathVariable("appId") long appId){
+                              @PathVariable("developerToken") String developerToken,
+                              @PathVariable("developerPass") String developerPass,
+                              @PathVariable("appId") long appId) {
         Result<App> result;
         try {
             DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
@@ -326,7 +326,7 @@ public class AppController {
                 throw new NotAppOwnerException("it's not your app!");
             }
             //verify user
-            if (developerService.verify(developer.getDeveloperEmail(),developerPass)==null) {
+            if (developerService.verify(developer.getDeveloperEmail(), developerPass) == null) {
                 throw new NotUserException("password incorrect!");
             }
 
@@ -335,26 +335,25 @@ public class AppController {
             } else {
                 result = new Result<App>(true, appService.findById(appId));
             }
-        }catch(TokenAuthFailedException e1){
-            logger.info(e1.getMessage(),e1);
+        } catch (TokenAuthFailedException e1) {
+            logger.info(e1.getMessage(), e1);
             result = new Result<App>(false, e1.getMessage());
-        }catch (NotAppException e2){
-            logger.info(e2.getMessage(),e2);
+        } catch (NotAppException e2) {
+            logger.info(e2.getMessage(), e2);
             result = new Result<App>(false, e2.getMessage());
-        }catch (NotAppOwnerException e3){
-            logger.info(e3.getMessage(),e3);
+        } catch (NotAppOwnerException e3) {
+            logger.info(e3.getMessage(), e3);
             result = new Result<App>(false, e3.getMessage());
-        }catch (NotUserException e4){
-            logger.info(e4.getMessage(),e4);
+        } catch (NotUserException e4) {
+            logger.info(e4.getMessage(), e4);
             result = new Result<App>(false, e4.getMessage());
-        }catch (Exception e){
-            logger.info(e.getMessage(),e);
-            result = new Result<App>(false,e.getMessage());
+        } catch (Exception e) {
+            logger.info(e.getMessage(), e);
+            result = new Result<App>(false, e.getMessage());
         }
 
         return result;
     }
-
 
 
 }

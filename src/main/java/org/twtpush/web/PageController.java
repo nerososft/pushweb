@@ -18,23 +18,23 @@ public class PageController {
 
     @RequestMapping(value = "/document")
     public String document(){
-        return PAGE_DOCUMENT.name();
+        return PAGE_DOCUMENT.name;
     }
 
     @RequestMapping(value = "/community")
     public String community(){
-        return PAGE_COMMUNITY.name();
+        return PAGE_COMMUNITY.name;
     }
 
     @RequestMapping(value = "/about")
     public String about(){
-        return PAGE_ABOUT.name();
+        return PAGE_ABOUT.name;
     }
 
     @RequestMapping(value = "/download")
     public String download(){
 
-        return PAGE_DOWNLOAD.name();
+        return PAGE_DOWNLOAD.name;
     }
 
 

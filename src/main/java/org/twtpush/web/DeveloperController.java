@@ -77,7 +77,7 @@ public class DeveloperController {
      */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String showlogin(){
-        return PAGE_LOGIN.name();
+        return PAGE_LOGIN.name;
     }
 
     /**
@@ -127,7 +127,7 @@ public class DeveloperController {
         }catch (TokenAuthFailedException e1){
             throw e1;
         }catch (Exception e){
-            logger.info(DEVELOPER_FAILED.name(),e);
+            logger.info(DEVELOPER_FAILED.name,e);
             result = new Result<DeveloperInfo>(false,e.getMessage());
         }
         return result;
