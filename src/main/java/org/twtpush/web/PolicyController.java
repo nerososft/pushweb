@@ -1,7 +1,4 @@
 package org.twtpush.web;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +17,10 @@ import org.twtpush.exception.TokenAuthFailedException;
 import org.twtpush.service.IAppService;
 import org.twtpush.service.IDeveloperService;
 import org.twtpush.service.IPolicyService;
-
-import javax.annotation.Resource;
 import java.util.List;
+import org.slf4j.*;
+
+import static org.twtpush.util.CONSTANT.*;
 
 /**
  * author： nero
@@ -34,14 +32,14 @@ import java.util.List;
 @RequestMapping("/policy")
 public class PolicyController {
 
-    private Logger logger  = LoggerFactory.getLogger(this.getClass());
-
     @Autowired
     private IPolicyService policyService;
     @Autowired
     private IDeveloperService developerService;
     @Autowired
     private IAppService appService;
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
      * 创建新策略
@@ -61,44 +59,43 @@ public class PolicyController {
                                 @PathVariable("policyName") String policyName,
                                 @PathVariable("appId") long appId){
         Operate result;
-        Policy policy;
         DeveloperInfo developer;
         App app;
 
         try {
             developer = developerService.checkDeveloper(developerId, developerToken);
             if (developer == null) {
-                throw new TokenAuthFailedException("token auth failed!");
+                throw new TokenAuthFailedException(TOKEN_AUTH_FAILED.name());
             }
             if(developerService.verify(developer.getDeveloperEmail(),developerPass)==null){
-                throw new NotUserException("password incorrect!");
+                throw new NotUserException(PASSWORD_INCORRECT.name());
             }
             app = appService.findById(appId);
 
             if (app.getAppDeveloperId() != developer.getDeveloperId()) {
-                throw new NotAppException("it not your app!");
+                throw new NotAppException(NOT_APP.name());
             }
             if (policyService.createPolicy(policyName,appId).isState()) {
-                result = new Operate(true, "create success!", 01002);
+                result = new Operate(true, "create success!", 1002);
             } else {
-                result = new Operate(false, "create failed!", 01003);
+                result = new Operate(false, "create failed!", 1003);
             }
-        }catch (NotPolicyException e3){
-            result = new Operate(false,e3.getMessage(),01001);
-        }catch (TokenAuthFailedException e1){
-            result = new Operate(false,e1.getMessage(),01001);
-        }catch (NotAppException e2){
-            result = new Operate(false,e2.getMessage(),01001);
-        }catch (NotUserException e4){
-            result = new Operate(false,e4.getMessage(),01001);
-        }catch (Exception e){
-            result = new Operate(false,e.getMessage(),01001);
+        } catch (TokenAuthFailedException e1){
+            logger.error(TOKEN_AUTH_FAILED.name(),e1);
+            result = new Operate(false,e1.getMessage(), 1001);
+        } catch (NotUserException e4){
+            logger.error(PASSWORD_INCORRECT.name(),e4);
+            result = new Operate(false,e4.getMessage(),1001);
+        } catch (Exception e){
+            logger.error(POLICY_FAILED.name(),e);
+            result = new Operate(false,e.getMessage(),1001);
         }
         return result;
     }
 
     /**
      * 获取策略组
+     *
      * @param developerId
      * @param developerToken
      * @param appId
@@ -120,22 +117,27 @@ public class PolicyController {
         try {
             DeveloperInfo developer = developerService.checkDeveloper(developerId, developerToken);
             if(developer==null){
-                throw new TokenAuthFailedException("token auth failed!");
+                throw new TokenAuthFailedException(TOKEN_AUTH_FAILED.name());
             }
 
             if (app.getAppDeveloperId() != developer.getDeveloperId()) {
-                throw new NotAppException("it not your app!");
+                throw new NotAppException(NOT_APP.name());
             }
             result =  policyService.getPolicyList(appId,offset,limit);
         }catch (TokenAuthFailedException e1){
+            logger.info(TOKEN_AUTH_FAILED.name(),e1);
             result = new Result<List<Policy>>(false,e1.getMessage());
         }catch (NotAppException e2) {
+            logger.info(NOT_APP.name(),e2);
             result = new Result<List<Policy>>(false,e2.getMessage());
         }catch (Exception e){
+            logger.info(POLICY_FAILED.name(),e);
             result = new Result<List<Policy>>(false,e.getMessage());
         }
         return result;
     }
+
+
 
     /**
      * 删除策略
@@ -143,7 +145,7 @@ public class PolicyController {
      * @param developerId
      * @param developerToken
      * @param policyId
-     * @return
+     * @return Operate
      */
     @RequestMapping(value = "/{developerId}/{developerToken}/auth/{developerPass}/verify/{policyId}/delete",
     method = RequestMethod.POST,
@@ -177,24 +179,25 @@ public class PolicyController {
                 throw new NotAppException("it not your app!");
             }
             if (policyService.deletePolicy(policyId).isState()) {
-                result = new Operate(true, "delete success!", 01002);
+                result = new Operate(true, "delete success!", 1002);
             } else {
-                result = new Operate(false, "delete failed!", 01003);
+                result = new Operate(false, "delete failed!", 1003);
             }
         }catch (NotPolicyException e3){
-            //throw e3;
-            result = new Operate(false,e3.getMessage(),01001);
+            logger.info(NOT_POLICY.name(),e3);
+            result = new Operate(false,e3.getMessage(),1001);
         }catch (TokenAuthFailedException e1){
-            //throw e1;
-            result = new Operate(false,e1.getMessage(),01001);
+            logger.info(TOKEN_AUTH_FAILED.name(),e1);
+            result = new Operate(false,e1.getMessage(),1001);
         }catch (NotAppException e2){
-            //throw e2;
-            result = new Operate(false,e2.getMessage(),01001);
+            logger.info(NOT_APP.name(),e2);
+            result = new Operate(false,e2.getMessage(),1001);
         }catch (NotUserException e5){
-            //throw e5;
-            result = new Operate(false,e5.getMessage(),01001);
+            logger.info(PASSWORD_INCORRECT.name(),e5);
+            result = new Operate(false,e5.getMessage(),1001);
         }catch (Exception e){
-            result = new Operate(false,e.getMessage(),01001);
+            logger.info(POLICY_FAILED.name(),e);
+            result = new Operate(false,e.getMessage(),1001);
         }
         return result;
     }
@@ -205,7 +208,7 @@ public class PolicyController {
      * @param developerToken
      * @param policyId
      * @param policyName
-     * @return
+     * @return Operate
      */
     @RequestMapping(value = "/{developerId}/{developerToken}/auth/{developerPass}/verify/{policyId}/{policyName}/modify",
             method = RequestMethod.POST,
@@ -240,21 +243,25 @@ public class PolicyController {
                 throw new NotAppException("it not your app!");
             }
             if (policyService.modifyPolicy(policyId,policyName).isState()) {
-                result = new Operate(true, "modify success!", 01002);
+                result = new Operate(true, "modify success!", 1002);
             } else {
-                result = new Operate    (false, "modify failed!", 01003);
+                result = new Operate    (false, "modify failed!", 1003);
             }
         }catch (NotPolicyException e3){
-            result = new Operate(false,e3.getMessage(),01001);
+            logger.info(NOT_POLICY.name(),e3);
+            result = new Operate(false,e3.getMessage(),1001);
         }catch (TokenAuthFailedException e1){
-            result = new Operate(false,e1.getMessage(),01001);
+            logger.info(TOKEN_AUTH_FAILED.name(),e1);
+            result = new Operate(false,e1.getMessage(),1001);
         }catch (NotAppException e2){
-            result = new Operate(false,e2.getMessage(),01001);
+            logger.info(NOT_APP.name(),e2);
+            result = new Operate(false,e2.getMessage(),1001);
         }catch (NotUserException e5){
-            //throw e5;
-            result = new Operate(false,e5.getMessage(),01001);
+            logger.info(PASSWORD_INCORRECT.name(),e5);
+            result = new Operate(false,e5.getMessage(),1001);
         }catch (Exception e){
-            result = new Operate(false,e.getMessage(),01001);
+            logger.info(POLICY_FAILED.name(),e);
+            result = new Operate(false,e.getMessage(),1001);
         }
         return result;
 

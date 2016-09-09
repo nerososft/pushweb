@@ -8,7 +8,6 @@ import org.springframework.util.DigestUtils;
 import org.twtpush.dao.DeveloperDao;
 import org.twtpush.dto.*;
 import org.twtpush.entity.Developer;
-import org.twtpush.exception.HaveLoggedOutException;
 import org.twtpush.exception.NotUserException;
 import org.twtpush.exception.TokenAuthFailedException;
 import org.twtpush.service.IDeveloperService;
@@ -30,7 +29,6 @@ public class DeveloperServiceImpl implements IDeveloperService {
     @Autowired
     private DeveloperDao developerDao;
 
-    private RandomString randomString;
 
     public List<Developer> getDeveloperList(int offset,int limit) {
         return developerDao.queryAll(offset,limit);
@@ -42,15 +40,16 @@ public class DeveloperServiceImpl implements IDeveloperService {
 
     private String getRandomToken(long length){
         //md5 encode
+        RandomString randomString;
         randomString = new RandomString();
-        logger.info("token={}",randomString.getRandomString(tokenLength).toString());
+        logger.info("token={}",randomString.getRandomString(tokenLength));
         return DigestUtils.md5DigestAsHex(randomString.getRandomString(tokenLength).getBytes());
     }
     /**
      * 使用注解控制事务
      */
     //@Transactional
-    public Login login(String developerEmail, String developerPassword) throws NotUserException {
+    public Login login(String developerEmail, String developerPassword){
 
         try {
             Developer developer = developerDao.queryByEmailAndPassword(developerEmail, developerPassword);
@@ -60,17 +59,18 @@ public class DeveloperServiceImpl implements IDeveloperService {
                 String newToken = getRandomToken(tokenLength);
                 int updateToken = developerDao.updateTokenByEmail(developer.getDeveloperEmail(), newToken);
                 if (updateToken < 1) {
-                    return new Login(false, "server error!", 0002);
+                    return new Login(false, "server error!", 10002);
                 } else {
                     developer.setDeveloperToken(newToken);
-                    return new Login(true, "login success!", 0003, new DeveloperInfo(developer.getDeveloperName(),developer.getDeveloperEmail(),developer.getDeveloperToken(),developer.getDeveloperId()));
+                    return new Login(true, "login success!", 10003, new DeveloperInfo(developer.getDeveloperName(),developer.getDeveloperEmail(),developer.getDeveloperToken(),developer.getDeveloperId()));
                 }
             }
         }catch(NotUserException e1){
-            return new Login(false,"username or password incorrect!",0001);
+            logger.info(e1.getMessage(),e1);
+            return new Login(false,"username or password incorrect!",10001);
         } catch (Exception e) {//look as runtime exception
             logger.error(e.getMessage(),e);
-            return new Login(false,"login failed!",0000);
+            return new Login(false,"login failed!",10000);
         }
     }
 
@@ -84,7 +84,7 @@ public class DeveloperServiceImpl implements IDeveloperService {
     }
 
     @Transactional
-    public Logout logout(long developerId, String developerToken) throws NotUserException, HaveLoggedOutException {
+    public Logout logout(long developerId, String developerToken){
         try {
             if(!authDeveloper(developerId,developerToken).isDeveloper()){
                 throw  new TokenAuthFailedException("username or password incorrect");
@@ -96,6 +96,7 @@ public class DeveloperServiceImpl implements IDeveloperService {
                 return new Logout(true, "logout success!", 0005);
             }
         }catch (TokenAuthFailedException e1){
+            logger.info(e1.getMessage(),e1);
             return new Logout(false, "token auth failed",01001);
         } catch (Exception e) {
             logger.error(e.getMessage(),e);
@@ -118,8 +119,10 @@ public class DeveloperServiceImpl implements IDeveloperService {
             }
             return new Operate(true,"change password success!",01003);
         }catch (NotUserException e2){
+            logger.info(e2.getMessage(),e2);
             return new Operate(false,"old password incorrect!",01005);
         }catch (TokenAuthFailedException e1){
+            logger.info(e1.getMessage(),e1);
             return new Operate(false,"token auth failed",01001);
         }catch (Exception e){
             logger.error(e.getMessage(),e);
@@ -129,7 +132,7 @@ public class DeveloperServiceImpl implements IDeveloperService {
 
 
     public Operate register(String developerEmail, String developerPassword, String developerName) {
-        //developerDao.add();
+
         return null;
     }
 

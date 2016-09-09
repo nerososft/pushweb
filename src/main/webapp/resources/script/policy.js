@@ -112,7 +112,7 @@ var policy={
             });
         },
         addpolicy:function () {
-            $.post(policy.URL.addpolicy($("#policyname").val(),policy.APP.getId(),$("#changeConfirmPass").val()),{},function (data,status) {
+            $.post(policy.URL.addpolicy($("#policyname").val(),this.APP.getId(),$("#changeConfirmPass").val()),{},function (data,status) {
                 console.log("deletepolicy={}",data);
                 if(!status || !data.state){
                     $("#changeNameTip").append("<p style='color: #EB650C;'><span class='glyphicon glyphicon-exclamation-sign'></span> "+data.msg+"</p>");

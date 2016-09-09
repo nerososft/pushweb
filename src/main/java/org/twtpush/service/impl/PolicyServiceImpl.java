@@ -1,10 +1,7 @@
 package org.twtpush.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StopWatch;
 import org.twtpush.dao.PolicyDao;
 import org.twtpush.dto.Operate;
 import org.twtpush.dto.Result;
@@ -23,14 +20,13 @@ import java.util.List;
 @Service
 public class PolicyServiceImpl implements IPolicyService {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
 
     private PolicyDao policyDao;
 
-    public Operate createPolicy(String policyName, long appId) throws CreatePolicyException {
+    public Operate createPolicy(String policyName, long appId){
         long result = policyDao.addPolicy(policyName, appId);
         if(result<1){
             throw new CreatePolicyException("cretae policy failed!");

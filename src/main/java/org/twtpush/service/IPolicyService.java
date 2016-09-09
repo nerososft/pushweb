@@ -1,6 +1,5 @@
 package org.twtpush.service;
 
-import org.springframework.stereotype.Service;
 import org.twtpush.dto.Operate;
 import org.twtpush.dto.Result;
 import org.twtpush.entity.Policy;

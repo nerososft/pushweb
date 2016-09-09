@@ -4,7 +4,6 @@ import org.twtpush.dto.DeveloperInfo;
 import org.twtpush.dto.Login;
 import org.twtpush.dto.Logout;
 import org.twtpush.dto.Operate;
-import org.twtpush.entity.App;
 import org.twtpush.entity.Developer;
 import org.twtpush.exception.HaveLoggedOutException;
 import org.twtpush.exception.NotUserException;
@@ -47,8 +46,7 @@ public interface IDeveloperService {
      * @throws NotUserException
      * @throws HaveLoggedOutException
      */
-    Logout logout(long developerId, String developerToken) throws NotUserException,HaveLoggedOutException;
-
+    Logout logout(long developerId, String developerToken);
     /**
      * change developer's password
      * @param developerId

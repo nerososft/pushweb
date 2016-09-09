@@ -3,6 +3,8 @@ package org.twtpush.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import static org.twtpush.util.CONSTANT.*;
+
 /**
  * author： nero
  * email: nerosoft@outlook.com
@@ -15,23 +17,24 @@ public class PageController {
 
 
     @RequestMapping(value = "/document")
-    public String Document(){
-        return "document";
+    public String document(){
+        return PAGE_DOCUMENT.name();
     }
 
     @RequestMapping(value = "/community")
-    public String Community(){
-        return "community";
+    public String community(){
+        return PAGE_COMMUNITY.name();
     }
 
     @RequestMapping(value = "/about")
-    public String About(){
-        return "about";
+    public String about(){
+        return PAGE_ABOUT.name();
     }
 
     @RequestMapping(value = "/download")
-    public String Download(){
-        return "download";
+    public String download(){
+
+        return PAGE_DOWNLOAD.name();
     }
 
 

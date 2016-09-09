@@ -7,7 +7,6 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -25,9 +24,9 @@ public class PushServiceImpl implements IPushService{
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private TwtMqtt twtMqtt;
 
     public Operate push(String broker,String appName,String appKey,String secretKey,String topic, String content) {
+        TwtMqtt twtMqtt;
         try {
             twtMqtt = new TwtMqtt();
             twtMqtt.setBroker("tcp://"+broker);
@@ -44,7 +43,7 @@ public class PushServiceImpl implements IPushService{
             return new Operate(true,"push success!",10002);
         }catch (Exception e){
             logger.error(e.getMessage(),e);
-            return new Operate(false,e.getMessage().toString(),10001);
+            return new Operate(false,e.getMessage(),10001);
         }
 
     }
@@ -54,37 +53,28 @@ public class PushServiceImpl implements IPushService{
         try {
             // 创建httpget.
             HttpGet httpget = new HttpGet("https://127.0.0.1:61681/api/json/broker?connections=true");
-            System.out.println("executing request " + httpget.getURI());
+
             // 执行get请求.
             CloseableHttpResponse response = httpclient.execute(httpget);
             try {
                 // 获取响应实体
                 HttpEntity entity = response.getEntity();
-                System.out.println("--------------------------------------");
-                // 打印响应状态
-                System.out.println(response.getStatusLine());
-                if (entity != null) {
-                    // 打印响应内容长度
-                    System.out.println("Response content length: " + entity.getContentLength());
-                    // 打印响应内容
-                    System.out.println("Response content: " + EntityUtils.toString(entity));
-                }
-                System.out.println("------------------------------------");
+
             } finally {
                 response.close();
             }
         } catch (ClientProtocolException e) {
-            e.printStackTrace();
+            logger.info(e.getMessage(),e);
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.info(e.getMessage(),e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.info(e.getMessage(),e);
         } finally {
             // 关闭连接,释放资源
             try {
                 httpclient.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.info(e.getMessage(),e);
             }
         }
 

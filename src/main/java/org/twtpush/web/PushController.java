@@ -3,7 +3,6 @@ package org.twtpush.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.task.TaskRejectedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.twtpush.dto.Operate;
@@ -13,6 +12,8 @@ import org.twtpush.service.IAppService;
 import org.twtpush.service.IDeveloperService;
 import org.twtpush.service.IPushService;
 
+import static org.twtpush.util.CONSTANT.PUSH_FAILED;
+
 /**
  * Created by nero on 16-8-20.
  */
@@ -21,6 +22,7 @@ import org.twtpush.service.IPushService;
 public class PushController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
     private IPushService pushService;
 
@@ -58,6 +60,7 @@ public class PushController {
         }catch (NotAppException e2){
             throw e2;
         }catch (Exception e){
+            logger.info(PUSH_FAILED.name(),e);
             operate = new Operate(false,e.getMessage(),03001);
         }
         return operate;

@@ -8,7 +8,6 @@ import org.springframework.util.DigestUtils;
 import org.twtpush.dao.AppDao;
 import org.twtpush.dto.Operate;
 import org.twtpush.entity.App;
-import org.twtpush.exception.CreateAppException;
 import org.twtpush.service.IAppService;
 import org.twtpush.util.Random.RandomString;
 
@@ -32,12 +31,12 @@ public class AppServiceImpl implements IAppService
 
     private long tokenLength=128;
 
-    private RandomString randomString;
 
     private String getRandomToken(){
         //md5 encode
+        RandomString randomString;
         randomString = new RandomString();
-        logger.info("token={}",randomString.getRandomString(tokenLength).toString());
+        logger.info("token={}",randomString.getRandomString(tokenLength));
         return DigestUtils.md5DigestAsHex(randomString.getRandomString(tokenLength).getBytes());
     }
 
@@ -72,7 +71,7 @@ public class AppServiceImpl implements IAppService
             bufferedWriter.close();
             return true;
         } catch (IOException e) {
-            //e.printStackTrace();
+            logger.info(e.getMessage(),e);
             return false;
         }
     }
@@ -88,7 +87,7 @@ public class AppServiceImpl implements IAppService
             randomFile.close();
             return true;
         } catch (IOException e) {
-            //e.printStackTrace();
+            logger.info(e.getMessage(),e);
             return false;
         }
     }

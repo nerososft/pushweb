@@ -1,7 +1,9 @@
 package org.twtpush.util.Mqtt;
 
 import org.eclipse.paho.client.mqttv3.*;
+import org.eclipse.paho.client.mqttv3.logging.LoggerFactory;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+import org.slf4j.*;
 
 /**
  * Created by nero on 16-7-4.
@@ -16,6 +18,7 @@ public class TwtMqtt {
     private String clientId;
     private String content;
     private boolean isConnected = false;
+
 
     private MemoryPersistence persistence;//
     private MqttClient mqttClient;

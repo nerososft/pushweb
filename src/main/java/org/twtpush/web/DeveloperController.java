@@ -18,11 +18,15 @@ import org.twtpush.service.IDeveloperService;
 
 import java.util.List;
 
+import static org.twtpush.util.CONSTANT.DEVELOPER_FAILED;
+import static org.twtpush.util.CONSTANT.PAGE_LOGIN;
+
 /**
  * Created by nero on 16-8-19.
  */
 @Controller
-@RequestMapping("/developer")//url:/model/resource/{id}
+
+@RequestMapping("/developer")
 public class DeveloperController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -73,7 +77,7 @@ public class DeveloperController {
      */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String showlogin(){
-        return "login";
+        return PAGE_LOGIN.name();
     }
 
     /**
@@ -123,6 +127,7 @@ public class DeveloperController {
         }catch (TokenAuthFailedException e1){
             throw e1;
         }catch (Exception e){
+            logger.info(DEVELOPER_FAILED.name(),e);
             result = new Result<DeveloperInfo>(false,e.getMessage());
         }
         return result;
