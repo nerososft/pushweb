@@ -21,7 +21,7 @@
 
             <div class="col-md-12"  style="margin-left:1em;">
                 <div class="col-md-12" style="padding: 0;margin: 0;">
-                        <span style="color: #EB650C;" class="glyphicon glyphicon-chevron-left"></span><a style="color: #EB650C;text-decoration: none;" href="/"><strong>AllApps</strong></a>
+                        <span style="color: #EB650C;" class="glyphicon glyphicon-chevron-left"></span><a style="color: #EB650C;text-decoration: none;" href="/page/myapps"><strong>AllApps</strong></a>
                 </div>
             </div>
             </div>

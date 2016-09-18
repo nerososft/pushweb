@@ -15,17 +15,7 @@ public class Developer {
 
     private String developerToken;
 
-    @Override
-    public String toString() {
-        return "Developer{" +
-                "developerId=" + developerId +
-                ", developerName='" + developerName + '\'' +
-                ", developerEmail='" + developerEmail + '\'' +
-                ", developerPassword='" + developerPassword + '\'' +
-                ", developerToken='" + developerToken + '\'' +
-                ", developerCreatetime=" + developerCreatetime +
-                '}';
-    }
+
 
     public long getDeveloperId() {
         return developerId;

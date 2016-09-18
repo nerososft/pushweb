@@ -40,3 +40,14 @@ CREATE TABLE IF NOT EXISTS policies(
 )ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='policy';
 
 
+CREATE TABLE IF NOT EXISTS friends(
+  user_a bigint NOT NULL COMMENT '好友a',
+  user_b bigint NOT NULL COMMENT '好友a',
+  user_pass_a tinyint DEFAULT 0 NOT NULL COMMENT '好友a通过',
+  user_pass_b tinyint DEFAULT 0 NOT NULL COMMENT '好友a通过',
+  friend_create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  friend_be_time DATEsTIME DEFAULT CURRENT_TIMESTAMP COMMENT '成为好友时间'
+
+)ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='policy';
+
+

@@ -22,11 +22,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="facade-common" />
+        <module name="facade-developer" />
+        <module name="parent-common" />
         <module name="push" />
+        <module name="service-common" />
+        <module name="service-developer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="DeveloperFacade" target="1.5" />
+      <module name="facade-common" target="1.5" />
+      <module name="facade-developer" target="1.5" />
+      <module name="parent-common" target="1.5" />
       <module name="push" target="1.5" />
+      <module name="service-common" target="1.5" />
+      <module name="service-developer" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -51,6 +51,7 @@ public class PolicyController {
      * @param developerToken
      * @param policyName
      * @param appId
+     *
      * @return Operate
      */
     @RequestMapping(value = "/{developerId}/{developerToken}/auth/{developerPass}/verify/{appId}/{policyName}/create",
@@ -158,7 +159,6 @@ public class PolicyController {
                                 @PathVariable("developerToken") String developerToken,
                                 @PathVariable("developerPass") String developerPass,
                                 @PathVariable("policyId") long policyId) {
-
         Operate result;
         Policy policy;
         DeveloperInfo developer;

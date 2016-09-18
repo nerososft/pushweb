@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - twt_push@localhost" uuid="2fa7cfa8-362c-4db6-a903-3ef24a978f9d">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>twt_push.*</schema-pattern>
+      <default-schemas>twt_push.*</default-schemas>
+    </data-source>
+  </component>
+</project>

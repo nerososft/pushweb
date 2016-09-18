@@ -34,9 +34,9 @@
 </style>
 
 <div class="row">
-    <nav style="background: #FFFFFF;" class="navbar navbar-default">
+    <div style="background: #FFFFFF;box-shadow: 0px 0px 5px 2px #ddd; " class="col-md-12">
         <div class="container-fluid">
-            <div  class="navbar-header col-md-12" style="border-radius: 0px;">
+            <div  class="col-md-12" style="border-radius: 0px;">
                 <a class="navbar-brand col-md-2" href="javascript:gotoPage('/');">
                     <img style="height: 1.5em;" alt="TWTPush" src="/resources/img/logo.png">
                 </a>
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
 </div>
 <script src="/resources/script/jquery.rotate.js" type="text/javascript"></script>
 <script src="/resources/script/developer.js" type="text/javascript"></script>

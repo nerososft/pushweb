@@ -19,4 +19,9 @@
 
 
 </body>
+<script>
+    $(function () {
+        developer.auth();
+    });
+</script>
 </html>
