@@ -213,3 +213,78 @@ POST https://api.domain/policy
     "error":null
 }
 ```
+## IOS推送
+### <font color = "#5791c1">功能描述<font>
+IOS推送
+### <font color = "#5791c1">调用地址<font>
+https://api.domain/push
+### <font color = "#5791c1">请求示例<font>
+```sh
+curl -X POST -v http://10.0.0.173:60613/push/{developerId}/{developerToken}/auth/{appKey}/{secretKey}/{deviceToken}/{content}/push
+```
+### <font color = "#5791c1">返回示例<font>
+```http
+< HTTP/1.0 200 OK
+< Content-Type:application/json
+```
+```json
+{ "state":"true","msg":"推送成功","resultCode":100002 }
+
+```
+## 历史消息
+### <font color = "#5791c1">功能描述<font>
+获取某应用历史推送消息
+### <font color = "#5791c1">调用地址<font>
+https://api.domain/msg
+### <font color = "#5791c1">请求示例<font>
+```sh
+curl -X POST -v http://10.0.0.173:60613/msg/wenjin_4a722d767e779f7936111a64ad3288f5/fe283b635bc7755168dd7798023e1d14159fdbee59669eef5a18e68dfdd10f36528c553e6eec88595e73d87c019fe988/3/msg
+```
+### <font color = "#5791c1">返回示例<font>
+```http
+< HTTP/1.0 200 OK
+< Content-Type:application/json
+```
+```json
+{
+"success":true,
+  "data":[
+    {
+      "id":1,
+      "appId":3,
+      "msg":"test",
+      "topic":wenjin/scs,
+      "device_type":"ANDROID",
+      "ctime":null
+    },
+    {
+      "id":1,
+      "appId":3,
+      "msg":"test",
+      "topic":wenjin/scs,
+      "device_type":"ANDROID",
+      "ctime":null
+    }, 
+    {
+      "id":1,
+      "appId":3,
+      "msg":"test",
+      "topic":wenjin/scs,
+      "device_type":"ANDROID",
+      "ctime":null
+    }
+  ],
+  "error":null
+}
+```
+## 推送策略(精准推送)
+### 推送说明:
+1.推送策略仅对android有效，IOS暂无推送策略方案（后期或用线程池解决），请暂时用 `deviceToken` 。
+2.`!!!非常严重`安卓推送请求策略中`/`请用`_`代替。
+### 安卓推送策略说明
+#### 策略示例 
+1.`scs`
+2.`scs_boy`
+3.`scs_boy_305218102`
+4.`...`
+注：3策略可收到2策略，2策略可收到1策略
