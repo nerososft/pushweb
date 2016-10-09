@@ -1,6 +1,0 @@
-org/twtpush/service/IPushServiceTest.class
-org/twtpush/service/IAppServiceTest.class
-org/twtpush/dao/DeviceDaoTest.class
-org/twtpush/dao/AppDaoTest.class
-org/twtpush/dao/DeveloperDaoTest.class
-org/twtpush/service/IDeveloperServiceTest.class
